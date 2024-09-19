@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    /* outline: 1px red solid; */
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif, Arial, Helvetica;
+    text-align: center;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    transition: all .6s;
+}
+
+button {
+    display: block;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}

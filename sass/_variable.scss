@@ -1,0 +1,64 @@
+// 網站主色
+$deep-blue: #001F3F;
+$sapphire: #0d3868;
+$navy-blue: #001F3F;
+$cerulean: #99bde7;
+$medium-blue: #0000CD;
+$steel-blue: #3e6db7;
+$royal-blue: #4169E1;
+$cornflower-blue: #367cca;
+$sky-blue: #87CEEB;
+$light-blue: #367cca;
+$azure: #68b1fa;
+$aegean-blue: #00AEEF;
+$gemstone-blue: #367bc9;
+$light-ivory:#f7f3eb;
+//spacer
+$spacer: 1rem !default;
+$spacers: ( 0: 0, 1: $spacer * .25, 2: $spacer * .5, 3: $spacer, 4: $spacer * 1.5, 5: $spacer * 3, ) !default;
+//空間%
+$position-values: ( 0: 0, 50: 50%, 100: 100%) !default;
+//斷點
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px);
+//container大小
+$container-max-widths: (xxl: 1320px, xl: 1200px, lg: 960px, md: 640px, sm: 450px, xsm: 400px);
+//boder
+$border-width: 1px !default;
+$border-widths: ( 1: 1px, 2: 2px, 3: 3px, 4: 4px, 5: 5px) !default;
+$border-style: solid !default;
+$border-color: $gemstone-blue !default;
+//文字
+//字型
+$font-family-sans-serif: system-ui,
+-apple-system,
+"Segoe UI",
+Roboto,
+"Helvetica Neue",
+"Noto Sans",
+"Liberation Sans",
+Arial,
+sans-serif,
+"Apple Color Emoji",
+"Segoe UI Emoji",
+"Segoe UI Symbol",
+"Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular,
+Menlo,
+Monaco,
+Consolas,
+"Liberation Mono",
+"Courier New",
+monospace !default;
+//行距
+$line-height-base: 1.5 !default;
+$line-height-sm: 1.25 !default;
+$line-height-lg: 2 !default;
+//字大小
+$font-size-root: 16px !default;
+$font-size-base: 1rem !default;
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;

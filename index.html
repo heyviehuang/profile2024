@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="shortcut icon" href="./img/logo.ico">
+    <meta name='description' content='黃暄晴的作品集' />
+    <meta property="og:title" content="作品集 by 黃暄晴" />
+    <meta property="og:description" content="黃暄晴的作品集">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://moooyang.com/" />
+    <meta property="og:image" content="./img/FBogImage-L.png" />
+    <meta property="twitter:image" content="./img/FBogImage-L.png" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <link rel="stylesheet" href="./css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./sass/all.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J95MMXKCG7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-J95MMXKCG7');
+    </script>
+</head>
+
+<body id="body">
+    <div class="loading-overlay">
+    </div>
+    <!-- 動態背景 -->
+    <div class="dynamicBG-container">
+        <div class="cloudL"></div>
+        <div class="cloudR"></div>
+        <canvas class="snow dynamicBg" width="100%" height="100%"></canvas>
+        <canvas class="flake dynamicBg" width="100%" height="100%"></canvas>
+        <img class="logoMain" src="./img/logo.svg" alt="logoMain">
+    </div>
+
+    <!-- 導覽列 -->
+    <header>
+        <nav>
+            <h1>
+                <a class="nav__a--logo scrollTop" href="#body">作品集 by 黃暄晴</a>
+            </h1>
+            <ul class="nav__menuList">
+                <li class="navItem__container"><a class="nav__a scrollTop" href="#personalInformation">個人簡介</a></li>
+                <li class="navItem__container"><a class="nav__a scrollTop" href="#gallery">作品展示</a></li>
+                <li class="navItem__container"><a class="nav__a scrollTop" href="#careerRecord">生涯紀錄</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="home-snap-section ">
+        <!-- 個人簡介 -->
+        <section id="personalInformation" class="personalInformation" data-aos="fade-zoom-in " data-aos-easing="linear" data-aos-delay="0" data-aos-offset="0" data-aos-duration="1000">
+            <div class="wrap">
+                <img class="personalIfobefore" src="./img/personalIfobefore.webp" alt="裝飾線">
+                <div class="personalInfo-container">
+                    <!-- 基本資料 -->
+                    <div class="card education">
+                        <img class="headShot" src="./img/img-headShot.png" alt="頭像">
+                        <div class="textContainer blurIncontainer">
+                            <h2><span class="char char01">黃暄晴</span> <span class="char char02" style="font-size: 1.5rem;">Sally Huang</span></h2>
+                            <h5 class="animL">2018/09~2019/06 (1年)</h5>
+                            <h5 class="animL">私立佛光大學
+                                <br/>資訊應用學系 碩士畢業</h5>
+                        </div>
+                    </div>
+                    <!-- 工作經歷 -->
+                    <div class="workExperience">
+                        <div class="card">
+                            <div class="textContainer">
+                                <h3 class="sectionTitle animB blurIncontainer">
+                                    <span class="char char01">W</span><span class="char char02">ork </span><span class="char char03">Experience</span>
+                                </h3>
+                                <table class="tbPC">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2023-06~現在</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">金田餐飲股份有限公司 | 網頁設計師</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2022-05~2023-02</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">智冠科技股份有限公司 | 平面/網頁設計師</h5>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2019-09~2021-10</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">恆為科技有限公司 | 美術設計師</h5>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2017/07~2017/12</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">財團法人資訊工業策進會 | 3D美術人員<small style="font-size: 1rem;"> (實習)</small></h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="tbMB animL">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2023-06~現在</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">金田餐飲股份有限公司</h5>
+                                                <h5 class="animL"> 網頁設計師</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2022-05~2023-02</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">智冠科技股份有限公司</h5>
+                                                <h5 class="animL"> 平面/網頁設計師</h5>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2019-09~2021-10</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">恆為科技有限公司</h5>
+                                                <h5 class="animL">美術設計師</h5>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <h4 class="animL">2017/07~2017/12</h4>
+                                            </td>
+                                            <td>
+                                                <h5 class="animL">財團法人資訊工業策進會</h5>
+                                                <h5 class="animL">3D美術人員<small style="font-size: 1rem;"> (實習)</small></h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 專業技能 -->
+                    <div class="skill">
+                        <div class="card">
+                            <div class="textContainer">
+                                <h3 class="sectionTitle animB blurIncontainer">
+                                    <span class="char char01">P</span><span class="char char02">rofessional </span><span class="char char03">Skill</span>
+                                </h3>
+                                <ul class="list animL">
+                                    <li>
+                                        <h4 class="animB">美術設計</h4>
+                                        <h5 class="animL">✦ Photoshop　✦ Illustrator　✦ Painter　✦ Clip Studio Paint　✦ Procreate</h5>
+                                    </li>
+                                    <li>
+                                        <h4 class="animB">網頁設計</h4>
+                                        <h5 class="animL">✦ HTML　✦ CSS　✦ SASS　✦ jQuery　✦ JavaScript　✦Bootstrap　✦WordPress</h5>
+                                    </li>
+                                    <li>
+                                        <h4 class="animB">遊戲設計</h4>
+                                        <h5 class="animL">✦ Unity3D　✦ DragonBones　✦ 3ds Max　✦ C#　✦ Egret Engine</h5>
+                                    </li>
+                                    <li>
+                                        <h4 class="animB">專案溝通</h4>
+                                        <h5 class="animL">✦ Adobe XD　✦ Figma　✦ GitHub　✦ Git</h5>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="personalIfoafter" src="./img/personalIfoafter.webp" alt="裝飾線">
+            </div>
+
+        </section>
+
+        <!-- 作品展示 -->
+        <section id="gallery" class="gallery">
+            <!-- 網頁作品列表 -->
+            <div class="webDesign">
+                <img id="FLine01" class="FLineBefore" src="./img/FLine.svg" alt="裝飾線">
+                <h3 class="sectionTitle blurIncontainer">
+                    <span class="char char01">W</span><span class="char char02">EB </span><span class="char char03">DESIGN</span>
+                </h3>
+                <!-- 原創網頁作品 -->
+                <ul class="listWEB wrap">
+                    <li data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="200" data-aos-offset="0" data-aos-duration="1000">
+                        <a class=" p-topOther__link" href="https://heyviehuang.github.io/ningxia/ " target="_blank ">
+                            <div class="p-topOther__linkThumb ">
+                                <img class="webLogo" src="./img/NXLogo.svg " alt="檸夏果汁LOGO ">
+                                <picture>
+                                    <img class="p-topOther__linkImage anim-sparkle " src="./img/webDesign01.webp " alt="Image ">
+                                </picture>
+                            </div>
+                        </a>
+                        <div class="textContainer">
+                            <h3 class="webName animB">【檸夏果汁】</h3>
+                            <p class="animL">為沒有使用套版的飲料網站，純手刻HTML與CSS，採明亮的水果色調，以冷飲的氣泡、柳橙與雞蛋花等做裝飾，讓夏天沁涼的果汁帶來暢快。</p>
+                        </div>
+                    </li>
+                    <li data-aos="fade-zoom-in" data-aos-easing="linear " data-aos-delay="400" data-aos-offset="0 " data-aos-duration="1000">
+                        <a class="p-topOther__link" href="https://heyviehuang.github.io/flyHotel/" target="_blank">
+                            <div class="p-topOther__linkThumb">
+                                <img class="webLogo" src="./img/FHLogo.svg" alt="敖翔飯店LOGO">
+                                <picture>
+                                    <img class="p-topOther__linkImage anim-sparkle" src="./img/webDesign02.webp" alt="Image">
+                                </picture>
+                            </div>
+                        </a>
+                        <div class="textContainer">
+                            <h3 class="webName animB">【敖翔飯店】</h3>
+                            <p class="animL">為沒有使用套版的飯店網站，純手刻HTML與CSS，走低調奢華的高級飯店路線，以黑色底金色邊為主視覺，設計的是一趟精緻的旅程。</p>
+                        </div>
+                    </li>
+                    <li data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="600" data-aos-offset="0" data-aos-duration="1000">
+                        <a class=" p-topOther__link " href="https://xd.adobe.com/view/3af5096b-9a31-41a7-b79b-11af403d3e23-6fa6/ " target="_blank ">
+                            <div class="p-topOther__linkThumb ">
+                                <img class="webLogo " src="./img/MNLogo.svg " alt="魔娜售票LOGO ">
+                                <picture>
+                                    <img class="p-topOther__linkImage anim-sparkle " src="./img/webDesign04.webp " alt="Image ">
+                                </picture>
+                            </div>
+                        </a>
+                        <div class="textContainer">
+                            <h3 class="webName animB">【魔娜售票】</h3>
+                            <p class="animL">為 Adobe XD 平台開發的售票平台設計稿，風格以魔女為原型，充滿神祕氣息的紫色為主色系。</p>
+                        </div>
+                    </li>
+                    <li class="windowBig" data-aos="fade-zoom-in " data-aos-easing="linear" data-aos-delay="800" data-aos-offset="0" data-aos-duration="1000">
+                        <a class="p-topOther__link" href="https://clearskytuckshop.com/" target="_blank">
+                            <div class="p-topOther__linkThumb">
+                                <img class="webLogo" src="./img/CSLogo.svg" alt="晴空雜貨店LOGO">
+                                <picture>
+                                    <img class="p-topOther__linkImage anim-sparkle" src="./img/webDesign03.webp" alt="Image">
+                                </picture>
+                            </div>
+                        </a>
+                        <div class="textContainer">
+                            <h3 class="webName animB">【晴空雜貨店】</h3>
+                            <p class="animL">為以WordPress系統架設的電商平台，伺服器部屬在GCP，採用Cloudflare提供的免費憑證，已串接金物流，正式上線營運，主視覺以清新風格的水彩速寫，營造〚在晴空萬里中的復古柑仔店〛。</p>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 實務經驗BTN -->
+                <!-- <div class="pulse" data-aos="fade-zoom-in" data-aos-easing="linear" data-aos-delay="500" data-aos-offset="0" data-aos-duration="300">
+                    <button id="openModalBtn" class="btn workBtn">
+                        <h4>
+                            Web Design on work
+                        </h4>
+                        <div class="star-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve"
+                            version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 784.11 815.53"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <defs></defs>
+                            <g id="Layer_x0020_1">
+                              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                              <path
+                                class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="star-2">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve"
+                            version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 784.11 815.53"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <defs></defs>
+                            <g id="Layer_x0020_1">
+                              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                              <path
+                                class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="star-3">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve"
+                            version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 784.11 815.53"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <defs></defs>
+                            <g id="Layer_x0020_1">
+                              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                              <path
+                                class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="star-4">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve"
+                            version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 784.11 815.53"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <defs></defs>
+                            <g id="Layer_x0020_1">
+                              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                              <path
+                                class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="star-5">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve"
+                            version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 784.11 815.53"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <defs></defs>
+                            <g id="Layer_x0020_1">
+                              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                              <path
+                                class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="star-6">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            xml:space="preserve"
+                            version="1.1"
+                            style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                            viewBox="0 0 784.11 815.53"
+                            xmlns:xlink="http://www.w3.org/1999/xlink"
+                          >
+                            <defs></defs>
+                            <g id="Layer_x0020_1">
+                              <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                              <path
+                                class="fil0"
+                                d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"
+                              ></path>
+                            </g>
+                          </svg>
+                        </div>
+                </button>
+                </div> -->
+                <img id="FLine02" class="FLineAfter" src="./img/FLine.svg" alt="裝飾線">
+            </div>
+            <!-- 實務經驗彈窗 -->
+            <!-- <div class="overlay"></div> -->
+            <div class="webOnWorkModal">
+                <!-- <span class="closeBtn material-icons md-48">
+                                    X
+                </span> -->
+                <div class="contentContainer">
+                    <h4 style="margin-top: 0;" class="sectionTitle blurIncontainer">
+                        <span class="char char01">❈</span><span class="char char02"> 金田餐飲 </span><span class="char char03">❈</span>
+                    </h4>
+                    <p>目前在金田餐飲擔任網頁設計師，除了負責公司官網以外，也負責公司旗下六個餐飲品牌的官網設計與維護。</p>
+                    <ul class="jtfsList">
+                        <li>
+                            <a class="anim-sparkle" href="https://jtfs.com.tw/" target="_blank">
+                                <img src="./img/jtfs00.webp" alt="">
+                            </a>
+                            <h5 class="animL">【金田餐飲官網】</h5>
+                        </li>
+                    </ul>
+                    <ul class="jtfsList">
+                        <li>
+                            <a class="anim-sparkle" href="https://nara.com.tw/" target="_blank">
+                                <img src="./img/jtfs01.webp" alt="">
+                            </a>
+                            <h5 class="animL">【NARA Thai Cuisine】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://ladynara.com.tw/" target="_blank">
+                                <img src="./img/jtfs02.webp" alt="">
+                            </a>
+                            <h5 class="animL">【Lady nara】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://sarabeth.com.tw/" target="_blank">
+                                <img src="./img/jtfs03.webp" alt="">
+                            </a>
+                            <h5 class="animL">【Sarabeth’s】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://tokyo-sundubu.com.tw/" target="_blank">
+                                <img src="./img/jtfs04.webp" alt="">
+                            </a>
+                            <h5 class="animL">【Tokyo Sundubu】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://capricciosa.com.tw/" target="_blank">
+                                <img src="./img/jtfs05.webp" alt="">
+                            </a>
+                            <h5 class="animL">【Capricciosa Premium】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://kimukatsu.com.tw/" target="_blank">
+                                <img src="./img/jtfs06.webp" alt="">
+                            </a>
+                            <h5 class="animL">【Kimukatsu】</h5>
+                        </li>
+                    </ul>
+                    <h4 class="sectionTitle blurIncontainer">
+                        <span class="char char01">❈</span><span class="char char02"> 智冠科技 </span><span class="char char03">❈</span>
+                    </h4>
+                    <p>曾在智冠科技從事平面/網頁設計師，MyCard 官網行銷活動，包含<br/> 〚會員活動〛頁面為智冠每月會員活動網頁，是曾實際上線的在MyCard官網的網頁，負責網頁主視覺的部分，切版部分並非我本人;
+                        <br/> 〚事前登錄〛頁面因不同活動檔期有不同的主視覺設計，我負責網頁主視覺，也負責切版，網頁裡的遊戲頭像非本人製作，僅供還原當時作品使用，活動連結不會跳轉出去，表單不會送出。</p>
+                    <ul class="mycardList">
+                        <li>
+                            <a class="anim-sparkle" href="https://www.mycard520.com.tw/zh-tw" target="_blank">
+                                <img src="./img/mycard00.webp" alt="">
+                            </a>
+                            <h5 class="animL">【MyCard官網】</h5>
+                        </li>
+                    </ul>
+                    <ul class="mycardList">
+                        <li>
+                            <a class="anim-sparkle" href="https://app.mycard520.com.tw/202301memberevent/" target="_blank">
+                                <img src="./img/mycard01.webp" alt="">
+                            </a>
+                            <h5 class="animL">【2023年1月會員活動】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://app.mycard520.com.tw/202211memberevent/" target="_blank">
+                                <img src="./img/mycard02.webp" alt="">
+                            </a>
+                            <h5 class="animL">【2022年11月會員活動】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://app.mycard520.com.tw/202210memberevent/" target="_blank">
+                                <img src="./img/mycard03.webp" alt="">
+                            </a>
+                            <h5 class="animL">【2022年10月會員活動】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://heyviehuang.github.io/202301preregister/" target="_blank">
+                                <img src="./img/mycard04.webp" alt="">
+                            </a>
+                            <h5 class="animL">【2023年1月事前登錄活動】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://heyviehuang.github.io/202211preregister/" target="_blank">
+                                <img src="./img/mycard05.webp" alt="">
+                            </a>
+                            <h5 class="animL">【2022年11月事前登錄活動】</h5>
+                        </li>
+                        <li>
+                            <a class="anim-sparkle" href="https://heyviehuang.github.io/202210preregister/" target="_blank">
+                                <img src="./img/mycard06.webp" alt="">
+                            </a>
+                            <h5 class="animL">【2022年10月事前登錄活動】</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="graphicContainer">
+                <!-- 菜單跑馬燈 -->
+                <div class="banner" data-aos="fade-right" data-aos-offset="300" data-aos-easing="linear" data-aos-delay="300" data-aos-duration="1000">
+                    <ul class="infiniteslide" data-direction="right" data-clone="2">
+                        <li>
+                            <img src="./img/bn01.webp" alt="">
+                        </li>
+                        <li>
+                            <img src="./img/bn02.webp" alt="">
+                        </li>
+                        <li>
+                            <img src="./img/bn03.webp" alt="">
+                        </li>
+                        <li>
+                            <img src="./img/bn04.webp" alt="">
+                        </li>
+
+                        <li>
+                            <img src="./img/bn05.webp" alt="">
+                        </li>
+                        <!-- <li>
+                            <img src="./img/bn06.webp" alt="">
+                        </li> -->
+                        <li>
+                            <img src="./img/bn07.webp" alt="">
+                        </li>
+
+                        <!-- <li>
+                            <img src="./img/bn08.webp" alt="">
+                        </li> -->
+                        <li>
+                            <img src="./img/bn09.webp" alt="">
+                        </li>
+                        <li>
+                            <img src="./img/bn10.webp" alt="">
+                        </li>
+                    </ul>
+                    <h3 class="sectionTitle blurIncontainer">
+                        <span class="char char01">B</span><span class="char char02">ANNER</span>
+                    </h3>
+                </div>
+
+                <!-- 繪畫作品輪播 -->
+                <div class="paintingWork">
+                    <div class="swiper-next">
+                        <img class="clock" src="./img/clock.png" alt="轉盤裝飾">
+                        <img class="clock-arrow" src="./img/clock-arrow.png" alt="下一張按鈕">
+                    </div>
+                    <h3 class="sectionTitle animT blurIncontainer">
+                        <span style="font-size: 2rem;" class="char char01">電繪&手繪</span><br/><span class="char char02">D</span><span class="char char03">RAWING</span>
+                    </h3>
+                    <div class="swiperContainer animR">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./img/painting11.webp" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/painting01.webp" />
+                                </div>
+                                <!-- <div class="swiper-slide">
+                                    <img src="./img/painting02.webp" />
+                                </div> -->
+                                <!-- <div class="swiper-slide">
+                                    <img src="./img/painting03.webp" />
+                                </div> -->
+                                <div class="swiper-slide">
+                                    <img src="./img/painting04.webp" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/painting05.webp" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/painting06.webp" />
+                                </div>
+                                <!-- <div class="swiper-slide">
+                                    <img src="./img/painting07.webp" />
+                                </div> -->
+                                <!-- <div class="swiper-slide">
+                                    <img src="./img/painting08.webp" />
+                                </div> -->
+                                <!-- <div class="swiper-slide">
+                                    <img src="./img/painting09.webp" />
+                                </div> -->
+                                <!-- <div class="swiper-slide">
+                                    <img src="./img/painting10.webp" />
+                                </div> -->
+                                <div class="swiper-slide">
+                                    <img src="./img/painting12.webp" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./img/painting13.webp" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 遊戲作品Tab -->
+                <div class="gameWorkByUnity">
+                    <div class="wrap">
+                        <h3 class="sectionTitle animB blurIncontainer">
+                            <span class="char char01">U</span><span class="char char02">NITY </span><span class="char char03">GAME</span>
+                        </h3>
+                        <div class="tabs animB">
+                            <button class="tab-btn tab--active" id="btn-tab1"><h5>風色幻想Online</h5></button>
+                            <button class="tab-btn" id="btn-tab2"><h5>夏日祭</h5></button>
+                        </div>
+                        <ul class="container animB">
+                            <li id="tab1" class="line--d">
+                                <div class="embed-container embedvideo">
+                                    <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube-nocookie.com/embed/bqvN-oHkwJs?rel=0" width="560"></iframe>
+                                </div>
+                                <p class="animL">【風色幻想Online】是由【弘煜科技】所製作的大型多人線上角色扮演遊戲，於2009年上線，奇幻的北歐故事背景與日系原畫風格，深深打動人心，遺憾的是在2014年結束營運，所以此款【風色幻想Online】重製便就此誕生，非營利，只為回憶；<br>本遊戲使用Unity遊戲引擎為開發平台，Photon Cloud為伺服器處理角色的動作同步，並同時接上Photon Chat讓多名玩家可以在同一個遊戲場景中做文字訊息交流。</p>
+                            </li>
+                            <li id="tab2" class="line--d">
+                                <div class="embed-container embedvideo">
+                                    <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube-nocookie.com/embed/vbu8PBo-8Uw?rel=0" width="560"></iframe>
+                                </div>
+                                <p class="animL">【夏日祭】是結合兩款經典網頁遊戲【夏の縁日】玩法與【忍豆風雲】風格的二創祭典小遊戲，由五個日本祭典常見的小攤位組成:打靶、撈金魚、面具、章魚燒與套圈圈，從空曠的草地到煙火絢爛的熱鬧祭典，讓玩家就算沒有去日本也能透過【夏日祭】體驗日本的祭典文化氛圍；<br>本遊戲使用Unity遊戲引擎為開發平台，C#為程式語言。</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 生涯成就 -->
+        <section id="careerRecord" class="careerRecord">
+            <ul class="wrap">
+                <li class="license">
+                    <h3 class="sectionTitle animB blurIncontainer">
+                        <span class="char char01">P</span><span class="char char02">rofessional </span><span class="char char03">Certification</span>
+                    </h3>
+                    <div class="titleDLine animT">
+                        <span class="titleDL"></span>
+                        <div class="titleDC"></div>
+                        <span class="titleDR"></span>
+                    </div>
+                    <div class="contentBg">
+                        <ul>
+                            <li class="animL">
+                                <h5>✦ TQC 企業人才技能合格證書 － Dreamweaver CS6</h5>
+                            </li>
+                            <li class="animL">
+                                <h5>✦ TQC 企業人才技能合格證書 － Java JDK 1.4</h5>
+                            </li>
+                            <li class="animL">
+                                <h5>✦ 經濟部產業人才能力鑑定證書 － 初級行動裝置程式設計師 (Android)</h5>
+                            </li>
+                            <li class="animL">
+                                <h5>✦ 經濟部產業人才能力鑑定證書 － 初級行動遊戲程式設計師 (Android)</h5>
+                            </li>
+                            <li class="animL">
+                                <h5>✦ Silicon Stone Education - Designing 3D Animation Games Using Unity 國際認證</h5>
+                            </li>
+                            <li class="animL">
+                                <h5>✦ Silicon Stone Education - Designing 3D Animation Games Using 3D Studio Max 國際認證</h5>
+                            </li>
+                            <li class="animL">
+                                <h5>✦ Microsoft Technology Associate - Software Development Fundamentals (C#)</h5>
+                            </li>
+                        </ul>
+                        <div class="frameD"></div>
+                    </div>
+                </li>
+                <li class="studyExperience">
+                    <h3 class="sectionTitle animB blurIncontainer">
+                        <span class="char char01">E</span><span class="char char02">ducation </span><span class="char char03">Experience</span>
+                    </h3>
+                    <div class="titleDLine animT">
+                        <span class="titleDL"></span>
+                        <div class="titleDC"></div>
+                        <span class="titleDR"></span>
+                    </div>
+                    <div class="contentBg">
+                        <ul class="studyExperience-content">
+                            <li>
+                                <h4 class="yearsTitle animB">2016</h4>
+                                <ul>
+                                    <li class="animL">
+                                        <h5>✦ 以影像深度資訊進行行為辨識與互動行為分析, 助理, 科技部專題研究計畫</h5>
+                                    </li>
+                                    <li class="animL">
+                                        <h5>✦ 以擴增實境為方法之生態模擬研究, 研究生, 科技部大專學生研究計畫</h5>
+                                    </li>
+                                    <li class="animL">
+                                        <h5>✦ 宜蘭地區文創觀光跨領域加值服務之技術開發與應用研究, 研究生, 科技部專題研究計畫</h5>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4 class="yearsTitle animB">2017</h4>
+                                <ul>
+                                    <li class="animL">
+                                        <h5>✦ 宜蘭地區文創觀光跨領域加值服務之技術開發與應用研究, 研究生, 科技部專題研究計畫</h5>
+                                    </li>
+                                    <li class="animL">
+                                        <h5>✦ DIGI + Talent跨域數位人才加速躍升計畫, 研習生, 資策會數位教育研究所實習</h5>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="frameD"></div>
+                    </div>
+                </li>
+                <li class="siteLink">
+                    <h3 class="sectionTitle blurIncontainer">
+                        <span class="char char01">A</span><span class="char char02">dditional </span><span class="char char03">Link</span>
+                    </h3>
+                    <div class="titleDLine">
+                        <span class="titleDL"></span>
+                        <div class="titleDC"></div>
+                        <span class="titleDR"></span>
+                    </div>
+                    <div class="contentBg">
+                        <ul class="list animT">
+                            <li class="animL">
+                                <a class="anim-sparkle" href="https://github.com/heyviehuang" target="_blank"><img src="./img/img-btn-github.png" alt="GitHub連結"></a>
+                            </li>
+                            <li class="animR">
+                                <a class="anim-sparkle" href="./img/OWG7Zm.jpg" target="_blank"><img src="./img/img-btn-score.png" alt="在校成績"></a>
+                            </li>
+                        </ul>
+                        <div class="frameD"></div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <h2>
+            <img class="footerLogo" src="./img/logo.svg" alt="footerLogo">
+        </h2>
+        <p class="copyRight">
+            Copyright © 2024 heyviehuang.All rights reserved.
+        </p>
+    </footer>
+
+    <button class="btnTop material-icons md-48" style="display: none;" type="button">
+        expand_less
+    </button>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="./js/jquery.let_it_snow.js"></script>
+    <script src="./js/jquery-canvas-sparkles.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="js/plugins.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/all.js"></script>
+</body>
+
+</html>

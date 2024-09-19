@@ -1,0 +1,62 @@
+//字型
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
+// Poiret One： 由於其較為特殊的風格，Poiret One 更適合用於標題、標語或需要吸引注意力的地方。
+// Josefin Sans： Josefin Sans 的簡潔性使其適用於各種場景，包括標題、正文和其他文本內容。
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poiret+One&display=swap');
+
+/* common font */
+
+html {
+    font-size: $font-size-root;
+    @include pad {
+        font-size: $font-size-root * 0.8;
+    }
+    @include mobile {
+        font-size: $font-size-root * 0.75;
+    }
+}
+
+h1 {
+    font-size: $h1-font-size;
+    font-family: "Poiret One", sans-serif;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    font-family: "Poiret One", sans-serif;
+}
+
+h3 {
+    margin: 8px auto;
+    font-size: $h3-font-size;
+    font-family: "Poiret One", sans-serif;
+}
+
+h4 {
+    margin: 8px auto;
+    font-size: $h4-font-size;
+    font-family: "Poiret One", sans-serif;
+    line-height: 1.5rem;
+}
+
+h5 {
+    margin: 8px auto;
+    font-size: $h5-font-size;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 2rem;
+}
+
+h6 {
+    margin: 8px auto;
+    font-size: $h6-font-size;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 2rem;
+}
+
+p {
+    font-size: $h5-font-size;
+    color: $navy-blue;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 2rem;
+    color: $navy-blue;
+}
