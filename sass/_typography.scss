@@ -55,8 +55,12 @@ h6 {
 
 p {
     font-size: $h5-font-size;
-    color: $navy-blue;
     font-family: "Noto Sans TC", sans-serif;
     line-height: 2rem;
-    color: $navy-blue;
+    color: $primary-black;
 }
+
+.glow-effect {
+    color: #fff;
+    text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 30px #ff9900;
+  }  
