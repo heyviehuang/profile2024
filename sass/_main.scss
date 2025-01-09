@@ -90,6 +90,7 @@ body {
   z-index: -1;
 }
 
+//主頁
 .webCreations__section,
 .otherVisualCreations__section {
   position: relative;
@@ -125,7 +126,24 @@ body {
   width: 30%;
 }
 
-// webDesign page
+//關於我
+
+.educationAndExperience__section,
+.skills__section {
+  display: flex;
+  margin: 2rem 0;
+  padding: 0 20rem;
+}
+
+.education__container,
+.experience__container,
+.languageCertifications__container,
+.ITCertifications__container {
+  width: 50%;
+  padding: 0 2rem;
+}
+
+//網頁
 .originalWebsite__list {
   display: flex;
 }

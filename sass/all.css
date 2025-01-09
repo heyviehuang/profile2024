@@ -899,6 +899,21 @@ body::-webkit-scrollbar-thumb {
   width: 30%;
 }
 
+.educationAndExperience__section,
+.skills__section {
+  display: flex;
+  margin: 2rem 0;
+  padding: 0 20rem;
+}
+
+.education__container,
+.experience__container,
+.languageCertifications__container,
+.ITCertifications__container {
+  width: 50%;
+  padding: 0 2rem;
+}
+
 .originalWebsite__list {
   display: flex;
 }
