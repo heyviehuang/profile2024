@@ -1,25 +1,25 @@
 //RWD
 @mixin pcXL {
-    @media(max-width: 1440px) {
-        @content
+    @media (max-width: 1440px) {
+        @content;
     }
 }
 
 @mixin pcLG {
-    @media(max-width: 1024px) {
-        @content
+    @media (max-width: 1024px) {
+        @content;
     }
 }
 
 @mixin pad {
-    @media(max-width: 768px) {
-        @content
+    @media (max-width: 768px) {
+        @content;
     }
 }
 
 @mixin mobile {
-    @media(max-width: 500px) {
-        @content
+    @media (max-width: 500px) {
+        @content;
     }
 }
 
@@ -61,4 +61,12 @@
     overflow: hidden;
     text-indent: 101%;
     white-space: nowrap;
+}
+
+// 定義一個 Mixin 用於水平排列列表
+@mixin horizontal-list($gap: 1rem) {
+    // display: flex;
+    // justify-content: end;
+    gap: $gap; // 控制項目之間的間距
+    // overflow-x: auto; // 滾動支持
 }

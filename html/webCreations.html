@@ -37,8 +37,7 @@
 
   <body id="body">
     <!-- 導覽列 -->
-    <header>
-      <nav>
+    <!-- <nav>
         <h1>
           <a class="nav__a--logo scrollTop" href="/html/index.html">Portfolio By Sally Huang</a>
         </h1>
@@ -53,27 +52,60 @@
             <a class="nav__a scrollTop" href="/profile2024/html/visualCreations.html">Other Visual Creations</a>
           </li>
         </ul>
-      </nav>
-      <!-- 封面 -->
-      <section class="header-section">
-        <!-- 動態背景 -->
-        <div class="dynamicBG-container">
-          <!-- <canvas class="snow dynamicBg" width="100%" height="100%"></canvas> -->
-          <!-- <canvas class="flake dynamicBg" width="100%" height="100%"></canvas> -->
-          <img class="logoMain glow-effect" src="/img/logo.svg" alt="logoMain" />
+      </nav> -->
+    <!-- 封面 -->
+    <section class="header-section">
+      <!-- 動態背景 -->
+      <div class="dynamicBG-container">
+        <!-- <canvas class="snow dynamicBg" width="100%" height="100%"></canvas> -->
+        <!-- <canvas class="flake dynamicBg" width="100%" height="100%"></canvas> -->
+        <img class="logoMain glow-effect" src="/img/logo.svg" alt="logoMain" />
+      </div>
+      <div style="height: 12vh;"></div>
+    </section>
+    <main class="home-snap-section">
+      <!-- 作品展示 -->
+      <div id="content"></div>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          <div class="swiper-slide">Slide 4</div>
+          <div class="swiper-slide">Slide 5</div>
+          <div class="swiper-slide">Slide 6</div>
+          <div class="swiper-slide">Slide 7</div>
+          <div class="swiper-slide">Slide 8</div>
+          <div class="swiper-slide">Slide 9</div>
         </div>
-        <div style="height: 12vh;"></div>
-      </section>
-      <main class="home-snap-section">
-        <!-- 作品展示 -->
-        <div id="content"></div>
-        <!-- 網頁作品（Web Creations） -->
-        <h2 class="sectionTitle">Web Creations</h2>
+      </div>
+
+      <!-- 網頁作品（Web Creations） -->
+      <!-- 動態生成的HTML -->
+      <!-- <div class="section">
+          <h3 class="animT blurIncontainer">
+            <span class="char char02">L</span><span class="char char03">IST1</span><br />
+            <span style="font-size: 1rem;" class="char char01">列表1</span>
+          </h3>
+          <ul class="eventPage__list">
+            <li class="eventPage__list-item">
+              <img src="https://fakeimg.pl/300x250" alt="列表1_1">
+              <h4>列表1_1</h4>
+            </li>
+            <li class="eventPage__list-item">
+              <img src="https://fakeimg.pl/300x250" alt="列表1_2">
+              <h4>列表1_2</h4>
+            </li>
+          </ul>
+        </div> -->
+
+      <!-- <h2 class="sectionTitle">Web Creations</h2>
         <h3 class="animT blurIncontainer">
           <span class="char char02">O</span><span class="char char03">riginal Website</span><br />
           <span style="font-size: 1rem;" class="char char01">原創官網</span>
         </h3>
-        <!-- <ul class="originalWebsite__list">
+        <ul class="originalWebsite__list">
           <li id="openModalBtn" class="originalWebsite__list-item">
             <img src="https://fakeimg.pl/300x250" />
           </li>
@@ -83,13 +115,13 @@
           <li class="originalWebsite__list-item">
             <img src="https://fakeimg.pl/300x250" />
           </li>
-        </ul> -->
+        </ul>
 
         <h3 class="animT blurIncontainer">
           <span class="char char02">B</span><span class="char char03">rand Website</span><br />
           <span style="font-size: 1rem;" class="char char01">品牌官網</span>
         </h3>
-        <!-- <ul class="brandWebsite__list">
+        <ul class="brandWebsite__list">
           <li class="brandWebsite__list-item">
             <img src="https://fakeimg.pl/300x250" />
           </li>
@@ -99,13 +131,13 @@
           <li class="brandWebsite__list-item">
             <img src="https://fakeimg.pl/300x250" />
           </li>
-        </ul> -->
+        </ul>
 
         <h3 class="animT blurIncontainer">
           <span class="char char02">E</span><span class="char char03">vent Page</span><br />
           <span style="font-size: 1rem;" class="char char01">活動網頁</span>
         </h3>
-        <!-- <ul class="eventPage__list">
+        <ul class="eventPage__list">
           <li class="eventPage__list-item">
             <img src="https://fakeimg.pl/300x250" />
           </li>
@@ -124,42 +156,44 @@
           <li class="eventPage__list-item">
             <img src="https://fakeimg.pl/300x250" />
           </li>
-        </ul> -->
+        </ul>
 
         <h3 class="animT blurIncontainer">
           <span class="char char02">W</span><span class="char char03">ebsite Prototype</span><br />
           <span style="font-size: 1rem;" class="char char01">網站原型</span>
         </h3>
-        <!-- <ul class="WebsitePrototype__list">
+        <ul class="WebsitePrototype__list">
           <li class="WebsitePrototype__list-item">
             <img src="https://fakeimg.pl/300x250" />
           </li>
         </ul> -->
 
-      </main>
-      <footer class="footer">
-        <h2>
-          <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
-        </h2>
-        <p class="copyRight">Copyright © 2024 heyviehuang.All rights reserved.</p>
-      </footer>
 
-      <button class="btnTop material-icons md-48" style="display: none" type="button">
-        expand_less
-      </button>
-      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-      <script src="/js/jquery.let_it_snow.js"></script>
-      <script src="/js/jquery-canvas-sparkles.js"></script>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>
-        AOS.init();
-      </script>
-      <script src="/js/plugins.min.js"></script>
-      <script src="/js/functions.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
-      <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <script src="/js/all.js"></script>
+    </main>
+    <footer class="footer">
+      <h2>
+        <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
+      </h2>
+      <p class="copyRight">Copyright © 2024 heyviehuang.All rights reserved.</p>
+    </footer>
+
+    <button class="btnTop material-icons md-48" style="display: none" type="button">
+      expand_less
+    </button>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="/js/jquery.let_it_snow.js"></script>
+    <script src="/js/jquery-canvas-sparkles.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="/js/plugins.min.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/data.js"></script>
+    <script src="/js/all.js"></script>
   </body>
 
 </html>

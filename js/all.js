@@ -95,25 +95,7 @@ $(document).ready(function () {
         itemSelector: '.grid-item',
         columnWidth: 320
     });
-    var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        navigation: {
-            nextEl: ".swiper-next",
-        },
-    });
+
 
     $("#tab1").show();
     $("#tab2").hide();
@@ -157,23 +139,25 @@ $(document).ready(function () {
     });
 
     // 打開彈窗
-    // $("#openModalBtn").click(function() {
+    // $("#openModalBtn").click(function () {
     //     $("body").addClass("no-scroll");
     //     $(".overlay, .webOnWorkModal").fadeIn();
     // });
 
     // 關閉彈窗
-    // $(".closeBtn, .overlay").click(function() {
+    // $(".closeBtn, .overlay").click(function () {
     //     $("body").removeClass("no-scroll");
     //     $(".overlay, .webOnWorkModal").fadeOut();
     // });
 
 
-    if (window.innerWidth <= 1024) {
-        document.getElementById("FLine01").src = "./img/FLine2.svg";
-        document.getElementById("FLine02").src = "./img/FLine2.svg";
-    } else {
-        document.getElementById("FLine01").src = "./img/FLine.svg";
-        document.getElementById("FLine02").src = "./img/FLine.svg";
-    }
+    // if (window.innerWidth <= 1024) {
+    //     document.getElementById("FLine01").src = "./img/FLine2.svg";
+    //     document.getElementById("FLine02").src = "./img/FLine2.svg";
+    // } else {
+    //     document.getElementById("FLine01").src = "./img/FLine.svg";
+    //     document.getElementById("FLine02").src = "./img/FLine.svg";
+    // }
+
+
 });

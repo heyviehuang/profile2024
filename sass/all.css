@@ -270,14 +270,31 @@ button {
   z-index: 99;
 }
 
-.card {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
+.horizontal-list {
+  gap: 2rem;
+  padding: 2.5rem;
+  padding-left: 200px;
 }
-.card .textContainer {
-  color: black;
-  font-size: 3rem;
+.horizontal-list__item {
+  position: relative;
+  width: 500px !important;
+  text-align: center;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.horizontal-list__item h5 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+.horizontal-list__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btnTop {
@@ -440,15 +457,11 @@ button {
   fill: #fffdef;
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
-
 .grid-item {
   width: 320px;
 }
 
+/* -------------- 彈窗 -------------- */
 /* 遮罩 */
 .overlay {
   display: none;
@@ -462,75 +475,96 @@ button {
 }
 
 /* 彈窗內容 */
-.webOnWorkModal {
-  padding: 2rem;
-  background-color: #aeaeb2;
+/* 彈窗背景樣式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 彈窗內容樣式 */
+.modal__content {
+  position: relative;
+  width: 60%;
+  height: 95%;
+  padding: 0.5rem;
+  background-color: #121212;
   z-index: 101;
   overflow: hidden;
+  border-radius: 18px;
 }
 @media (max-width: 768px) {
-  .webOnWorkModal {
+  .modal__content {
     padding: 2rem 1%;
   }
 }
 @media (max-width: 500px) {
-  .webOnWorkModal {
+  .modal__content {
     padding: 2rem 1%;
   }
 }
-.webOnWorkModal .contentContainer {
+.modal__content .modal__content-container {
   max-height: 100%;
+  border-radius: 18px;
   overflow-y: auto;
 }
-.webOnWorkModal .contentContainer::-webkit-scrollbar-track {
+.modal__content .modal__content-container img {
+  width: 100%;
+}
+.modal__content .modal__content-container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px #48484a;
   background-color: #1c1c1e;
 }
-.webOnWorkModal .contentContainer::-webkit-scrollbar {
+.modal__content .modal__content-container::-webkit-scrollbar {
   width: 6px;
 }
-.webOnWorkModal .contentContainer::-webkit-scrollbar-thumb {
+.modal__content .modal__content-container::-webkit-scrollbar-thumb {
   background-color: #48484a;
 }
 @media (max-width: 768px) {
-  .webOnWorkModal .contentContainer {
+  .modal__content .modal__content-container {
     padding: 2rem 3%;
   }
 }
 @media (max-width: 500px) {
-  .webOnWorkModal .contentContainer {
+  .modal__content .modal__content-container {
     padding: 2rem 1%;
   }
 }
-.webOnWorkModal .list {
+.modal__content .list {
   display: flex;
   justify-content: space-evenly;
 }
-.webOnWorkModal .list > * {
+.modal__content .list > * {
   margin: 0 0.5rem;
 }
-.webOnWorkModal a {
+.modal__content a {
   transition: 0.5s all;
   -webkit-transition: 1s all;
 }
-.webOnWorkModal a:hover {
+.modal__content a:hover {
   transform: scale(1.02);
   -webkit-transform: scale(1.02);
 }
-.webOnWorkModal .closeBtn {
+
+/* 關閉按鈕樣式 */
+.modal__close-btn {
   position: absolute;
-  top: 1rem;
-  left: 2rem;
+  top: 2rem;
+  right: 2rem;
+  color: #000;
+  border: none;
+  border-radius: 18px;
+  padding: 5px 10px;
   cursor: pointer;
-  transition: 0.1s ease;
-  -webkit-transition: 0.1s ease;
-  font-family: "Noto Sans TC", sans-serif;
-  z-index: 102;
-}
-.webOnWorkModal .closeBtn:hover {
-  color: #636366;
-  transform: rotate(360deg) scale(1.1);
-  -webkit-transform: rotate(360deg) scale(1.1);
+  font-size: 3rem;
 }
 
 /* 鎖定滾動 */
@@ -538,6 +572,7 @@ button {
   overflow: hidden;
 }
 
+/* -------------- 動畫 -------------- */
 .animT,
 .animR,
 .animB,
