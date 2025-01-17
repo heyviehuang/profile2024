@@ -160,4 +160,15 @@ $(document).ready(function () {
     // }
 
 
+    // 全屏滾動
+    if (typeof $.fn.pagepiling !== 'undefined') {
+        $('#pagepiling').pagepiling({
+            sectionSelector: '.full-screen', // 使用自定義的 class 名稱
+            autoScrolling: true,
+            navigation: true,
+        });
+    } else {
+        console.error('pagepiling.js plugin is not loaded.');
+    }
+
 });
