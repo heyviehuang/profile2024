@@ -223,7 +223,6 @@ li {
 }
 
 p {
-  text-align: justify;
   text-justify: inter-word;
 }
 
@@ -270,12 +269,12 @@ button {
   z-index: 99;
 }
 
-.horizontal-list {
+.horizontal {
   gap: 2rem;
   padding: 2.5rem;
   padding-left: 200px;
 }
-.horizontal-list__item {
+.horizontal__item {
   position: relative;
   width: 500px !important;
   text-align: center;
@@ -285,14 +284,14 @@ button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.horizontal-list__item h5 {
+.horizontal__item h5 {
   position: absolute;
   top: 1rem;
   left: 1rem;
   font-size: 1.2rem;
   margin: 0.5rem 0;
 }
-.horizontal-list__item:hover {
+.horizontal__item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -934,9 +933,19 @@ body::-webkit-scrollbar-thumb {
   width: 30%;
 }
 
+.i__title {
+  margin: 20rem 0;
+}
+
+.i__section {
+  margin: 2rem 0;
+  padding: 0 20rem;
+}
+
 .educationAndExperience__section,
 .skills__section {
   display: flex;
+  justify-content: space-between;
   margin: 2rem 0;
   padding: 0 20rem;
 }
@@ -945,8 +954,18 @@ body::-webkit-scrollbar-thumb {
 .experience__container,
 .languageCertifications__container,
 .ITCertifications__container {
+  margin: 0 2rem;
   width: 50%;
-  padding: 0 2rem;
+  text-align: left;
+  border-top: 1px solid #1c1c1e;
+}
+
+.additionalExperience__list {
+  display: flex;
+  padding: 0 20rem;
+}
+.additionalExperience__list li {
+  width: 100%;
 }
 
 .originalWebsite__list {

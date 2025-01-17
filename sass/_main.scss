@@ -47,6 +47,7 @@ body {
   text-orientation: upright;
   white-space: nowrap;
 }
+
 /* dynamic background */
 
 .dynamicBG-container {
@@ -74,7 +75,6 @@ body {
 //   left: 0;
 //   position: fixed;
 // }
-
 .blur {
   filter: blur(10px);
   transition: filter 0.3s;
@@ -97,6 +97,7 @@ body {
   padding: 8rem 0;
   height: 100vh;
 }
+
 .webCreations__section {
   // background-image: url("/img/painting01.webp");
   background-repeat: no-repeat;
@@ -119,6 +120,7 @@ body {
   left: 10%;
   width: 30%;
 }
+
 .otherVisualCreations__container {
   position: absolute;
   top: 20%;
@@ -126,11 +128,18 @@ body {
   width: 30%;
 }
 
-//關於我
-
+//關於
+.i__title {
+  margin: 20rem 0;
+}
+.i__section {
+  margin: 2rem 0;
+  padding: 0 20rem;
+}
 .educationAndExperience__section,
 .skills__section {
   display: flex;
+  justify-content: space-between;
   margin: 2rem 0;
   padding: 0 20rem;
 }
@@ -139,8 +148,17 @@ body {
 .experience__container,
 .languageCertifications__container,
 .ITCertifications__container {
+  margin: 0 2rem;
   width: 50%;
-  padding: 0 2rem;
+  text-align: left;
+  border-top: 1px solid $dark-gray;
+}
+.additionalExperience__list {
+  display: flex;
+  padding: 0 20rem;
+  li {
+    width: 100%;
+  }
 }
 
 //網頁
