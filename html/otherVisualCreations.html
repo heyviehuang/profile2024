@@ -38,7 +38,7 @@
   <body id="body">
     <!-- 導覽列 -->
     <header>
-      <nav>
+      <!-- <nav>
         <h1>
           <a class="nav__a--logo scrollTop" href="/html/index.html">Portfolio By Sally Huang</a>
         </h1>
@@ -53,7 +53,7 @@
             <a class="nav__a scrollTop" href="/profile2024/html/otherVisualCreations.html">Other Visual Creations</a>
           </li>
         </ul>
-      </nav>
+      </nav> -->
       <!-- 封面 -->
       <section class="header-section">
         <!-- 動態背景 -->
@@ -65,83 +65,46 @@
         <div style="height: 30vh; background-color: #000;"></div>
       </section>
       <main class="home-snap-section">
-        <!-- 作品展示 -->
-        <!-- 網頁設計（Web Creations） -->
-        <h2 class="sectionTitle">Other Visual Creations</h2>
-        <h3 class="animT blurIncontainer">
-          <span class="char char02">B</span><span class="char char03">anner Design </span><br />
-          <span style="font-size: 1rem;" class="char char01">橫幅設計</span>
-        </h3>
-        <ul class="originalWebsite__list">
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-        </ul>
+        <div class="graphicContainer">
+          <!-- 菜單跑馬燈 -->
+          <div class="banner" data-aos="fade-right" data-aos-offset="300" data-aos-easing="linear" data-aos-delay="300"
+            data-aos-duration="1000">
+            <ul class="infiniteslide" data-direction="right" data-clone="2">
+              <li>
+                <img src="https://fakeimg.pl/600x300" alt="">
+              </li>
+              <li>
+                <img src="https://fakeimg.pl/600x300" alt="">
+              </li>
+              <li>
+                <img src="https://fakeimg.pl/600x300" alt="">
+              </li>
+              <li>
+                <img src="https://fakeimg.pl/600x300" alt="">
+              </li>
+            </ul>
+            <h3 class="sectionTitle blurIncontainer">
+              <span class="char char01">B</span><span class="char char02">ANNER</span>
+            </h3>
+          </div>
+          <div id="content"></div>
 
-        <h3 class="animT blurIncontainer">
+
+          <!-- <span class="char char02">B</span><span class="char char03">anner Design </span><br />
+          <span style="font-size: 1rem;" class="char char01">橫幅設計</span>
           <span class="char char02">D</span><span class="char char03">igital Art</span><br />
           <span style="font-size: 1rem;" class="char char01">電腦繪圖</span>
-        </h3>
-        <ul class="originalWebsite__list">
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-        </ul>
-
-        <h3 class="animT blurIncontainer">
           <span class="char char02">T</span><span class="char char03">raditional Art</span><br />
           <span style="font-size: 1rem;" class="char char01">傳統繪圖</span>
-        </h3>
-        <ul class="originalWebsite__list">
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-        </ul>
-
-        <h3 class="animT blurIncontainer">
           <span class="char char02">G</span><span class="char char03">ame Design</span><br />
-          <span style="font-size: 1rem;" class="char char01">遊戲設計</span>
-        </h3>
-        <ul class="originalWebsite__list">
-          <li class="originalWebsite__list-item">
-            <img src="https://fakeimg.pl/300x250" />
-          </li>
-        </ul>
-
+          <span style="font-size: 1rem;" class="char char01">遊戲設計</span> -->
       </main>
-      <footer class="footer">
+      <!-- <footer class="footer">
         <h2>
           <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
         </h2>
         <p class="copyRight">Copyright © 2024 heyviehuang.All rights reserved.</p>
-      </footer>
+      </footer> -->
 
       <button class="btnTop material-icons md-48" style="display: none" type="button">
         expand_less
@@ -158,6 +121,7 @@
       <script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
       <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="/js/data2.js"></script>
       <script src="/js/all.js"></script>
   </body>
 

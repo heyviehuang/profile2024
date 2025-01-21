@@ -39,7 +39,7 @@
 .horizontal-list {
   @include horizontal-list(2rem); // 使用 Mixin，間距設為 2rem
   padding: 2.5rem;
-  padding-left: 200px;
+  padding-left: 50px;
 
   &__item {
     position: relative;

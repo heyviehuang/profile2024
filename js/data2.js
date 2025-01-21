@@ -11,7 +11,7 @@ $(document).ready(function () {
         .then(data => {
             // 處理 page1 的數據
             if (document.getElementById("content")) {
-                processPageData(data.page1, "content");
+                processPageData(data.page2, "content");
             }
 
             // 初始化 Swiper
@@ -90,46 +90,7 @@ $(document).ready(function () {
                 // Swiper 配置選項
                 slidesPerView: 3,
                 spaceBetween: 10,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
             });
-        });
-    }
-
-    // 打開滿版圖片彈窗的函數
-    function openModal(imageUrl, description) {
-        const modal = document.createElement('div');
-        modal.classList.add('modal');
-        modal.innerHTML = `
-        <div class="modal__content">
-            <div class="modal__content-container">
-                <span class="modal__close-btn">&times;</span>
-                <img src="${imageUrl}" alt="Full Image" class="modal__image">
-                <p class="image-description">${description}</p> <!-- 新增文字說明 -->
-            </div>
-        </div>
-        `;
-
-        document.body.appendChild(modal);
-
-        // 關閉彈窗的邏輯
-        modal.querySelector('.modal__close-btn').addEventListener('click', () => {
-            document.body.removeChild(modal);
-            $("body").removeClass("no-scroll");
-        });
-
-        // 點擊彈窗外部關閉彈窗
-        modal.addEventListener('click', event => {
-            if (event.target === modal) {
-                document.body.removeChild(modal);
-                $("body").removeClass("no-scroll");
-            }
         });
     }
 });
