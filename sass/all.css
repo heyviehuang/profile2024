@@ -909,14 +909,14 @@ body::-webkit-scrollbar-thumb {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #7c6969;
+  background-color: #d1d1d6;
 }
 
 .otherVisualCreations__section {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #e6e6e6;
+  background-color: #f2f2f7;
 }
 
 .webCreations__container {

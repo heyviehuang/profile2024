@@ -55,13 +55,15 @@ $(document).ready(function () {
     $(window).scroll(function () {
         var scrollPos = $(window).scrollTop();
         var windowHeight = $(window).height();
-        // animated
+        // 淡入淡出動畫
         $('.animT,.animR,.animB,.animL,.animM').each(function () {
             var thisPos = $(this).offset().top;
             if ((windowHeight + scrollPos) >= thisPos) {
                 $(this).addClass('fadeIn');
             }
         });
+
+        // 標題文字模糊
         $('.blurIncontainer').each(function () {
             var thisPos = $(this).offset().top;
             if ((windowHeight + scrollPos) >= thisPos) {
@@ -72,7 +74,7 @@ $(document).ready(function () {
         });
     });
 
-
+    // infiniteslide
     $(function () {
         // 選擇所有的 .infiniteslide 元素
         $('.infiniteslide').each(function (index, element) {
@@ -96,11 +98,10 @@ $(document).ready(function () {
         columnWidth: 320
     });
 
-
+    // 按鈕切換內容
     $("#tab1").show();
     $("#tab2").hide();
 
-    // 按鈕切換內容
     $(".tab-btn").click(function () {
         var tabId = $(this).attr("id");
 
@@ -119,6 +120,7 @@ $(document).ready(function () {
     });
 
 
+    // 視差滾動模糊
     window.addEventListener('scroll', function () {
         let sections = document.querySelectorAll('.dynamicBG-container');
         sections.forEach(function (section, index) {
@@ -158,17 +160,4 @@ $(document).ready(function () {
     //     document.getElementById("FLine01").src = "./img/FLine.svg";
     //     document.getElementById("FLine02").src = "./img/FLine.svg";
     // }
-
-
-    // 全屏滾動
-    if (typeof $.fn.pagepiling !== 'undefined') {
-        $('#pagepiling').pagepiling({
-            sectionSelector: '.full-screen', // 使用自定義的 class 名稱
-            autoScrolling: true,
-            navigation: true,
-        });
-    } else {
-        console.error('pagepiling.js plugin is not loaded.');
-    }
-
 });

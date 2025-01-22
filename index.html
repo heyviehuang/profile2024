@@ -19,7 +19,9 @@
 
     <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" type="text/css" />
+    <link rel="stylesheet" href="/css/jquery.pagepiling.css" />
+    <link rel="stylesheet" href="/examples.css" type="text/css" />
     <!-- <link rel="stylesheet" href="/css/style.css"> -->
     <link rel="stylesheet" href="/sass/all.css" />
     <!-- Google tag (gtag.js) -->
@@ -33,14 +35,63 @@
       gtag("js", new Date());
       gtag("config", "G-J95MMXKCG7");
     </script>
+
+    <style>
+      /* Centered texts in each section
+* --------------------------------------- */
+      .section {
+        text-align: center;
+      }
+
+      #myVideo {
+        position: absolute;
+        z-index: 4;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-color: black;
+        /* in case the video doesn't fit the whole page*/
+        background-position: center center;
+        background-size: contain;
+        object-fit: cover;
+        /*cover video background */
+      }
+
+      /* Layer with position absolute in order to have it over the video
+* --------------------------------------- */
+      #section1 .layer {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        left: 0;
+        top: 43%;
+        height: 100%;
+      }
+
+      #section1 h1 {
+        color: #fff;
+      }
+
+      #infoMenu li a {
+        color: #fff;
+      }
+
+      #section1 {
+        overflow: hidden;
+      }
+    </style>
   </head>
 
   <body id="body">
     <div class="loading-overlay"></div>
 
     <!-- 導覽列 -->
-    <header>
-      <!-- <nav>
+
+    <!-- <nav>
         <h1>
           <a class="nav__a--logo scrollTop" href="#body">Portfolio By Sally Huang</a>
         </h1>
@@ -56,70 +107,114 @@
           </li>
         </ul>
       </nav> -->
-      <!-- 封面 -->
-      <section class="header-section">
-        <!-- 動態背景 -->
-        <div class="dynamicBG-container">
-          <!-- <canvas class="snow dynamicBg" width="100%" height="100%"></canvas> -->
-          <!-- <canvas class="flake dynamicBg" width="100%" height="100%"></canvas> -->
-          <img class="logoMain glow-effect" src="/img/logo.svg" alt="logoMain" />
-          <video
-            src="https://videos.openai.com/vg-assets/assets%2Ftask_01jgd9w9h7f2vseapezgfx4njg%2Fvideos%2F00000_551947%2Fsource.mp4?st=2024-12-31T01%3A43%3A10Z&amp;se=2025-01-06T02%3A43%3A10Z&amp;sks=b&amp;skt=2024-12-31T01%3A43%3A10Z&amp;ske=2025-01-06T02%3A43%3A10Z&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skoid=5f13508c-2274-47a2-9941-e8329f2d7b6a&amp;skv=2019-02-02&amp;sv=2018-11-09&amp;sr=b&amp;sp=r&amp;spr=https%2Chttp&amp;sig=%2B0zD7OJNWWNFf95rIkSGAo0sRN1NQBnfKOKvi2g4Sb0%3D&amp;az=oaivgprodscus"
-            preload="metadata" autoplay="" loop="" controlslist="nodownload" style="width: 100%; height: 100%;"></video>
-        </div>
-        <div style="height: 100vh;"></div>
-      </section>
+    <!-- 封面 -->
+    <section class="header-section">
+      <!-- 動態背景 -->
+      <div class="dynamicBG-container">
+        <!-- <canvas class="snow dynamicBg" width="100%" height="100%"></canvas> -->
+        <!-- <canvas class="flake dynamicBg" width="100%" height="100%"></canvas> -->
+        <!-- <img class="logoMain glow-effect" src="/img/logo.svg" alt="logoMain" /> -->
+        <!-- <video
+          src="https://videos.openai.com/vg-assets/assets%2Ftask_01jj3zr6c8fpmt4r49sfhj5rdx%2Ftask_01jj3zr6c8fpmt4r49sfhj5rdx_genid_4e37a074-91ac-4c61-b8b3-be6349fd1fc6_25_01_21_08_30_742110%2Fvideos%2F00000_42545940%2Fsource.mp4?st=2025-01-21T06%3A58%3A02Z&amp;se=2025-01-27T07%3A58%3A02Z&amp;sks=b&amp;skt=2025-01-21T06%3A58%3A02Z&amp;ske=2025-01-27T07%3A58%3A02Z&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&amp;skv=2019-02-02&amp;sv=2018-11-09&amp;sr=b&amp;sp=r&amp;spr=https%2Chttp&amp;sig=8FKwYvd9D82UTRIfZ6X3zrVgX3Jm4QwHS%2B7%2BUBWpjU4%3D&amp;az=oaivgprodscus"
+          preload="metadata" loop="" controlslist="nodownload" playsinline="" webkit-playsinline="" x5-playsinline=""
+          autoplay="" style="width: 100%; height: 100%;"></video> -->
+      </div>
+      <!-- <div style="height: 100vh;"></div> -->
+    </section>
 
-      <main class="home-snap-section" id="pagepiling">
-        <section id="webCreations" class="webCreations__section full-screen">
-          <div class="webCreations__container">
-            <!-- <h2 class="sectionTitle">Web Creations</h2> -->
-            <span style="font-size: 1rem;" class="char char01">WEBB</span>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-              repellendus
-              eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio
-              vitae
-              ducimus labore.</p>
-            <a class="" href="/profile2024/html/webCreations.html">Web</a>
-          </div>
-        </section>
-        <section id="otherVisualCreations" class="otherVisualCreations__section full-screen">
-          <div class="otherVisualCreations__container">
-            <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
-            <span style="font-size: 1rem;" class="char char01">other</span>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-              repellendus
-              eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio vitae
-              ducimus labore.</p>
-            <a class="" href="/profile2024/html/otherVisualCreations.html">
-              Vis</a>
-          </div>
-        </section>
-      </main>
-      <footer class="footer">
+
+    <ul id="menu">
+      <li data-menuanchor="page1" class="active"><a href="#page1">Page 1</a></li>
+      <li data-menuanchor="page2"><a href="#page2">Page 2</a></li>
+      <li data-menuanchor="page3"><a href="#page3">Page 3</a></li>
+    </ul>
+
+    <div id="pagepiling">
+      <div class="section" id="section1">
+        <video autoplay loop muted id="myVideo">
+          <source src="/flowers.mp4" type="video/mp4">
+          <!-- <source src="imgs/flowers.webm" type="video/webm"> -->
+        </video>
+        <div class="layer">
+          <h1>pagePiling.js video</h1>
+        </div>
+      </div>
+      <div class="section" id="section2">
+        <div class="intro">
+          <!-- <h2 class="sectionTitle">Web Creations</h2> -->
+          <span style="font-size: 1rem;" class="char char01">LIST1</span>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
+            repellendus
+            eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio
+            vitae
+            ducimus labore.</p>
+          <a class="" href="">Web</a>
+        </div>
+      </div>
+      <div class="section" id="section4">
+        <div class="intro">
+          <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
+          <span style="font-size: 1rem;" class="char char01">LIST2</span>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
+            repellendus
+            eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio vitae
+            ducimus labore.</p>
+          <a class="" href="">
+            Vis</a>
+        </div>
+      </div>
+    </div>
+    <!-- <main class="home-snap-section" id="pagepiling">
+      <section data-menuanchor="page1" id="webCreations" class="webCreations__section section">
+        <div class="webCreations__container">
+          <h2 class="sectionTitle">Web Creations</h2>
+          <span style="font-size: 1rem;" class="char char01">LIST1</span>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
+            repellendus
+            eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio
+            vitae
+            ducimus labore.</p>
+          <a class="" href="">Web</a>
+        </div>
+      </section>
+      <section data-menuanchor="page2" id="otherVisualCreations" class="otherVisualCreations__section section">
+        <div class="otherVisualCreations__container">
+          <h2 class="sectionTitle">Other Visual Creations</h2>
+          <span style="font-size: 1rem;" class="char char01">LIST2</span>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
+            repellendus
+            eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio vitae
+            ducimus labore.</p>
+          <a class="" href="">
+            Vis</a>
+        </div>
+      </section>
+    </main> -->
+    <!-- <footer class="footer">
         <h2>
           <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
         </h2>
         <p class="copyRight">Copyright © 2024 heyviehuang.All rights reserved.</p>
-      </footer>
+      </footer> -->
 
-      <button class="btnTop material-icons md-48" style="display: none" type="button">
-        expand_less
-      </button>
-      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-      <script src="/js/jquery.let_it_snow.js"></script>
-      <script src="/js/jquery-canvas-sparkles.js"></script>
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-      <script>
-        AOS.init();
-      </script>
-      <script src="/js/plugins.min.js"></script>
-      <script src="/js/functions.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
-      <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.7/jquery.pagepiling.min.js"></script>
-      <script src="/js/all.js"></script>
+    <button class="btnTop material-icons md-48" style="display: none" type="button">
+      expand_less
+    </button>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="/js/jquery.let_it_snow.js"></script>
+    <script src="/js/jquery-canvas-sparkles.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="/js/plugins.min.js"></script>
+    <script src="/js/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/infiniteslidev2/infiniteslidev2.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.pagepiling.min.js"></script>
+    <script src="/js/all.js"></script>
+    <script type="text/javascript" src="/js/data0.js"></script>
   </body>
 
 </html>
