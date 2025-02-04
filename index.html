@@ -21,7 +21,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" type="text/css" />
     <link rel="stylesheet" href="/css/jquery.pagepiling.css" />
-    <link rel="stylesheet" href="/examples.css" type="text/css" />
     <!-- <link rel="stylesheet" href="/css/style.css"> -->
     <link rel="stylesheet" href="/sass/all.css" />
     <!-- Google tag (gtag.js) -->
@@ -35,62 +34,11 @@
       gtag("js", new Date());
       gtag("config", "G-J95MMXKCG7");
     </script>
-
-    <style>
-      /* Centered texts in each section
-* --------------------------------------- */
-      .section {
-        text-align: center;
-      }
-
-      #myVideo {
-        position: absolute;
-        z-index: 4;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background-size: 100% 100%;
-        background-color: black;
-        /* in case the video doesn't fit the whole page*/
-        background-position: center center;
-        background-size: contain;
-        object-fit: cover;
-        /*cover video background */
-      }
-
-      /* Layer with position absolute in order to have it over the video
-* --------------------------------------- */
-      #section1 .layer {
-        position: absolute;
-        z-index: 5;
-        width: 100%;
-        left: 0;
-        top: 43%;
-        height: 100%;
-      }
-
-      #section1 h1 {
-        color: #fff;
-      }
-
-      #infoMenu li a {
-        color: #fff;
-      }
-
-      #section1 {
-        overflow: hidden;
-      }
-    </style>
   </head>
 
   <body id="body">
-    <div class="loading-overlay"></div>
 
     <!-- 導覽列 -->
-
     <!-- <nav>
         <h1>
           <a class="nav__a--logo scrollTop" href="#body">Portfolio By Sally Huang</a>
@@ -140,7 +88,7 @@
         </div>
       </div>
       <div class="section" id="section2">
-        <div class="intro">
+        <div class="webCreations__container">
           <!-- <h2 class="sectionTitle">Web Creations</h2> -->
           <span style="font-size: 1rem;" class="char char01">LIST1</span>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
@@ -151,8 +99,8 @@
           <a class="" href="">Web</a>
         </div>
       </div>
-      <div class="section" id="section4">
-        <div class="intro">
+      <div class="section" id="section3">
+        <div class="otherVisualCreations__container">
           <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
           <span style="font-size: 1rem;" class="char char01">LIST2</span>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
@@ -164,32 +112,7 @@
         </div>
       </div>
     </div>
-    <!-- <main class="home-snap-section" id="pagepiling">
-      <section data-menuanchor="page1" id="webCreations" class="webCreations__section section">
-        <div class="webCreations__container">
-          <h2 class="sectionTitle">Web Creations</h2>
-          <span style="font-size: 1rem;" class="char char01">LIST1</span>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-            repellendus
-            eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio
-            vitae
-            ducimus labore.</p>
-          <a class="" href="">Web</a>
-        </div>
-      </section>
-      <section data-menuanchor="page2" id="otherVisualCreations" class="otherVisualCreations__section section">
-        <div class="otherVisualCreations__container">
-          <h2 class="sectionTitle">Other Visual Creations</h2>
-          <span style="font-size: 1rem;" class="char char01">LIST2</span>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-            repellendus
-            eligendi aut repellat itaque debitis rerum sequi cupiditate maiores doloremque architecto nisi optio vitae
-            ducimus labore.</p>
-          <a class="" href="">
-            Vis</a>
-        </div>
-      </section>
-    </main> -->
+
     <!-- <footer class="footer">
         <h2>
           <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />

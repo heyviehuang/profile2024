@@ -6,6 +6,7 @@ body {
   @include embed-container();
 }
 
+// 導覽列LOGO
 .logo {
   @include hide-text;
   width: 70.16px;
@@ -13,17 +14,6 @@ body {
   background: url("/img/logo.svg") no-repeat center;
   @include pad {
     height: 60px;
-  }
-}
-
-.logoMain {
-  width: 476px;
-  margin: 0 auto;
-  @include pad {
-    width: 400px;
-  }
-  @include mobile {
-    width: 250px;
   }
 }
 
@@ -40,12 +30,6 @@ body {
   @include mobile {
     font-size: 4rem;
   }
-}
-
-.vertical-lr {
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  white-space: nowrap;
 }
 
 /* dynamic background */
@@ -69,50 +53,13 @@ body {
   }
 }
 
-// .dynamicBg {
-//   display: block;
-//   top: 0;
-//   left: 0;
-//   position: fixed;
-// }
 .blur {
   filter: blur(10px);
   transition: filter 0.3s;
   -webkit-transition: filter 0.3s;
 }
 
-.logoMain {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
 //主頁
-.webCreations__section,
-.otherVisualCreations__section {
-  position: relative;
-  padding: 8rem 0;
-  height: 100vh;
-}
-
-.webCreations__section {
-  // background-image: url("/img/painting01.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: $gainsboro;
-}
-
-.otherVisualCreations__section {
-  // background-image: url("/img/painting01.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: $white-smoke;
-}
 
 .webCreations__container {
   position: absolute;
