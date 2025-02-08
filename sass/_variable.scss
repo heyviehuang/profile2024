@@ -1,55 +1,80 @@
 // 網站主色
 // 科技公司風格顏色變數
-$primary-black: #121212;    // 主要黑色
-$dark-gray: #1c1c1e;        // 深灰色
-$medium-gray: #2c2c2e;      // 中灰色
-$light-gray: #3a3a3c;       // 淺灰色
-$cool-gray: #48484a;        // 冷灰色
-$steel-gray: #636366;       // 鋼灰色
-$silver-gray: #8e8e93;      // 銀灰色
-$light-silver: #aeaeb2;     // 淺銀色
-$gainsboro: #d1d1d6;        // 亮灰色
-$white-smoke: #f2f2f7;      // 白煙色
-$off-white: #e5e5ea;        // 微白
-$pure-white: #ffffff;       // 純白
-$highlight-blue: #007aff;   // 強調藍色（可用於按鈕或重要元素）
+$primary-black: #121212; // 主要黑色
+$dark-gray: #1c1c1e; // 深灰色
+$medium-gray: #2c2c2e; // 中灰色
+$light-gray: #3a3a3c; // 淺灰色
+$cool-gray: #48484a; // 冷灰色
+$steel-gray: #636366; // 鋼灰色
+$silver-gray: #8e8e93; // 銀灰色
+$light-silver: #aeaeb2; // 淺銀色
+$gainsboro: #d1d1d6; // 亮灰色
+$white-smoke: #f2f2f7; // 白煙色
+$off-white: #e5e5ea; // 微白
+$pure-white: #ffffff; // 純白
 
 //spacer
 $spacer: 1rem !default;
-$spacers: ( 0: 0, 1: $spacer * .25, 2: $spacer * .5, 3: $spacer, 4: $spacer * 1.5, 5: $spacer * 3, ) !default;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3
+) !default;
 //空間%
-$position-values: ( 0: 0, 50: 50%, 100: 100%) !default;
+$position-values: (
+    0: 0,
+    50: 50%,
+    100: 100%
+) !default;
 //斷點
-$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px);
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
 //container大小
-$container-max-widths: (xxl: 1320px, xl: 1200px, lg: 960px, md: 640px, sm: 450px, xsm: 400px);
+$container-max-widths: (
+    xxl: 1320px,
+    xl: 1200px,
+    lg: 960px,
+    md: 640px,
+    sm: 450px,
+    xsm: 400px
+);
 //boder
 $border-width: 1px !default;
-$border-widths: ( 1: 1px, 2: 2px, 3: 3px, 4: 4px, 5: 5px) !default;
+$border-widths: (
+    1: 1px,
+    2: 2px,
+    3: 3px,
+    4: 4px,
+    5: 5px
+) !default;
 $border-style: solid !default;
 $border-color: $primary-black !default;
 //文字
 //字型
-$font-family-sans-serif: system-ui,
--apple-system,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-"Noto Sans",
-"Liberation Sans",
-Arial,
-sans-serif,
-"Apple Color Emoji",
-"Segoe UI Emoji",
-"Segoe UI Symbol",
-"Noto Color Emoji" !default;
-$font-family-monospace: SFMono-Regular,
-Menlo,
-Monaco,
-Consolas,
-"Liberation Mono",
-"Courier New",
-monospace !default;
+$font-family-sans-serif:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    "Liberation Sans",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 //行距
 $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
@@ -63,3 +88,22 @@ $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
+
+$page-themes: (
+    "index": (
+        bg: $primary-black,
+        text: $white-smoke
+    ),
+    "aboutMe": (
+        bg: $primary-black,
+        text: $white-smoke
+    ),
+    "webCreations": (
+        bg: $white-smoke,
+        text: $primary-black
+    ),
+    "otherVisualCreations": (
+        bg: $white-smoke,
+        text: $primary-black
+    )
+);

@@ -1,9 +1,18 @@
 body {
   @include custom-scrollbar($primary-black, $dark-gray, 6px);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .embed-container {
   @include embed-container();
+}
+
+@each $page, $colors in $page-themes {
+  .#{$page} {
+    --bg-color: #{map-get($colors, bg)};
+    --text-color: #{map-get($colors, text)};
+  }
 }
 
 // 導覽列LOGO
@@ -60,19 +69,62 @@ body {
 }
 
 //主頁
+.index {
+  .layer {
+    color: $primary-black;
+    position: relative;
+    .indexMainBN__text {
+      position: absolute;
+      top: 20vh;
+      left: 13vw;
+      z-index: 1;
+      font-weight: 700;
+      text-align: left;
+      color: $off-white;
+      h2 {
+        font-size: 3rem;
+      }
+      h3 {
+        margin: 1rem 0 0 0;
+        font-size: 1rem;
+      }
+    }
 
-.webCreations__container {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 30%;
+    img {
+      position: absolute;
+      top: 10vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30%;
+    }
+  }
 }
 
-.otherVisualCreations__container {
+.webCreations__text {
+  @include center;
+  z-index: 1;
+  font-size: 2rem;
+  color: $pure-white;
+}
+
+.otherVisualCreations__text {
   position: absolute;
-  top: 20%;
-  left: 10%;
-  width: 30%;
+  top: 16%;
+  p {
+    font-size: 6rem;
+    line-height: normal;
+    color: $primary-black;
+  }
+}
+.otherVisualCreations__container {
+  @include center;
+}
+.otherVisualCreations__image {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  width: 100%;
+  z-index: -1;
 }
 
 //關於

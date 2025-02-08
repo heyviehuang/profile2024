@@ -64,9 +64,53 @@
 }
 
 // 定義一個 Mixin 用於水平排列列表
-@mixin horizontal-list($gap: 1rem) {
-    // display: flex;
-    // justify-content: end;
+@mixin horizontal-list($gap: 2rem) {
     gap: $gap; // 控制項目之間的間距
-    // overflow-x: auto; // 滾動支持
+}
+
+// 霓虹發光字體
+@mixin neon-text($color: #ffae42, $animation-duration: 1.5s) {
+    font-size: 48px;
+    font-weight: bold;
+    color: lighten($color, 40%); // 提升文字的亮度
+    text-align: center;
+
+    // 設定 text-shadow 創造霓虹燈效果
+    text-shadow:
+        0 0 5px $color,
+        0 0 10px $color,
+        0 0 20px $color,
+        0 0 40px rgba($color, 0.8),
+        0 0 80px rgba($color, 0.6);
+
+    // 加入動畫
+    animation: neonGlow $animation-duration infinite alternate;
+}
+
+// 霓虹燈閃爍動畫
+@keyframes neonGlow {
+    0% {
+        text-shadow:
+            0 0 5px #ffae42,
+            0 0 10px #ffae42,
+            0 0 20px #ffae42,
+            0 0 40px rgba(#ffae42, 0.8),
+            0 0 80px rgba(#ffae42, 0.6);
+    }
+    100% {
+        text-shadow:
+            0 0 5px #ffae42,
+            0 0 15px #ffae42,
+            0 0 30px #ffae42,
+            0 0 60px rgba(#ffae42, 0.9),
+            0 0 120px rgba(#ffae42, 0.7);
+    }
+}
+
+// 水平垂直置中
+@mixin center($direction: "both") {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
