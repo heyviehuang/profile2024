@@ -26,9 +26,9 @@
 }
 
 //header
-header {
-  height: 100vh;
-}
+// header {
+//   height: 100vh;
+// }
 
 //nav
 // nav {
@@ -48,12 +48,16 @@ header {
 //   }
 // }
 
-// .nav__a--logo {
-//   @include hide-text;
-//   width: 70.16px;
-//   height: 78px;
-//   background: url("/img/logo.svg") no-repeat center;
-// }
+.nav__a--logo {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  z-index: 20;
+  @include hide-text;
+  width: 70.16px;
+  height: 78px;
+  background: url("/img/logo.svg") no-repeat center;
+}
 
 // .nav__menuList {
 //   display: flex;
@@ -111,8 +115,8 @@ header {
  * --------------------------------------- */
 #menu {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 40px;
+  left: 85%;
   height: 40px;
   z-index: 70;
   width: 100%;
@@ -120,15 +124,16 @@ header {
   margin: 0;
 
   li {
-    display: inline-block;
+    display: block;
+    width: 200px;
     margin: 10px;
     color: #000;
-    background: rgba(255, 255, 255, 0.5);
+    // background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
     cursor: pointer !important;
 
     &.active {
-      background: rgba(0, 0, 0, 0.5);
+      // background: rgba(0, 0, 0, 0.5);
       color: #fff;
 
       a {
@@ -139,14 +144,9 @@ header {
         }
       }
     }
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.8);
-    }
-
     a {
       text-decoration: none;
-      color: #000;
+      color: $silver-gray;
       padding: 9px 18px;
       display: block;
     }
@@ -155,44 +155,12 @@ header {
 
 //footer
 .footer {
+  margin-top: 4rem;
   padding: 4rem 0;
-  background-color: rgba($gainsboro, 0.4);
-}
-
-.footerLogo {
-  width: 80px;
-  margin: 0 auto;
+  border-top: $gainsboro 1px solid;
 }
 
 .copyRight {
   text-align: center;
-  color: #fff;
-}
-
-.material-icons {
-  color: #fff;
-}
-
-.material-icons.md-40 {
-  font-size: 40px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
-}
-
-.btnTop {
-  position: fixed;
-  right: 1.5%;
-  bottom: 1.5%;
-  z-index: 9;
-  // background-color: $cerulean;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-}
-
-.btnTop:hover {
-  transform: translateY(-5px);
-  -webkit-transform: translateY(-5px);
-  background-color: $dark-gray;
+  color: $primary-black;
 }

@@ -279,6 +279,7 @@ button {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* 按鈕--------------------------------------- */
 .btnTop {
   position: fixed;
   right: 1.5%;
@@ -408,7 +409,163 @@ button {
   --progress: -102%;
 }
 
-/* -------------- 彈窗 -------------- */
+/* From Uiverse.io by Galahhad */
+.ui-btn {
+  --btn-transition: 0.3s;
+  --btn-letter-spacing: 0.1rem;
+  --btn-animation-duration: 1.2s;
+  --hover-btn-color: #dbdeaf;
+  --default-btn-color: #fff;
+  --font-size: 16px;
+  /* 👆 this field should not be empty */
+  --font-weight: 600;
+  --font-family: Menlo, Roboto Mono, monospace;
+  /* 👆 this field should not be empty */
+}
+
+/* button settings 👆 */
+.ui-btn {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+}
+
+.ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span,
+.ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "#";
+  }
+  5% {
+    content: ".";
+  }
+  10% {
+    content: "^{";
+  }
+  15% {
+    content: "-!";
+  }
+  20% {
+    content: "#$_";
+  }
+  25% {
+    content: "№:0";
+  }
+  40% {
+    content: "?{4@%";
+  }
+  45% {
+    content: "=.,^!";
+  }
+  50% {
+    content: "?2@%";
+  }
+  55% {
+    content: ";1}]";
+  }
+  60% {
+    content: "?{%:%";
+    right: 0;
+  }
+  65% {
+    content: "|{f[4";
+    right: 0;
+  }
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+  75% {
+    content: "'1_0<";
+    right: 0;
+  }
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+  90% {
+    content: "4";
+    right: 0;
+  }
+  95% {
+    content: "2";
+    right: 0;
+  }
+  100% {
+    content: "";
+    right: 0;
+  }
+}
+.material-icons {
+  color: #fff;
+}
+
+.material-icons.md-40 {
+  font-size: 40px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.btnTop {
+  position: fixed;
+  right: 1.5%;
+  bottom: 1.5%;
+  z-index: 9;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+
+.btnTop:hover {
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  background-color: #1c1c1e;
+}
+
+/* 彈窗--------------------------------------- */
 /* 彈窗內容 */
 /* 彈窗背景樣式 */
 .modal {
@@ -507,7 +664,7 @@ button {
   overflow: hidden;
 }
 
-/* -------------- 動畫 -------------- */
+/* 動畫--------------------------------------- */
 .animT,
 .animR,
 .animB,
@@ -574,6 +731,7 @@ button {
     -webkit-transform: translate(0 0) scale(1.5);
   }
 }
+/* 效果--------------------------------------- */
 .orange-glow {
   font-size: 48px;
   font-weight: bold;
@@ -615,7 +773,7 @@ button {
   top: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  max-height: 100vh;
   background-size: 100% 100%;
   background-color: black;
   /* in case the video doesn't fit the whole page*/
@@ -633,12 +791,48 @@ button {
   z-index: 5;
   width: 100%;
   left: 0;
-  top: 43%;
-  height: 100%;
+  top: 14rem;
+  height: 100vh;
 }
 
 #section1 {
   overflow: hidden;
+}
+
+/* 表單--------------------------------------- */
+.contact-form__group {
+  width: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+}
+.contact-form__label {
+  width: 150px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+.contact-form__input, .contact-form__textarea {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid wheat;
+  background-color: transparent;
+  color: #121212;
+  outline: none;
+  transition: 0.4s;
+}
+.contact-form__input:focus, .contact-form__textarea:focus {
+  border-bottom: 1px solid #121212;
+  transition: 0.3s ease-in-out;
+}
+.contact-form__button {
+  margin: 0 auto;
+  background-color: wheat;
+  box-shadow: 0 0 10px antiquewhite;
+}
+.contact-form__button:hover {
+  background-color: antiquewhite;
 }
 
 .wrap {
@@ -667,16 +861,25 @@ button {
   }
 }
 
-header {
-  height: 100vh;
+.nav__a--logo {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  z-index: 20;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+  width: 70.16px;
+  height: 78px;
+  background: url("/img/logo.svg") no-repeat center;
 }
 
 /* Menu
  * --------------------------------------- */
 #menu {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 40px;
+  left: 85%;
   height: 40px;
   z-index: 70;
   width: 100%;
@@ -684,15 +887,14 @@ header {
   margin: 0;
 }
 #menu li {
-  display: inline-block;
+  display: block;
+  width: 200px;
   margin: 10px;
   color: #000;
-  background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   cursor: pointer !important;
 }
 #menu li.active {
-  background: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 #menu li.active a {
@@ -701,56 +903,22 @@ header {
 #menu li.active a:hover {
   color: #000;
 }
-#menu li:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
 #menu li a {
   text-decoration: none;
-  color: #000;
+  color: #8e8e93;
   padding: 9px 18px;
   display: block;
 }
 
 .footer {
+  margin-top: 4rem;
   padding: 4rem 0;
-  background-color: rgba(209, 209, 214, 0.4);
-}
-
-.footerLogo {
-  width: 80px;
-  margin: 0 auto;
+  border-top: #d1d1d6 1px solid;
 }
 
 .copyRight {
   text-align: center;
-  color: #fff;
-}
-
-.material-icons {
-  color: #fff;
-}
-
-.material-icons.md-40 {
-  font-size: 40px;
-}
-
-.material-icons.md-48 {
-  font-size: 48px;
-}
-
-.btnTop {
-  position: fixed;
-  right: 1.5%;
-  bottom: 1.5%;
-  z-index: 9;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-}
-
-.btnTop:hover {
-  transform: translateY(-5px);
-  -webkit-transform: translateY(-5px);
-  background-color: #1c1c1e;
+  color: #121212;
 }
 
 body {
@@ -854,32 +1022,27 @@ body::-webkit-scrollbar-thumb {
   -webkit-transition: filter 0.3s;
 }
 
-.index .layer {
-  color: #121212;
-  position: relative;
+.indexMain__container {
+  display: flex;
+  align-items: center;
 }
-.index .layer .indexMainBN__text {
-  position: absolute;
-  top: 20vh;
-  left: 13vw;
-  z-index: 1;
-  font-weight: 700;
+.indexMain__container h2 {
+  font-size: 3rem;
   text-align: left;
+  font-weight: 700;
   color: #e5e5ea;
 }
-.index .layer .indexMainBN__text h2 {
-  font-size: 3rem;
+.indexMain__container .viewMore__btn {
+  max-height: 4rem;
 }
-.index .layer .indexMainBN__text h3 {
-  margin: 1rem 0 0 0;
-  font-size: 1rem;
-}
-.index .layer img {
+
+.indexMain__image {
   position: absolute;
-  top: 10vh;
-  left: 50%;
+  top: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
   width: 30%;
+  z-index: 4;
 }
 
 .webCreations__text {
@@ -915,6 +1078,11 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   width: 100%;
   z-index: -1;
+}
+
+.contact__text {
+  color: #121212;
+  margin: 2rem auto;
 }
 
 .i__title {
@@ -954,8 +1122,4 @@ body::-webkit-scrollbar-thumb {
 
 .originalWebsite__list {
   display: flex;
-}
-
-.footer {
-  background: #aeaeb2 url("/img/Random256Felt01-1.webp") repeat;
 }/*# sourceMappingURL=all.css.map */

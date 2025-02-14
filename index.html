@@ -13,10 +13,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/img/FBogImage-L.png" />
     <meta property="twitter:image" content="/img/FBogImage-L.png" />
+    <meta name="google" content="notranslate">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="/css/reset.css" />
-
     <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" type="text/css" />
@@ -39,59 +39,37 @@
   <body id="body" class="index">
 
     <!-- 導覽列 -->
-    <!-- <nav>
-        <h1>
-          <a class="nav__a--logo scrollTop" href="#body">Portfolio By Sally Huang</a>
-        </h1>
-        <ul class="nav__menuList">
-          <li class="navItem__container">
-            <a class="nav__a scrollTop" href="html/aboutMe.html">About Me</a>
-          </li>
-          <li class="navItem__container">
-            <a class="nav__a scrollTop" href="html/webCreations.html">Web Creations</a>
-          </li>
-          <li class="navItem__container">
-            <a class="nav__a scrollTop" href="html/visualCreations.html">Other Visual Creations</a>
-          </li>
-        </ul>
-      </nav> -->
-    <!-- 封面 -->
-    <section class="header-section">
-      <!-- 動態背景 -->
-      <div class="dynamicBG-container">
-        <!-- <canvas class="snow dynamicBg" width="100%" height="100%"></canvas> -->
-        <!-- <canvas class="flake dynamicBg" width="100%" height="100%"></canvas> -->
-        <!-- <img class="logoMain glow-effect" src="/img/logo.svg" alt="logoMain" /> -->
-        <!-- <video
-          src="https://videos.openai.com/vg-assets/assets%2Ftask_01jj3zr6c8fpmt4r49sfhj5rdx%2Ftask_01jj3zr6c8fpmt4r49sfhj5rdx_genid_4e37a074-91ac-4c61-b8b3-be6349fd1fc6_25_01_21_08_30_742110%2Fvideos%2F00000_42545940%2Fsource.mp4?st=2025-01-21T06%3A58%3A02Z&amp;se=2025-01-27T07%3A58%3A02Z&amp;sks=b&amp;skt=2025-01-21T06%3A58%3A02Z&amp;ske=2025-01-27T07%3A58%3A02Z&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skoid=8ebb0df1-a278-4e2e-9c20-f2d373479b3a&amp;skv=2019-02-02&amp;sv=2018-11-09&amp;sr=b&amp;sp=r&amp;spr=https%2Chttp&amp;sig=8FKwYvd9D82UTRIfZ6X3zrVgX3Jm4QwHS%2B7%2BUBWpjU4%3D&amp;az=oaivgprodscus"
-          preload="metadata" loop="" controlslist="nodownload" playsinline="" webkit-playsinline="" x5-playsinline=""
-          autoplay="" style="width: 100%; height: 100%;"></video> -->
-      </div>
-      <!-- <div style="height: 100vh;"></div> -->
-    </section>
-
+    <h1>
+      <!-- <a class="nav__a--logo scrollTop" href="#body">index</a> -->
+    </h1>
 
     <ul id="menu">
-      <li data-menuanchor="page1" class="active"><a href="#page1">Page 1</a></li>
-      <li data-menuanchor="page2"><a href="#page2">Page 2</a></li>
-      <li data-menuanchor="page3"><a href="#page3">Page 3</a></li>
+      <li data-menuanchor="page1" class="active ui-btn"><a href="#page1"><span>Page 1</span></a></li>
+      <li data-menuanchor="page2" class="ui-btn"><a href="#page2"><span>Page 2</span></a></li>
+      <li data-menuanchor="page3" class="ui-btn"><a href="#page3"><span>Page 3</span></a></li>
+      <li data-menuanchor="page4" class="ui-btn"><a href="#page4"><span>Page 4</span></a></li>
     </ul>
 
     <div id="pagepiling">
       <div class="section" id="section1">
         <video autoplay loop muted id="myVideo">
-          <source src="/223625_large.mp4" type="video/mp4">
-          <source src="imgs/flowers.webm" type="video/webm">
+          <!-- <source src="/223625_large.mp4" type="video/mp4"> -->
+          <!-- <source src="imgs/flowers.webm" type="video/webm"> -->
         </video>
-        <div class="layer">
-          <div class="indexMainBN__text">
+        <div class="layer indexMain__container">
+          <div class="indexMain__text wrap">
             <h2>Lorem ipsum, dolor sit amet<br />
               eligendi aut repellat consectetur<br />
               itaque debitis dolor sit amet.</h2>
-            <h3>価値を創造して人々の日常に彩りを</h3>
+            <!-- <h3>価値を創造して人々の日常に彩りを</h3> -->
           </div>
-          <img src="https://fakeimg.pl/1200x1620" alt="">
+          <!-- <button class="btn-17 viewMore__btn wrap">
+            <span class="text-container">
+              <span class="text">Button</span>
+            </span>
+          </button> -->
         </div>
+        <!-- <img class="indexMain__image" src="https://fakeimg.pl/1200x1620" alt=""> -->
       </div>
 
 
@@ -99,11 +77,11 @@
         <div class="webCreations__text">
           <!-- <h2 class="sectionTitle">Web Creations</h2> -->
           <span class="orange-glow" style="font-size: 1rem;" class="char char01">LIST1</span>
-          <button class="btn-17">
+          <!-- <button class="btn-17">
             <span class="text-container">
               <span class="text">Button</span>
             </span>
-          </button>
+          </button> -->
         </div>
         <div class="webCreations__carousel" data-aos="fade-left" data-aos-offset="300" data-aos-easing="linear"
           data-aos-delay="300" data-aos-duration="1000">
@@ -141,26 +119,61 @@
         <div class="otherVisualCreations__container">
           <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
           <span class="orange-glow" style="font-size: 4rem;" class="char char01">LIST2</span>
-          <button class="btn-17">
+          <!-- <button class="btn-17">
             <span class="text-container">
               <span class="text">Button</span>
-            </span>
+            </span> -->
           </button>
         </div>
-        <img class="otherVisualCreations__image" src="/img/videoframe_2204.png" alt="">
+        <!-- <img class="otherVisualCreations__image" src="/img/videoframe_2204.png" alt=""> -->
+      </div>
+
+      <div class="section" id="section4">
+        <span class="orange-glow" style="font-size: 4rem;" class="char char01">LIST2</span>
+
+        <div class="contact__container">
+          <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
+          <h2 class="contact__text">お問い合わせフォーム</h2>
+          <form action="send_email.php" method="POST" class="contact-form">
+
+            <div class="contact-form__group">
+              <label for="name" class="contact-form__label">お名前 *</label>
+              <input type="text" id="name" name="name" class="contact-form__input" required>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="email" class="contact-form__label">メールアドレス *</label>
+              <input type="email" id="email" name="email" class="contact-form__input" required>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="message" class="contact-form__label">お問い合わせ内容 *</label>
+              <textarea id="message" name="message" class="contact-form__textarea" rows="5" maxlength="3000"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="contact-form__button btn-17">
+              <span class="text-container">
+                <span class="text">送信</span>
+              </span>
+            </button>
+          </form>
+        </div>
+        <!-- <img class="otherVisualCreations__image" src="/img/videoframe_2204.png" alt=""> -->
+        <footer class="footer wrap">
+          <!-- <h2>
+            <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
+          </h2> -->
+          <p class="copyRight">Copyright © 2024 .All rights reserved.</p>
+        </footer>
       </div>
     </div>
-
-    <!-- <footer class=" footer">
-            <h2>
-              <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
-            </h2>
-            <p class="copyRight">Copyright © 2024 heyviehuang.All rights reserved.</p>
-            </footer> -->
 
     <button class="btnTop material-icons md-48" style="display: none" type="button">
       expand_less
     </button>
+
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="/js/jquery.let_it_snow.js"></script>
     <script src="/js/jquery-canvas-sparkles.js"></script>

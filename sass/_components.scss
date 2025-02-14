@@ -32,8 +32,9 @@
     }
   }
 }
+/* 按鈕--------------------------------------- */
 
-//Top按鈕
+// Top按鈕
 .btnTop {
   position: fixed;
   right: 1.5%;
@@ -49,7 +50,7 @@
   }
 }
 
-// 常態按鈕
+// 黑白按鈕
 .btn-17,
 .btn-17 *,
 .btn-17 :after,
@@ -203,7 +204,195 @@
   --progress: -102%;
 }
 
-/* -------------- 彈窗 -------------- */
+// 亂碼按鈕
+/* From Uiverse.io by Galahhad */
+.ui-btn {
+  // --btn-default-bg: rgb(41, 41, 41);
+  // --btn-padding: 15px 20px;
+  // --btn-hover-bg: rgb(51, 51, 51);
+  --btn-transition: 0.3s;
+  --btn-letter-spacing: 0.1rem;
+  --btn-animation-duration: 1.2s;
+  // --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  // --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: #dbdeaf;
+  --default-btn-color: #fff;
+  --font-size: 16px;
+  /* 👆 this field should not be empty */
+  --font-weight: 600;
+  --font-family: Menlo, Roboto Mono, monospace;
+  /* 👆 this field should not be empty */
+}
+
+/* button settings 👆 */
+
+.ui-btn {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  border: none;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+}
+
+.ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span,
+.ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "#";
+  }
+
+  5% {
+    content: ".";
+  }
+
+  10% {
+    content: "^{";
+  }
+
+  15% {
+    content: "-!";
+  }
+
+  20% {
+    content: "#$_";
+  }
+
+  25% {
+    content: "№:0";
+  }
+
+  // 30% {
+  //   content: "#{+.";}35%{content: "@}-?";
+  // }
+
+  40% {
+    content: "?{4@%";
+  }
+
+  45% {
+    content: "=.,^!";
+  }
+
+  50% {
+    content: "?2@%";
+  }
+
+  55% {
+    content: "\;1}]";
+  }
+
+  60% {
+    content: "?{%:%";
+    right: 0;
+  }
+
+  65% {
+    content: "|{f[4";
+    right: 0;
+  }
+
+  70% {
+    content: "{4%0%";
+    right: 0;
+  }
+
+  75% {
+    content: "'1_0<";
+    right: 0;
+  }
+
+  80% {
+    content: "{0%";
+    right: 0;
+  }
+
+  85% {
+    content: "]>'";
+    right: 0;
+  }
+
+  90% {
+    content: "4";
+    right: 0;
+  }
+
+  95% {
+    content: "2";
+    right: 0;
+  }
+
+  100% {
+    content: "";
+    right: 0;
+  }
+}
+
+// Top按鈕
+.material-icons {
+  color: #fff;
+}
+
+.material-icons.md-40 {
+  font-size: 40px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+.btnTop {
+  position: fixed;
+  right: 1.5%;
+  bottom: 1.5%;
+  z-index: 9;
+  // background-color: $cerulean;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+}
+
+.btnTop:hover {
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  background-color: $dark-gray;
+}
+
+/* 彈窗--------------------------------------- */
 
 /* 彈窗內容 */
 /* 彈窗背景樣式 */
@@ -288,7 +477,7 @@
   overflow: hidden;
 }
 
-/* -------------- 動畫 -------------- */
+/* 動畫--------------------------------------- */
 
 //淡入淡出動畫
 .animT,
@@ -367,6 +556,8 @@
   }
 }
 
+/* 效果--------------------------------------- */
+
 // 霓虹燈文字
 // 橙色霓虹燈
 .orange-glow {
@@ -398,7 +589,7 @@
   top: 0;
   right: 0;
   width: 100%;
-  height: 100%;
+  max-height: 100vh;
   background-size: 100% 100%;
   background-color: black;
   /* in case the video doesn't fit the whole page*/
@@ -415,10 +606,54 @@
   z-index: 5;
   width: 100%;
   left: 0;
-  top: 43%;
-  height: 100%;
+  top: 14rem;
+  height: 100vh;
 }
 
 #section1 {
   overflow: hidden;
+}
+
+/* 表單--------------------------------------- */
+.contact-form {
+  &__group {
+    width: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    width: 150px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+  }
+
+  &__input,
+  &__textarea {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid wheat;
+    background-color: transparent;
+    color: $primary-black;
+    outline: none;
+    transition: 0.4s;
+
+    &:focus {
+      border-bottom: 1px solid $primary-black;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    background-color: wheat;
+    box-shadow: 0 0 10px antiquewhite;
+
+    &:hover {
+      background-color: antiquewhite;
+    }
+  }
 }

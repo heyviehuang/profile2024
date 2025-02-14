@@ -67,37 +67,28 @@ body {
   transition: filter 0.3s;
   -webkit-transition: filter 0.3s;
 }
-
 //主頁
-.index {
-  .layer {
-    color: $primary-black;
-    position: relative;
-    .indexMainBN__text {
-      position: absolute;
-      top: 20vh;
-      left: 13vw;
-      z-index: 1;
-      font-weight: 700;
-      text-align: left;
-      color: $off-white;
-      h2 {
-        font-size: 3rem;
-      }
-      h3 {
-        margin: 1rem 0 0 0;
-        font-size: 1rem;
-      }
-    }
-
-    img {
-      position: absolute;
-      top: 10vh;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30%;
-    }
+.indexMain__container {
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 3rem;
+    text-align: left;
+    font-weight: 700;
+    color: $off-white;
   }
+  .viewMore__btn {
+    max-height: 4rem;
+  }
+}
+
+.indexMain__image {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  z-index: 4;
 }
 
 .webCreations__text {
@@ -125,6 +116,11 @@ body {
   left: 0;
   width: 100%;
   z-index: -1;
+}
+
+.contact__text {
+  color: $primary-black;
+  margin: 2rem auto;
 }
 
 //關於
@@ -163,8 +159,4 @@ body {
 //網頁
 .originalWebsite__list {
   display: flex;
-}
-
-.footer {
-  background: $light-silver url("/img/Random256Felt01-1.webp") repeat;
 }
