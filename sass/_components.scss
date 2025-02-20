@@ -39,7 +39,8 @@
   position: fixed;
   right: 1.5%;
   bottom: 1.5%;
-  z-index: 9;
+  z-index: 50;
+  color: $medium-gray;
   // background-color: $cerulean;
   transition: 0.3s;
   -webkit-transition: 0.3s;

@@ -43,14 +43,27 @@ $(document).ready(function () {
         }, 700);
     });
 
+    // 根據 body class 來設定不同的滾動觸發高度
+    let triggerHeight = 1200; // 預設高度
+
+    if ($('body').hasClass("otherVisualCreations", "webCreations")) {
+        triggerHeight = 800;
+    } else if ($('body').hasClass("aboutMe")) {
+        triggerHeight = 300;
+    }
+
     function showBtnCondition() {
-        if ($(this).scrollTop() > 1200) {
+        if ($(window).scrollTop() > triggerHeight) {
             $('.btnTop').fadeIn();
+            $('#menu').fadeIn();
         } else {
             $('.btnTop').fadeOut();
+            $('#menu').fadeOut();
         }
     }
+
     $(window).scroll(showBtnCondition);
+
 
     $(window).scroll(function () {
         var scrollPos = $(window).scrollTop();
