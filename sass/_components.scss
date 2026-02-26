@@ -3,6 +3,7 @@
   @include horizontal-list(2rem); // 使用 Mixin，間距設為 2rem
   padding: 2.5rem;
   padding-left: 50px;
+  padding-right: 50px;
 
   &__item {
     position: relative;
@@ -467,8 +468,8 @@
   // background: #000;
   color: #000;
   border: none;
-  border-radius: 18px;
-  padding: 5px 10px;
+  border-radius: 50%;
+  padding: 10px;
   cursor: pointer;
   font-size: 3rem;
 }
@@ -656,5 +657,221 @@
     &:hover {
       background-color: antiquewhite;
     }
+  }
+}
+
+.modal--device {
+  .modal__content {
+    width: min(94vw, 1400px);
+    height: min(90vh, 900px);
+    padding: 1.5rem;
+    overflow: visible;
+    background-color: transparent;
+  }
+
+  .modal__content-container {
+    max-height: 90vh;
+    height: 100%;
+    overflow: visible;
+    padding: 0;
+    background: transparent;
+  }
+
+  .modal__close-btn {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 24px;
+    color: $white-smoke;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    top: -1rem;
+    right: -1rem;
+  }
+}
+
+.mac-frame {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #1b1b1d;
+  border-radius: 20px;
+  padding: 16px 16px 20px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.mac-frame__top {
+  display: flex;
+  gap: 8px;
+  padding: 4px 4px 12px;
+}
+
+.mac-frame__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mac-frame__dot--close {
+  background: #ff5f57;
+}
+
+.mac-frame__dot--min {
+  background: #febc2e;
+}
+
+.mac-frame__dot--max {
+  background: #28c840;
+}
+
+.mac-frame__screen {
+  flex: 1;
+  background: #0b0b0d;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mac-frame__media {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.mac-frame__media-embed,
+.mac-frame__media-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: cover;
+}
+
+.webCreations .section--LIST11 .horizontal-list__item {
+  width: min(980px, 68vw) !important;
+  height: min(520px, 60vw);
+  background: #000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.webCreations .section--LIST11 .openModalBtn {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.webCreations .section--LIST11 img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+.webCreations .web-item__overlay {
+  position: absolute;
+  inset: 0;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2) 55%, transparent 100%);
+}
+
+.webCreations .web-item__title {
+  position: static;
+  top: auto;
+  left: auto;
+  margin: 0;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.webCreations .web-item__desc {
+  margin: 0;
+  max-width: 320px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.webCreations .section--LIST12 .horizontal-list__item,
+.webCreations .section--LIST13 .horizontal-list__item {
+  width: min(720px, 52vw) !important;
+  height: min(560px, 68vw);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.webCreations .section--LIST12 .openModalBtn,
+.webCreations .section--LIST13 .openModalBtn {
+  flex: 0 0 70%;
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.webCreations .section--LIST12 img,
+.webCreations .section--LIST13 img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.webCreations .section--LIST12 .web-item__meta,
+.webCreations .section--LIST13 .web-item__meta {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+
+.webCreations .section--LIST12 .web-item__title,
+.webCreations .section--LIST13 .web-item__title {
+  position: static;
+  margin: 0;
+  font-size: 1.1rem;
+  color: #111;
+}
+
+.webCreations .section--LIST12 .web-item__desc,
+.webCreations .section--LIST13 .web-item__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(17, 17, 17, 0.7);
+}
+.webCreations .mySwiper {
+  padding-left: 0;
+  transition: padding-left 0.3s ease;
+}
+
+.webCreations .mySwiper.swiper--offset {
+  padding-left: 8vw;
+}
+
+@media (max-width: 768px) {
+  .webCreations .mySwiper.swiper--offset {
+    padding-left: 5vw;
   }
 }

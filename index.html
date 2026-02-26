@@ -53,15 +53,15 @@
     <div id="pagepiling">
       <div class="section" id="section1">
         <video autoplay loop muted id="myVideo">
-          <!-- <source src="/223625_large.mp4" type="video/mp4"> -->
-          <!-- <source src="imgs/flowers.webm" type="video/webm"> -->
+          <source src="/223625_large.mp4" type="video/mp4">
+          <source src="imgs/flowers.webm" type="video/webm">
         </video>
         <div class="layer indexMain__container">
           <div class="indexMain__text wrap">
             <h2>Lorem ipsum, dolor sit amet<br />
               eligendi aut repellat consectetur<br />
               itaque debitis dolor sit amet.</h2>
-            <!-- <h3>価値を創造して人々の日常に彩りを</h3> -->
+            <h3>価値を創造して人々の日常に彩りを</h3>
           </div>
           <button class="btn-17 viewMore__btn wrap" onclick="window.location.href='/html/aboutMe.html';">
             <span class="text-container">
@@ -69,36 +69,28 @@
             </span>
           </button>
         </div>
-        <!-- <img class="indexMain__image" src="https://fakeimg.pl/1200x1620" alt=""> -->
+        <img class="indexMain__image" src="https://fakeimg.pl/1200x1620" alt="">
       </div>
 
 
       <div class="section" id="section2">
-        <div class="webCreations__text">
-          <!-- <h2 class="sectionTitle">Web Creations</h2> -->
-          <span class="orange-glow" style="font-size: 1rem;" class="char char01">LIST1</span>
-          <button class="btn-17" onclick="window.location.href='/html/webCreations.html';">
+        <div class="webCreations__bg" aria-hidden="true">
+          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign01.webp');"></span>
+          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign02.webp');"></span>
+          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign03.webp');"></span>
+          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign04.webp');"></span>
+        </div>
+        <div class="webCreations__hero">
+          <h2 class="orange-glow webCreations__title">LIST1</h2>
+          <p class="webCreations__desc">
+            這裡收錄我的網頁作品，包含視覺設計、互動與前端實作。
+            點擊按鈕可進入完整作品列表與細節。
+          </p>
+          <button class="webCreations__cta btn-17" onclick="window.location.href='/html/webCreations.html';">
             <span class="text-container">
-              <span class="text">Button</span>
+              <span class="text">View</span>
             </span>
           </button>
-        </div>
-        <div class="webCreations__carousel" data-aos="fade-left" data-aos-offset="300" data-aos-easing="linear"
-          data-aos-delay="300" data-aos-duration="1000">
-          <ul class="infiniteslide" data-direction="left" data-clone="2">
-            <li>
-              <img src="https://fakeimg.pl/300x600" alt="">
-            </li>
-            <li>
-              <img src="https://fakeimg.pl/300x600" alt="">
-            </li>
-            <li>
-              <img src="https://fakeimg.pl/300x600" alt="">
-            </li>
-            <li>
-              <img src="https://fakeimg.pl/300x600" alt="">
-            </li>
-          </ul>
         </div>
       </div>
 
@@ -118,7 +110,7 @@
         </div>
         <div class="otherVisualCreations__container">
           <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
-          <span class="orange-glow" style="font-size: 4rem;" class="char char01">LIST2</span>
+          <h2 class="orange-glow webCreations__title">GALLERY</h2>
           <button class="btn-17" onclick="window.location.href='/html/otherVisualCreations.html';">
             <span class="text-container">
               <span class="text">Button</span>
@@ -129,8 +121,7 @@
       </div>
 
       <div class="section" id="section4">
-        <span class="orange-glow" style="font-size: 4rem;" class="char char01">LIST2</span>
-
+        <h2 class="orange-glow webCreations__title">LIST1</h2>
         <div class="contact__container">
           <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
           <h2 class="contact__text">お問い合わせフォーム</h2>

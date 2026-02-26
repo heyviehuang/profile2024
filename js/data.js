@@ -30,7 +30,7 @@ $(document).ready(function () {
         // 假設 JSON 數據已經通過 fetch 獲取並存儲在 pageData 中
         for (const [sectionName, sectionData] of Object.entries(pageData)) {
             const section = document.createElement('div');
-            section.classList.add('section');
+            section.classList.add('section', `section--${sectionName}`);
 
             // 動態生成每個 LIST 的標題
             section.innerHTML = `
@@ -49,11 +49,48 @@ $(document).ready(function () {
                 li.classList.add('swiper-slide', 'horizontal-list__item');
 
                 // 動態生成每個 item 的結構
+                const videoUrl = item.videoUrl || item.fullImage || "";
+                const isFeatured = sectionName === "LIST11";
+                const isList12 = sectionName === "LIST12";
+                const isList13 = sectionName === "LIST13";
+                                const descriptionHtml = item.description ? `<p class="web-item__desc">${item.description}</p>` : '';
+                const overlay = isFeatured
+                    ? `
+                    <div class="web-item__overlay">
+                        <h5 class="web-item__title">${item.title}</h5>
+                        ${descriptionHtml}
+                    </div>
+                    `
+                    : '';
+                const metaHtml = (isList12 || isList13)
+                    ? `
+                    <div class="web-item__meta">
+                        <h5 class="web-item__title">${item.title}</h5>
+                        ${descriptionHtml}
+                    </div>
+                    `
+                    : '';
+                const titleHtml = isFeatured || isList12 || isList13 ? '' : `<h5>${item.title}</h5>`;
+                const dualMedia = false;
+                const mediaHtml = dualMedia
+                    ? `
+                    <div class="web-item__split">
+                        <div class="web-item__device web-item__device--pc">
+                            <img class="web-item__media" src="${item.coverImage}" alt="${item.title} PC">
+                        </div>
+                        <div class="web-item__device web-item__device--mb">
+                            <img class="web-item__media" src="${item.coverImage2}" alt="${item.title} Mobile">
+                        </div>
+                    </div>
+                    `
+                    : `<img src="${item.coverImage}" alt="${item.title}">`;
                 li.innerHTML = `
-                <button class="openModalBtn" data-fullimage="${item.fullImage}">
-                    <img src="${item.coverImage}" alt="${item.title}">
+                <button class="openModalBtn" data-video="${videoUrl}" data-title="${item.title}" data-description="${item.description || ""}">
+                    ${mediaHtml}
+                    ${overlay}
                 </button>
-                <h5>${item.title}</h5>
+                ${metaHtml}
+                ${titleHtml}
                 `;
 
                 // 將 li 添加到 ul
@@ -74,9 +111,9 @@ $(document).ready(function () {
         // 添加事件監聽器來處理點擊事件
         document.querySelectorAll('.openModalBtn').forEach(button => {
             button.addEventListener('click', event => {
-                const fullImageUrl = event.currentTarget.getAttribute('data-fullimage');
-                const description = event.currentTarget.nextElementSibling.textContent; // 獲取圖片說明
-                openModal(fullImageUrl, description);
+                const videoUrl = event.currentTarget.getAttribute('data-video');
+                const description = event.currentTarget.getAttribute('data-description') || event.currentTarget.getAttribute('data-title') || ''; // 獲取圖片說明
+                openModal(videoUrl, description);
                 $("body").addClass("no-scroll");
             });
         });
@@ -86,10 +123,22 @@ $(document).ready(function () {
     function initializeSwipers() {
         const swipers = document.querySelectorAll('.mySwiper');
         swipers.forEach(swiper => {
+            swiper.classList.add('swiper--offset');
             new Swiper(swiper, {
                 // Swiper 配置選項
                 slidesPerView: 3,
                 spaceBetween: 10,
+                on: {
+                    sliderFirstMove: function () {
+                        this.el.classList.remove('swiper--offset');
+                    },
+                    touchStart: function () {
+                        this.el.classList.remove('swiper--offset');
+                    },
+                    reachBeginning: function () {
+                        this.el.classList.add('swiper--offset');
+                    }
+                },
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
@@ -103,14 +152,29 @@ $(document).ready(function () {
     }
 
     // 打開滿版圖片彈窗的函數
-    function openModal(imageUrl, description) {
+    function openModal(videoUrl, description) {
         const modal = document.createElement('div');
-        modal.classList.add('modal');
+        modal.classList.add('modal', 'modal--device');
+        const embedUrl = getYouTubeEmbedUrl(videoUrl);
+        const mediaHtml = embedUrl
+            ? `<iframe class="mac-frame__media-embed" src="${embedUrl}" title="${description}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+            : `<img src="${videoUrl}" alt="${description}" class="mac-frame__media-image">`;
         modal.innerHTML = `
         <div class="modal__content">
             <div class="modal__content-container">
                 <span class="modal__close-btn">&times;</span>
-                <img src="${imageUrl}" alt="Full Image" class="modal__image">
+                <div class="mac-frame">
+                    <div class="mac-frame__top">
+                        <span class="mac-frame__dot mac-frame__dot--close"></span>
+                        <span class="mac-frame__dot mac-frame__dot--min"></span>
+                        <span class="mac-frame__dot mac-frame__dot--max"></span>
+                    </div>
+                    <div class="mac-frame__screen">
+                        <div class="mac-frame__media">
+                            ${mediaHtml}
+                        </div>
+                    </div>
+                </div>
                 <p class="image-description">${description}</p> <!-- 新增文字說明 -->
             </div>
         </div>
@@ -131,5 +195,41 @@ $(document).ready(function () {
                 $("body").removeClass("no-scroll");
             }
         });
+    }
+
+    function getYouTubeEmbedUrl(url) {
+        if (!url) {
+            return "";
+        }
+
+        const id = getYouTubeId(url);
+        if (!id) {
+            return "";
+        }
+
+        return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&fs=1`;
+    }
+
+    function getYouTubeId(url) {
+        if (!url) {
+            return "";
+        }
+
+        const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]{6,})/);
+        if (shortMatch) {
+            return shortMatch[1];
+        }
+
+        const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{6,})/);
+        if (watchMatch) {
+            return watchMatch[1];
+        }
+
+        const embedMatch = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]{6,})/);
+        if (embedMatch) {
+            return embedMatch[1];
+        }
+
+        return "";
     }
 });

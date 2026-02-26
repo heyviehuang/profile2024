@@ -173,4 +173,78 @@ $(document).ready(function () {
     //     document.getElementById("FLine01").src = "./img/FLine.svg";
     //     document.getElementById("FLine02").src = "./img/FLine.svg";
     // }
+
+
+    // 主頁鼠標
+    const isIndex = document.body.classList.contains("index");
+    const supportsHover = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (isIndex && supportsHover) {
+        const cursor = document.createElement("div");
+        cursor.className = "cursor-orbit is-light";
+        cursor.innerHTML = '<span class="cursor-orbit__dot"></span>';
+        document.body.appendChild(cursor);
+
+        const setCursorTone = (element) => {
+            if (!element) {
+                cursor.classList.add("is-light");
+                cursor.classList.remove("is-dark");
+                return;
+            }
+
+            const section = element.closest(".section");
+            if (!section) {
+                cursor.classList.add("is-light");
+                cursor.classList.remove("is-dark");
+                return;
+            }
+
+            const sectionId = section.getAttribute("id");
+            if (sectionId === "section1" || sectionId === "section2") {
+                cursor.classList.add("is-light");
+                cursor.classList.remove("is-dark");
+                return;
+            }
+
+            if (sectionId === "section3") {
+                const visualContainer = section.querySelector(".otherVisualCreations__container");
+                if (visualContainer) {
+                    const rect = visualContainer.getBoundingClientRect();
+                    const threshold = rect.top + rect.height * 0.3;
+                    if (lastMouseY >= threshold) {
+                        cursor.classList.add("is-light");
+                        cursor.classList.remove("is-dark");
+                    } else {
+                        cursor.classList.add("is-dark");
+                        cursor.classList.remove("is-light");
+                    }
+                } else {
+                    cursor.classList.add("is-dark");
+                    cursor.classList.remove("is-light");
+                }
+                return;
+            }
+
+            if (sectionId === "section4") {
+                cursor.classList.add("is-dark");
+                cursor.classList.remove("is-light");
+                return;
+            }
+
+            cursor.classList.add("is-light");
+            cursor.classList.remove("is-dark");
+        };
+
+        let lastMouseY = 0;
+        window.addEventListener("mousemove", (event) => {
+            cursor.classList.add("is-active");
+            cursor.style.left = `${event.clientX}px`;
+            cursor.style.top = `${event.clientY}px`;
+            lastMouseY = event.clientY;
+            setCursorTone(document.elementFromPoint(event.clientX, event.clientY));
+        });
+
+        window.addEventListener("mouseleave", () => {
+            cursor.classList.remove("is-active");
+        });
+    }
 });
