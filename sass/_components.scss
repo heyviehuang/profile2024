@@ -1,9 +1,8 @@
 // 定義水平列表的樣式
 .horizontal-list {
   @include horizontal-list(2rem); // 使用 Mixin，間距設為 2rem
-  padding: 2.5rem;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
   &__item {
     position: relative;
@@ -863,15 +862,6 @@
 }
 .webCreations .mySwiper {
   padding-left: 0;
-  transition: padding-left 0.3s ease;
-}
-
-.webCreations .mySwiper.swiper--offset {
-  padding-left: 8vw;
-}
-
-@media (max-width: 768px) {
-  .webCreations .mySwiper.swiper--offset {
-    padding-left: 5vw;
-  }
+  padding-right: 0;
+  box-sizing: border-box;
 }

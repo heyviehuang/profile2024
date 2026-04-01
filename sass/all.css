@@ -253,9 +253,9 @@ button {
 }
 
 .horizontal-list {
-  gap: 2rem;
-  padding: 2.5rem;
-  padding-left: 50px;
+  gap: 0;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .horizontal-list__item {
   position: relative;
@@ -1091,17 +1091,8 @@ button {
 
 .webCreations .mySwiper {
   padding-left: 0;
-  transition: padding-left 0.3s ease;
-}
-
-.webCreations .mySwiper.swiper--offset {
-  padding-left: 8vw;
-}
-
-@media (max-width: 768px) {
-  .webCreations .mySwiper.swiper--offset {
-    padding-left: 5vw;
-  }
+  padding-right: 0;
+  box-sizing: border-box;
 }
 .wrap {
   margin: 0 auto;
