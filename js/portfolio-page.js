@@ -54,6 +54,10 @@
         return '<img src="' + item.coverImage + '" alt="' + item.title + '">';
     }
 
+    function getExternalUrl(item) {
+        return item.externalUrl || item.liveUrl || item.websiteUrl || "";
+    }
+
     function createCardContent(item, sectionName, layout) {
         const isFeatured = layout === "web" && sectionName === "LIST11";
         const showsMeta = layout === "web" && (sectionName === "LIST12" || sectionName === "LIST13");
@@ -74,29 +78,35 @@
         };
     }
 
-    function createCardElement(item, sectionName, layout, modalEnabled) {
+    function createCardElement(item, sectionName, layout) {
         const li = document.createElement("li");
         li.className = "swiper-slide horizontal-list__item";
 
-        const mediaUrl = item.videoUrl || item.fullImage || "";
+        const externalUrl = getExternalUrl(item);
         const content = createCardContent(item, sectionName, layout);
 
-        if (modalEnabled) {
+        if (externalUrl) {
             li.innerHTML =
-                '<button class="openModalBtn" data-media-url="' + mediaUrl + '" data-title="' + item.title + '" data-description="' + (item.description || "") + '">' +
+                '<a class="openModalBtn" href="' + externalUrl + '" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">' +
                 content.media +
                 content.overlay +
-                "</button>" +
+                "</a>" +
                 content.meta +
                 content.title;
         } else {
-            li.innerHTML = content.media + content.overlay + content.meta + content.title;
+            li.innerHTML =
+                '<div class="openModalBtn">' +
+                content.media +
+                content.overlay +
+                "</div>" +
+                content.meta +
+                content.title;
         }
 
         return li;
     }
 
-    function createSectionElement(sectionName, sectionData, layout, modalEnabled) {
+    function createSectionElement(sectionName, sectionData, layout) {
         const section = document.createElement("div");
         section.className = "section section--" + sectionName;
         section.innerHTML =
@@ -113,70 +123,13 @@
         list.className = "swiper-wrapper horizontal-list";
 
         sectionData.items.forEach(function (item) {
-            list.appendChild(createCardElement(item, sectionName, layout, modalEnabled));
+            list.appendChild(createCardElement(item, sectionName, layout));
         });
 
         swiper.appendChild(list);
         section.appendChild(swiper);
 
         return section;
-    }
-
-    function openModal(mediaUrl, description) {
-        const modal = document.createElement("div");
-        modal.className = "modal modal--device";
-
-        const embedUrl = getYouTubeEmbedUrl(mediaUrl);
-        const mediaHtml = embedUrl
-            ? '<iframe class="mac-frame__media-embed" src="' + embedUrl + '" title="' + description + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-            : '<img src="' + mediaUrl + '" alt="' + description + '" class="mac-frame__media-image">';
-
-        modal.innerHTML =
-            '<div class="modal__content">' +
-            '<div class="modal__content-container">' +
-            '<span class="modal__close-btn">&times;</span>' +
-            '<div class="mac-frame">' +
-            '<div class="mac-frame__top">' +
-            '<span class="mac-frame__dot mac-frame__dot--close"></span>' +
-            '<span class="mac-frame__dot mac-frame__dot--min"></span>' +
-            '<span class="mac-frame__dot mac-frame__dot--max"></span>' +
-            "</div>" +
-            '<div class="mac-frame__screen">' +
-            '<div class="mac-frame__media">' + mediaHtml + "</div>" +
-            "</div>" +
-            "</div>" +
-            '<p class="image-description">' + description + "</p>" +
-            "</div>" +
-            "</div>";
-
-        function closeModal() {
-            document.body.classList.remove("no-scroll");
-            if (modal.parentNode) {
-                modal.parentNode.removeChild(modal);
-            }
-        }
-
-        modal.querySelector(".modal__close-btn").addEventListener("click", closeModal);
-        modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-
-        document.body.appendChild(modal);
-        document.body.classList.add("no-scroll");
-    }
-
-    function bindModalEvents(container) {
-        container.querySelectorAll(".openModalBtn").forEach(function (button) {
-            button.addEventListener("click", function (event) {
-                const target = event.currentTarget;
-                const mediaUrl = target.getAttribute("data-media-url");
-                const description = target.getAttribute("data-description") || target.getAttribute("data-title") || "";
-
-                openModal(mediaUrl, description);
-            });
-        });
     }
 
     function initSwipers(container) {
@@ -213,7 +166,6 @@
     function initPortfolioPage(container) {
         const pageKey = container.dataset.portfolioPage;
         const layout = container.dataset.portfolioLayout || "default";
-        const modalEnabled = container.dataset.portfolioModal !== "false";
         if (!pageKey) {
             return;
         }
@@ -228,12 +180,8 @@
                 Object.entries(pageData).forEach(function (entry) {
                     const sectionName = entry[0];
                     const sectionData = entry[1];
-                    container.appendChild(createSectionElement(sectionName, sectionData, layout, modalEnabled));
+                    container.appendChild(createSectionElement(sectionName, sectionData, layout));
                 });
-
-                if (modalEnabled) {
-                    bindModalEvents(container);
-                }
 
                 initSwipers(container);
             })

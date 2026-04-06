@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
     <title></title>
     <link rel="shortcut icon" href="/img/logo.ico" />
     <meta name="description" content="Portfolio By Sally Huang" />
@@ -15,15 +16,14 @@
     <meta property="twitter:image" content="/img/FBogImage-L.png" />
     <meta name="google" content="notranslate">
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" type="text/css" />
     <link rel="stylesheet" href="/css/jquery.pagepiling.css" />
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
     <link rel="stylesheet" href="/sass/all.css" />
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J95MMXKCG7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -37,60 +37,127 @@
   </head>
 
   <body id="body" class="index">
-
-    <!-- 導覽列 -->
-    <h1>
-      <!-- <a class="nav__a--logo scrollTop" href="#body">index</a> -->
-    </h1>
+    <h1></h1>
 
     <ul id="menu">
-      <li data-menuanchor="page1" class="active ui-btn"><a href="#page1"><span>Page 1</span></a></li>
-      <li data-menuanchor="page2" class="ui-btn"><a href="#page2"><span>Page 2</span></a></li>
-      <li data-menuanchor="page3" class="ui-btn"><a href="#page3"><span>Page 3</span></a></li>
-      <li data-menuanchor="page4" class="ui-btn"><a href="#page4"><span>Page 4</span></a></li>
+      <li data-menuanchor="page1" class="active ui-btn"><a href="#page1"><span>Home</span></a></li>
+      <li data-menuanchor="page2" class="ui-btn"><a href="#page2"><span>About Me</span></a></li>
+      <li data-menuanchor="page3" class="ui-btn"><a href="#page3"><span>Web</span></a></li>
+      <li data-menuanchor="page4" class="ui-btn"><a href="#page4"><span>Gallery</span></a></li>
+      <li data-menuanchor="page5" class="ui-btn"><a href="#page5"><span>Contact</span></a></li>
     </ul>
 
     <div id="pagepiling">
       <div class="section" id="section1">
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          id="myVideo"
-          src="/223625_large.mp4">
-        </video>
+        <img class="indexMain__corner-logo" src="/img/logo.svg" alt="Sally Huang logo">
+        <video autoplay loop muted playsinline id="myVideo" src="/223625_large.mp4"></video>
         <div class="layer indexMain__container">
           <div class="indexMain__text wrap">
-            <h2>Lorem ipsum, dolor sit amet<br />
-              eligendi aut repellat consectetur<br />
-              itaque debitis dolor sit amet.</h2>
-            <h3>価値を創造して人々の日常に彩りを</h3>
+            <h2>Crafting value to bring vibrant colors to everyday life.</h2>
+            <h3>創造價值，為人們的日常生活增添色彩。</h3>
           </div>
-          <button class="btn-17 viewMore__btn wrap" onclick="window.location.href='/html/aboutMe.html';">
+        </div>
+        <img class="indexMain__image" src="https://fakeimg.pl/1200x1620" alt="">
+      </div>
+
+      <div class="section" id="section2" style="color: #111;">
+        <div class="aboutPreview wrap">
+          <p class="aboutPreview__eyebrow">About Me</p>
+          <h2 class="aboutPreview__title">黃暄晴 <span>/ Sally Huang</span></h2>
+          <p class="aboutPreview__lead">Web Designer with a visual design background, focused on brand websites,
+            campaign pages, and frontend implementation.</p>
+          <div class="aboutPreview__meta">
+            <span>#前端</span>
+            <span>#網頁設計</span>
+          </div>
+
+          <div class="aboutPreview__grid">
+            <article class="aboutPreview__card">
+              <h3>Current Focus</h3>
+              <p>網站視覺設計、前端切版、活動頁與品牌官網整體規劃</p>
+            </article>
+            <article class="aboutPreview__card">
+              <h3>Education</h3>
+              <p>佛光大學資訊應用學系碩士，具設計與技術整合背景</p>
+            </article>
+            <article class="aboutPreview__card">
+              <h3>Experience</h3>
+              <p>曾任網頁設計師、平面／網頁設計師與美術設計師，累積品牌與專案型網站實務經驗</p>
+            </article>
+          </div>
+
+          <a class="btn-17 aboutPreview__cta" href="/html/aboutMe.html">
+            <span class="text-container">
+              <span class="text">View More</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="section" id="section3">
+        <div class="webCreations__text webCreations__text--code" data-aos="fade-left" data-aos-offset="300"
+          data-aos-easing="linear" data-aos-delay="300" data-aos-duration="1000">
+          <div class="code-marquee infiniteslide" data-direction="left" data-clone="2">
+            <p>&lt;section class="gallery"&gt; const visualLanguage = ["layout", "image", "motion"];&lt;/section&gt;</p>
+            <p>function renderFrame() { return cards.map((item) =&gt; item.cover).join(" / "); }</p>
+            <p>const atmosphere = "code + visual + storytelling";</p>
+          </div>
+          <div class="code-marquee code-marquee--alt infiniteslide" data-direction="right" data-clone="2">
+            <p>grid-template-columns: repeat(12, minmax(0, 1fr)); background: radial-gradient(circle, #1f2937, #000);
+            </p>
+            <p>if (project.type === "visual") timeline.push("illustration", "photo", "branding");</p>
+            <p>export const galleryTheme = { text: "#f5f5f5", accent: "#7dd3fc" };</p>
+          </div>
+          <div class="code-marquee infiniteslide" data-direction="left" data-clone="2">
+            <p>while (ideas.length) { buildScene({ balance: "bold", spacing: "clean" }); }</p>
+            <p>&lt;img src="/img/OWG7Zm.jpg" alt="transcript" /&gt; // supporting materials and process notes</p>
+            <p>const portfolio = projects.filter((item) =&gt; item.status === "published");</p>
+          </div>
+          <div class="code-marquee code-marquee--alt infiniteslide" data-direction="right" data-clone="2">
+            <p>const designSystem = { spacing: "fluid", contrast: "high", rhythm: "steady" };</p>
+            <p>background-image: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(255, 255, 255, 0));</p>
+            <p>galleryItems.forEach((item) =&gt; composeFrame(item.thumbnail, item.caption));</p>
+          </div>
+          <div class="code-marquee infiniteslide" data-direction="left" data-clone="2">
+            <p>const viewport = { width: window.innerWidth, height: window.innerHeight };</p>
+            <p>mix-blend-mode: screen; opacity: 0.18; letter-spacing: 0.04rem;</p>
+            <p>return sections.map((section) =&gt; section.dataset.theme).filter(Boolean);</p>
+          </div>
+          <div class="code-marquee code-marquee--alt infiniteslide" data-direction="right" data-clone="2">
+            <p>async function preloadAssets() { await Promise.all(images.map(load)); }</p>
+            <p>const motionPreset = ["fade", "slide", "stagger"].join(" + ");</p>
+            <p>&lt;button class="btn-17"&gt;Open Gallery&lt;/button&gt; // primary call to action</p>
+          </div>
+        </div>
+        <div class="webCreations__container webCreations__container--code">
+          <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
+          <h2 class="orange-glow webCreations__title">WEB</h2>
+          <p class="webCreations__lead">Web Designer with a visual design background, focused on brand websites,
+            campaign pages, and frontend implementation.</p>
+          <button class="btn-17" onclick="window.location.href='/html/webCreations.html';">
             <span class="text-container">
               <span class="text">Button</span>
             </span>
           </button>
         </div>
-        <img class="indexMain__image" src="https://fakeimg.pl/1200x1620" alt="">
+        <!-- <img class="webCreations__image webCreations__image--code" src="/img/videoframe_2204.png" alt=""> -->
       </div>
 
-
-      <div class="section" id="section2">
-        <div class="webCreations__bg" aria-hidden="true">
-          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign01.webp');"></span>
-          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign02.webp');"></span>
-          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign03.webp');"></span>
-          <span class="webCreations__bg-panel" style="--panel-image: url('/img/webDesign04.webp');"></span>
+      <div class="section" id="section4">
+        <div class="otherVisualCreations__bg" aria-hidden="true">
+          <span class="otherVisualCreations__bg-panel" style="--panel-image: url('/img/webDesign01.webp');"></span>
+          <span class="otherVisualCreations__bg-panel" style="--panel-image: url('/img/webDesign02.webp');"></span>
+          <span class="otherVisualCreations__bg-panel" style="--panel-image: url('/img/webDesign03.webp');"></span>
+          <span class="otherVisualCreations__bg-panel" style="--panel-image: url('/img/webDesign04.webp');"></span>
         </div>
-        <div class="webCreations__hero">
-          <h2 class="orange-glow webCreations__title">LIST1</h2>
-          <p class="webCreations__desc">
+        <div class="otherVisualCreations__hero">
+          <h2 class="orange-glow otherVisualCreations__title">Gallery</h2>
+          <p class="otherVisualCreations__desc">
             這裡收錄我的網頁作品，包含視覺設計、互動與前端實作。
             點擊按鈕可進入完整作品列表與細節。
           </p>
-          <button class="webCreations__cta btn-17" onclick="window.location.href='/html/webCreations.html';">
+          <button class="otherVisualCreations__cta btn-17"
+            onclick="window.location.href='/html/otherVisualCreations.html';">
             <span class="text-container">
               <span class="text">View</span>
             </span>
@@ -98,68 +165,19 @@
         </div>
       </div>
 
-      <div class="section" id="section3">
-        <div class="otherVisualCreations__text" data-aos="fade-left" data-aos-offset="300" data-aos-easing="linear"
-          data-aos-delay="300" data-aos-duration="1000">
-          <div class="infiniteslide" data-direction="left" data-clone="2">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-              repellendus</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-              repellendus</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-              repellendus</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, dolore, quidem natus consectetur
-              repellendus</p>
+      <div class="section section--closing" id="section5">
+        <footer class="footer footer--closing wrap">
+          <div class="closing__inner">
+            <p class="closing__eyebrow">CONTACT</p>
+            <img class="closing__logo" src="/img/logo.svg" alt="Sally Huang logo">
+            <div class="closing__links">
+              <a class="closing__link" href="mailto:heyviehuang@gmail.com">heyviehuang@gmail.com</a>
+              <span class="closing__link">104</span>
+              <span class="closing__link">Github</span>
+              <a class="closing__link" href="/img/OWG7Zm.jpg" target="_blank" rel="noopener noreferrer">在校成績單(英文)</a>
+            </div>
+            <p class="copyRight closing__copyright">Copyright © 2026 heyviehuang. All rights reserved.</p>
           </div>
-        </div>
-        <div class="otherVisualCreations__container">
-          <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
-          <h2 class="orange-glow webCreations__title">GALLERY</h2>
-          <button class="btn-17" onclick="window.location.href='/html/otherVisualCreations.html';">
-            <span class="text-container">
-              <span class="text">Button</span>
-            </span>
-          </button>
-        </div>
-        <!-- <img class="otherVisualCreations__image" src="/img/videoframe_2204.png" alt=""> -->
-      </div>
-
-      <div class="section" id="section4">
-        <h2 class="orange-glow webCreations__title">LIST1</h2>
-        <div class="contact__container">
-          <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
-          <h2 class="contact__text">お問い合わせフォーム</h2>
-          <form action="send_email.php" method="POST" class="contact-form">
-
-            <div class="contact-form__group">
-              <label for="name" class="contact-form__label">お名前 *</label>
-              <input type="text" id="name" name="name" class="contact-form__input" required>
-            </div>
-
-            <div class="contact-form__group">
-              <label for="email" class="contact-form__label">メールアドレス *</label>
-              <input type="email" id="email" name="email" class="contact-form__input" required>
-            </div>
-
-            <div class="contact-form__group">
-              <label for="message" class="contact-form__label">お問い合わせ内容 *</label>
-              <textarea id="message" name="message" class="contact-form__textarea" rows="5" maxlength="3000"
-                required></textarea>
-            </div>
-
-            <button type="submit" class="contact-form__button btn-17">
-              <span class="text-container">
-                <span class="text">送信</span>
-              </span>
-            </button>
-          </form>
-        </div>
-        <!-- <img class="otherVisualCreations__image" src="/img/videoframe_2204.png" alt=""> -->
-        <footer class="footer wrap">
-          <!-- <h2>
-            <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
-          </h2> -->
-          <p class="copyRight">Copyright © 2024 .All rights reserved.</p>
         </footer>
       </div>
     </div>
@@ -167,7 +185,6 @@
     <button class="btnTop material-icons md-48" style="display: none" type="button">
       expand_less
     </button>
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="/js/jquery.let_it_snow.js"></script>

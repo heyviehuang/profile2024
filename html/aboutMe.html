@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-Hant">
 
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <meta name="referrer" content="no-referrer" />
+    <title>About Me | Sally Huang</title>
     <link rel="shortcut icon" href="/img/logo.ico" />
     <meta name="description" content="Portfolio By Sally Huang" />
     <meta property="og:title" content="Portfolio By Sally Huang" />
@@ -14,15 +15,13 @@
     <meta property="og:image" content="/img/FBogImage-L.png" />
     <meta property="twitter:image" content="/img/FBogImage-L.png" />
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="/css/reset.css" />
-
     <link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
     <link rel="stylesheet" href="/sass/all.css" />
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J95MMXKCG7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -36,101 +35,143 @@
   </head>
 
   <body id="body" class="aboutMe">
-    <!-- 導覽列 -->
-    <!-- 導覽列 -->
-    <h1>
-      <!-- <a class="nav__a--logo scrollTop" href="#body">index</a> -->
-    </h1>
+    <h1></h1>
 
-    <ul id="menu" style="display: none">
-      <li data-menuanchor="page1" class="active ui-btn"><a href="/html/aboutMe.html"><span>Page 1</span></a></li>
-      <li data-menuanchor="page2" class="ui-btn"><a href="/index.html#page2"><span>Page 2</span></a></li>
-      <li data-menuanchor="page3" class="ui-btn"><a href="/index.html#page3"><span>Page 3</span></a></li>
-      <li data-menuanchor="page4" class="ui-btn"><a href="/index.html#page4"><span>Page 4</span></a></li>
+    <ul id="menu" class="theme-light">
+      <li data-menuanchor="page1" class="ui-btn"><a href="/index.html#page1"><span>Home</span></a></li>
+      <li data-menuanchor="page2" class="active ui-btn"><a href="/index.html#page2"><span>About Me</span></a></li>
+      <li data-menuanchor="page3" class="ui-btn"><a href="/index.html#page3"><span>Web</span></a></li>
+      <li data-menuanchor="page4" class="ui-btn"><a href="/index.html#page4"><span>Gallery</span></a></li>
+      <li data-menuanchor="page5" class="ui-btn"><a href="/index.html#page5"><span>Contact</span></a></li>
     </ul>
 
-    <!-- 封面 -->
     <section class="header-section">
-      <!-- 動態背景 -->
-      <div class="dynamicBG-container">
-        <!-- <img class="logoMain glow-effect" src="/img/logo.svg" alt="logoMain" /> -->
-      </div>
-      <!-- <div style="height: 100vh;"></div> -->
+      <div class="dynamicBG-container"></div>
     </section>
 
-    <main class="home-snap-section">
-      <h2 class="i__title">A18 Pro</h2>
-      <h3 class="orange-glow">超能的晶片</h2>
-        <section class="i__section">
-          <p>全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧<br />全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧</p>
-        </section>
+    <main class="aboutPage wrap">
+      <section class="aboutPage__hero">
+        <p class="aboutPage__eyebrow">About Me</p>
+        <h2 class="aboutPage__title">Education, Experience & Proof</h2>
+        <p class="aboutPage__title-zh">學歷、工作經歷與相關證照</p>
+        <p class="aboutPage__lead">這裡收錄學經歷、語言、技能與其他補充證明的完整資訊</p>
+      </section>
 
-        <h2>超能的晶片</h2>
-        <section class="educationAndExperience__section">
-          <div class="education__container">
-            <span style="font-size: 1.5rem;">全新 16 核心神經網路引擎實現</span>
-            <p>速度更快、效率更高的裝置端智慧</p>
-          </div>
-          <div class="experience__container">
-            <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
-            <span style="font-size: 1rem;" class="char char01">全新 6 核心 GPU</span>
-            <p>帶
-          </div>
-        </section>
+      <section class="aboutPage__section">
+        <div class="aboutPage__section-head">
+          <p class="aboutPage__kicker">Education & Experience</p>
+          <h3>學歷與工作經歷</h3>
+        </div>
+        <div class="aboutPage__split">
+          <article class="aboutPage__panel">
+            <h4>Education</h4>
+            <div class="aboutPage__timeline">
+              <div class="aboutPage__entry">
+                <strong>私立佛光大學｜資訊應用學系 碩士畢業</strong>
+                <p>2018/09-2019/06</p>
+              </div>
+            </div>
+          </article>
+          <article class="aboutPage__panel">
+            <h4>Experience</h4>
+            <div class="aboutPage__timeline">
+              <div class="aboutPage__entry">
+                <strong>金田興業股份有限公司｜前端設計主任</strong>
+                <p>2023/06-現在</p>
+              </div>
+              <div class="aboutPage__entry">
+                <strong>智冠科技股份有限公司｜平面／網頁設計師</strong>
+                <p>2022/05-2023/02</p>
+              </div>
+              <div class="aboutPage__entry">
+                <strong>恆為科技有限公司｜美術設計師</strong>
+                <p>2019/09-2021/10</p>
+              </div>
+              <div class="aboutPage__entry">
+                <strong>財團法人資訊工業策進會｜3D 美術人員（實習）</strong>
+                <p>2017/07-2017/12</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-        <h2>16 核心</h2>
-        <section class="skills__section">
-          <div class="languageCertifications__container">
-            <span style="font-size: 1.5rem;">全新 16 核心神經網路引擎實現</span>
-            <p>速度更快、效率更高的裝置端智慧</p>
-          </div>
-          <div class="ITCertifications__container">
-            <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
-            <span style="font-size: 1rem;" class="char char01">全新 6 核心 GPU</span>
-            <p>帶來更出色的繪圖處理表現</p>
-          </div>
-        </section>
+      <section class="aboutPage__section">
+        <div class="aboutPage__section-head">
+          <p class="aboutPage__kicker">Skills</p>
+          <h3>技能與工具</h3>
+        </div>
+        <div class="aboutPage__split">
+          <article class="aboutPage__panel">
+            <h4>Design & Production</h4>
+            <ul class="aboutPage__list">
+              <li>Photoshop / Illustrator / Painter / Clip Studio Paint / Procreate</li>
+              <li>HTML / CSS / Sass / jQuery / Bootstrap / WordPress</li>
+              <li>Unity3D / DragonBones / 3ds Max / Egret Engine</li>
+              <li>Adobe XD / Figma / GitHub / Git</li>
+            </ul>
+          </article>
+          <article class="aboutPage__panel">
+            <h4>Certifications</h4>
+            <ul class="aboutPage__list">
+              <li>TQC Dreamweaver CS6</li>
+              <li>TQC Java JDK 1.4</li>
+              <li>初級行動裝置程式設計師（Android）</li>
+              <li>初級行動遊戲程式設計師（Android）</li>
+              <li>Silicon Stone Education - Unity 國際認證</li>
+              <li>Silicon Stone Education - 3D Studio Max 國際認證</li>
+              <li>Microsoft Technology Associate - Software Development Fundamentals (C#)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-        <h2>16 核心</h2>
-        <section class="additionalExperience_section">
-          <ul class="additionalExperience__list">
-            <li>
-              <h4>2016</h4>
-              <ul>
-                <li>
-                  <h5>全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧</h5>
-                </li>
-                <li>
-                  <h5>全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧</h5>
-                </li>
-                <li>
-                  <h5>全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧</h5>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h4>2017</h4>
-              <ul>
-                <li>
-                  <h5>全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧</h5>
-                </li>
-                <li>
-                  <h5>全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧</h5>
-                </li>
-                <li>
-                  <h5>全新 16 核心神經網路引擎實現速度更快、效率更高的裝置端智慧</h5>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </section>
+      <section class="aboutPage__section">
+        <div class="aboutPage__section-head">
+          <p class="aboutPage__kicker">Additional Experience & Language</p>
+          <h3>其他經歷與語言</h3>
+        </div>
+        <div class="aboutPage__split aboutPage__split--additional">
+          <article class="aboutPage__panel">
+            <h4>Additional Experience</h4>
+            <div class="aboutPage__timeline">
+              <div class="aboutPage__entry">
+                <strong>2016</strong>
+                <ul class="aboutPage__list">
+                  <li>以影像深度資訊進行行為辨識與互動行為分析, 助理, 科技部專題研究計畫</li>
+                  <li>以擴增實境為方法之生態模擬研究, 研究生, 科技部大專學生研究計畫</li>
+                  <li>宜蘭地區文創觀光跨領域加值服務之技術開發與應用研究, 研究生, 科技部專題研究計畫</li>
+                </ul>
+              </div>
+              <div class="aboutPage__entry">
+                <strong>2017</strong>
+                <ul class="aboutPage__list">
+                  <li>宜蘭地區文創觀光跨領域加值服務之技術開發與應用研究, 研究生, 科技部專題研究計畫</li>
+                  <li>DIGI + Talent跨域數位人才加速躍升計畫, 研習生, 資策會數位教育研究所實習</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <article class="aboutPage__panel aboutPage__panel--language">
+            <h4>Language</h4>
+            <div class="aboutPage__timeline">
+              <div class="aboutPage__entry">
+                <strong>中文</strong>
+                <p>CWT全民中文能力檢定-中高等</p>
+              </div>
+              <div class="aboutPage__entry">
+                <strong>英文</strong>
+                <p>GEPT全民英檢中級</p>
+              </div>
+              <div class="aboutPage__entry">
+                <strong>日文</strong>
+                <p>JLPT N4</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
-    <!-- <footer class="footer">
-      <h2>
-        <img class="footerLogo" src="/img/logo.svg" alt="footerLogo" />
-      </h2>
-      <p class="copyRight">Copyright © 2024 heyviehuang.All rights reserved.</p>
-    </footer> -->
 
     <button class="btnTop material-icons md-48" style="display: none" type="button">
       expand_less

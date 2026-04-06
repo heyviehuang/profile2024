@@ -62,7 +62,6 @@
 
         initScrollEffects() {
             const triggerHeight = this.getButtonTriggerHeight();
-            const shouldKeepMenuVisible = this.$body.hasClass("index");
 
             const updateScrollState = () => {
                 const scrollTop = this.$window.scrollTop();
@@ -70,14 +69,8 @@
 
                 if (scrollTop > triggerHeight) {
                     this.$backToTop.fadeIn();
-                    if (!shouldKeepMenuVisible) {
-                        this.$menu.fadeIn();
-                    }
                 } else {
                     this.$backToTop.fadeOut();
-                    if (!shouldKeepMenuVisible) {
-                        this.$menu.fadeOut();
-                    }
                 }
 
                 $(".animT,.animR,.animB,.animL,.animM").each(function () {
@@ -115,9 +108,7 @@
             };
 
             this.$window.on("scroll", updateScrollState);
-            if (shouldKeepMenuVisible) {
-                this.$menu.show();
-            }
+            this.$menu.show();
             updateScrollState();
         },
 
@@ -236,30 +227,7 @@
                 }
 
                 const sectionId = section.getAttribute("id");
-                if (sectionId === "section1" || sectionId === "section2") {
-                    setLight();
-                    return;
-                }
-
-                if (sectionId === "section3") {
-                    const visualContainer = section.querySelector(".otherVisualCreations__container");
-                    if (!visualContainer) {
-                        setDark();
-                        return;
-                    }
-
-                    const rect = visualContainer.getBoundingClientRect();
-                    const threshold = rect.top + rect.height * 0.3;
-
-                    if (lastMouseY >= threshold) {
-                        setLight();
-                    } else {
-                        setDark();
-                    }
-                    return;
-                }
-
-                if (sectionId === "section4") {
+                if (sectionId === "section2" || sectionId === "section5") {
                     setDark();
                     return;
                 }

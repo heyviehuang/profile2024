@@ -1,19 +1,21 @@
-// 網站主色
-// 科技公司風格顏色變數
-$primary-black: #121212; // 主要黑色
-$dark-gray: #1c1c1e; // 深灰色
-$medium-gray: #2c2c2e; // 中灰色
-$light-gray: #3a3a3c; // 淺灰色
-$cool-gray: #48484a; // 冷灰色
-$steel-gray: #636366; // 鋼灰色
-$silver-gray: #8e8e93; // 銀灰色
-$light-silver: #aeaeb2; // 淺銀色
-$gainsboro: #d1d1d6; // 亮灰色
-$white-smoke: #f2f2f7; // 白煙色
-$off-white: #e5e5ea; // 微白
-$pure-white: #ffffff; // 純白
+﻿// Color palette
+// Main grayscale set used across the site
+$primary-black: #1c1c1e; // Primary black
+$dark-gray: #1c1c1e; // Dark gray
+$medium-gray: #2c2c2e; // Medium gray
+$light-gray: #3a3a3c; // Light gray
+$cool-gray: #48484a; // Cool gray
+$steel-gray: #636366; // Steel gray
+$silver-gray: #8e8e93; // Silver gray
+$light-silver: #aeaeb2; // Light silver
+$gainsboro: #d1d1d6; // Gainsboro
+$white-smoke: #f2f2f7; // White smoke
+$off-white: #e5e5ea; // Off white
+$pure-white: #ffffff; // Pure white
+$about-tech-blue: #78b8ff; // Accent blue
+$about-tech-blue-soft: #bcd8ff; // Soft accent blue
 
-//spacer
+// Spacing
 $spacer: 1rem !default;
 $spacers: (
     0: 0,
@@ -23,13 +25,15 @@ $spacers: (
     4: $spacer * 1.5,
     5: $spacer * 3
 ) !default;
-//空間%
+
+// Position values
 $position-values: (
     0: 0,
     50: 50%,
     100: 100%
 ) !default;
-//斷點
+
+// Grid breakpoints
 $grid-breakpoints: (
     xs: 0,
     sm: 576px,
@@ -38,7 +42,8 @@ $grid-breakpoints: (
     xl: 1200px,
     xxl: 1400px
 );
-//container大小
+
+// Container widths
 $container-max-widths: (
     xxl: 1320px,
     xl: 1200px,
@@ -47,7 +52,8 @@ $container-max-widths: (
     sm: 450px,
     xsm: 400px
 );
-//boder
+
+// Border
 $border-width: 1px !default;
 $border-widths: (
     1: 1px,
@@ -58,8 +64,8 @@ $border-widths: (
 ) !default;
 $border-style: solid !default;
 $border-color: $primary-black !default;
-//文字
-//字型
+
+// Typography
 $font-family-sans-serif:
     system-ui,
     -apple-system,
@@ -75,11 +81,13 @@ $font-family-sans-serif:
     "Segoe UI Symbol",
     "Noto Color Emoji" !default;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-//行距
+
+// Line height
 $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
-//字大小
+
+// Font size scale
 $font-size-root: 16px !default;
 $font-size-base: 1rem !default;
 $h1-font-size: $font-size-base * 2.5 !default;
@@ -89,14 +97,15 @@ $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
+// Page theme colors
 $page-themes: (
     "index": (
         bg: $primary-black,
         text: $white-smoke
     ),
     "aboutMe": (
-        bg: $primary-black,
-        text: $white-smoke
+        bg: $pure-white,
+        text: $primary-black
     ),
     "webCreations": (
         bg: $white-smoke,
