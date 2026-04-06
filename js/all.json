@@ -1,235 +1,229 @@
-{
-    "page1": {
-        "LIST11": {
-            "title_en-first": "L",
-            "title_en-rest": "IST1",
-            "title_zh": "列表1",
-            "items": [
-                {
-                    "title": "列表11_1",
-                    "coverImage": "https://dummyimage.com/900x600",
-                    "fullImage": "https://www.youtube.com/watch?v=lt5qpkgf4lw",
-                    "description": "M5?M4 Pro ? M4 Max???????????????"
-                },
-                {
-                    "title": "列表11_2",
-                    "coverImage": "https://dummyimage.com/900x600",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "??????????????????????"
-                },
-                {
-                    "title": "列表11_3",
-                    "coverImage": "https://dummyimage.com/900x600",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "?????????????????????"
-                },
-                {
-                    "title": "列表11_4",
-                    "coverImage": "https://dummyimage.com/900x600",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "????????????????????"
-                },
-                {
-                    "title": "列表11_5",
-                    "coverImage": "https://dummyimage.com/900x600",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "??????????????????"
-                }
-            ]
+﻿{
+  "page1": {
+    "LIST11": {
+      "title_en-first": "品牌官網",
+      "title_en-rest": "WordPress",
+      "title_zh": "金田興業股份有限公司",
+      "items": [
+        {
+          "title": "品牌官網 01",
+          "coverImage": "/img/jtfs01.png",
+          "link": "https://sarabeth.com.tw/",
+          "description": "品牌官網首頁視覺與切版設計。"
         },
-        "LIST12": {
-            "title_en-first": "L",
-            "title_en-rest": "IST2",
-            "title_zh": "列表2",
-            "items": [
-                {
-                    "title": "列表2_1",
-                    "coverImage": "https://dummyimage.com/900x600",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "?????????????????????"
-                },
-                {
-                    "title": "列表2_2",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "?????????????????"
-                },
-                {
-                    "title": "列表2_3",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "????????????????????"
-                },
-                {
-                    "title": "列表1_4",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "?????????????????"
-                },
-                {
-                    "title": "列表1_5",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "???????????????"
-                }
-            ]
+        {
+          "title": "品牌官網 02",
+          "coverImage": "/img/jtfs02.png",
+          "link": "https://kimukatsu.com.tw/",
+          "description": "品牌內容與產品資訊整合頁面設計。"
         },
-        "LIST13": {
-            "title_en-first": "L",
-            "title_en-rest": "IST2",
-            "title_zh": "列表2",
-            "items": [
-                {
-                    "title": "列表2_1",
-                    "coverImage": "https://dummyimage.com/900x600",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "?????????????????????"
-                },
-                {
-                    "title": "列表2_2",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "?????????????????"
-                },
-                {
-                    "title": "列表2_3",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "????????????????????"
-                },
-                {
-                    "title": "列表1_4",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "?????????????????"
-                },
-                {
-                    "title": "列表1_5",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250",
-                    "description": "???????????????"
-                }
-            ]
+        {
+          "title": "品牌官網 03",
+          "coverImage": "/img/jtfs03.png",
+          "link": "https://ladynara.com.tw/",
+          "description": "首頁主視覺與品牌調性延伸設計。"
+        },
+        {
+          "title": "品牌官網 04",
+          "coverImage": "/img/jtfs04.png",
+          "link": "https://tokyo-sundubu.com.tw/",
+          "description": "活動檔期與導購資訊頁面規劃。"
+        },
+        {
+          "title": "品牌官網 05",
+          "coverImage": "/img/jtfs05.png",
+          "link": "https://nara.com.tw/",
+          "description": "餐飲品牌形象頁與前端切版整理。"
         }
+      ]
     },
-    "page2": {
-        "LIST21": {
-            "title_en-first": "L",
-            "title_en-rest": "IST1",
-            "title_zh": "列表1",
-            "items": [
-                {
-                    "title": "列表21_1",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/1200x4000"
-                },
-                {
-                    "title": "列表21_2",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表21_3",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表21_4",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表21_5",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                }
-            ]
+    "LIST12": {
+      "title_en-first": "一頁式活動頁",
+      "title_en-rest": "WordPress & Bootstrap",
+      "title_zh": "智冠科技股份有限公司",
+      "items": [
+        {
+          "title": "活動頁 01",
+          "coverImage": "/img/mycard01.png",
+          "link": "https://dummyimage.com/300x250",
+          "description": "以活動主題為核心的一頁式頁面設計。"
         },
-        "LIST22": {
-            "title_en-first": "L",
-            "title_en-rest": "IST2",
-            "title_zh": "列表2",
-            "items": [
-                {
-                    "title": "列表2_1",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表2_2",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表2_3",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表1_4",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表1_5",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                }
-            ]
+        {
+          "title": "活動頁 02",
+          "coverImage": "/img/mycard02.webp",
+          "link": "https://dummyimage.com/300x250",
+          "description": "整合活動資訊、CTA 與視覺節奏的落地頁。"
         },
-        "LIST23": {
-            "title_en-first": "L",
-            "title_en-rest": "IST3",
-            "title_zh": "列表3",
-            "items": [
-                {
-                    "title": "列表3_1",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/500x450"
-                },
-                {
-                    "title": "列表3_2",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表3_3",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表3_4",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                }
-            ]
+        {
+          "title": "活動頁 03",
+          "coverImage": "/img/mycard03.webp",
+          "link": "https://dummyimage.com/300x250",
+          "description": "配合行銷檔期製作的活動宣傳頁面。"
         },
-        "LIST24": {
-            "title_en-first": "L",
-            "title_en-rest": "IST4",
-            "title_zh": "列表4",
-            "items": [
-                {
-                    "title": "列表4_1",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表4_2",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表4_3",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                },
-                {
-                    "title": "列表4_4",
-                    "coverImage": "https://dummyimage.com/500x500",
-                    "fullImage": "https://dummyimage.com/300x250"
-                }
-            ]
+        {
+          "title": "活動頁 04",
+          "coverImage": "/img/mycard04.webp",
+          "link": "https://dummyimage.com/300x250",
+          "description": "以 Bootstrap 架構完成的活動頁切版。"
+        },
+        {
+          "title": "活動頁 05",
+          "coverImage": "/img/mycard05.webp",
+          "link": "https://dummyimage.com/300x250",
+          "description": "兼顧品牌視覺與資訊導流的一頁式頁面。"
         }
+      ]
+    },
+    "LIST13": {
+      "title_en-first": "品牌官網 & 電子商務平台 & 設計稿",
+      "title_en-rest": "個人作品",
+      "title_zh": "手刻網站 & WordPress & Adobe XD",
+      "items": [
+        {
+          "title": "品牌官網 01",
+          "coverImage": "/img/webDesign01.webp",
+          "link": "https://heyviehuang.github.io/ningxia/",
+          "description": "手刻網站作品，著重品牌資訊整理與版面切版。"
+        },
+        {
+          "title": "品牌官網 02",
+          "coverImage": "/img/webDesign02.webp",
+          "link": "https://heyviehuang.github.io/flyHotel/",
+          "description": "旅宿形象網站練習，聚焦視覺節奏與資訊架構。"
+        },
+        {
+          "title": "電子商務網站",
+          "coverImage": "/img/webDesign03.webp",
+          "link": "https://clearskytuckshop.com/",
+          "description": "電商網站作品，整合商品展示與品牌內容呈現。"
+        },
+        {
+          "title": "售票網站設計稿",
+          "coverImage": "/img/webDesign04.webp",
+          "link": "https://xd.adobe.com/view/3af5096b-9a31-41a7-b79b-11af403d3e23-6fa6/",
+          "description": "以 Adobe XD 製作的介面原型與互動流程設計。"
+        }
+      ]
     }
+  },
+  "page2": {
+    "LIST21": {
+      "title_en-first": "Banner",
+      "title_en-rest": "Design",
+      "title_zh": "橫幅設計",
+      "items": [
+        {
+          "title": "作品 01",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/1200x4000"
+        },
+        {
+          "title": "作品 02",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 03",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 04",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 05",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        }
+      ]
+    },
+    "LIST22": {
+      "title_en-first": "Digital",
+      "title_en-rest": "Art",
+      "title_zh": "電腦繪圖",
+      "items": [
+        {
+          "title": "作品 01",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 02",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 03",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 04",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 05",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        }
+      ]
+    },
+    "LIST23": {
+      "title_en-first": "Traditional",
+      "title_en-rest": "Art",
+      "title_zh": "傳統繪圖",
+      "items": [
+        {
+          "title": "作品 01",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/500x450"
+        },
+        {
+          "title": "作品 02",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 03",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 04",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        }
+      ]
+    },
+    "LIST24": {
+      "title_en-first": "Game",
+      "title_en-rest": "Design",
+      "title_zh": "遊戲設計",
+      "items": [
+        {
+          "title": "作品 01",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 02",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 03",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        },
+        {
+          "title": "作品 04",
+          "coverImage": "https://dummyimage.com/500x500",
+          "link": "https://dummyimage.com/300x250"
+        }
+      ]
+    }
+  }
 }

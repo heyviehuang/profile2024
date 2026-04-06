@@ -18,61 +18,73 @@
         return dataPromise;
     }
 
-    function getYouTubeId(url) {
-        if (!url) {
-            return "";
-        }
-
-        const shortMatch = url.match(/youtu\.be\/([a-zA-Z0-9_-]{6,})/);
-        if (shortMatch) {
-            return shortMatch[1];
-        }
-
-        const watchMatch = url.match(/[?&]v=([a-zA-Z0-9_-]{6,})/);
-        if (watchMatch) {
-            return watchMatch[1];
-        }
-
-        const embedMatch = url.match(/youtube\.com\/embed\/([a-zA-Z0-9_-]{6,})/);
-        if (embedMatch) {
-            return embedMatch[1];
-        }
-
-        return "";
-    }
-
-    function getYouTubeEmbedUrl(url) {
-        const id = getYouTubeId(url);
-        if (!id) {
-            return "";
-        }
-
-        return "https://www.youtube.com/embed/" + id + "?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&fs=1";
+    function escapeHtml(value) {
+        return String(value || "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#39;");
     }
 
     function createMediaMarkup(item) {
-        return '<img src="' + item.coverImage + '" alt="' + item.title + '">';
+        const alt = item.alt || item.title || "Portfolio item";
+
+        return '<img class="portfolio-card__image" src="' + escapeHtml(item.coverImage) + '" alt="' + escapeHtml(alt) + '" loading="lazy" decoding="async">';
+    }
+
+    function isExternalLink(url) {
+        if (!url || typeof url !== "string") {
+            return false;
+        }
+
+        try {
+            const parsedUrl = new URL(url, window.location.origin);
+            const isHttp = parsedUrl.protocol === "http:" || parsedUrl.protocol === "https:";
+            const isDummyImage = /dummyimage\.com$/i.test(parsedUrl.hostname);
+            const isImageFile = /\.(png|jpe?g|webp|gif|svg)([?#].*)?$/i.test(parsedUrl.pathname);
+
+            return isHttp && !isDummyImage && !isImageFile;
+        } catch (error) {
+            return false;
+        }
     }
 
     function getExternalUrl(item) {
-        return item.externalUrl || item.liveUrl || item.websiteUrl || "";
+        const candidates = [
+            item.link,
+            item.LINK,
+            item.externalUrl,
+            item.linkUrl,
+            item.liveUrl,
+            item.websiteUrl,
+            item.fullImage
+        ];
+
+        return candidates.find(isExternalLink) || "";
+    }
+
+    function openExternalUrl(url) {
+        const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+
+        if (newWindow) {
+            newWindow.opener = null;
+        }
     }
 
     function createCardContent(item, sectionName, layout) {
-        const isFeatured = layout === "web" && sectionName === "LIST11";
-        const showsMeta = layout === "web" && (sectionName === "LIST12" || sectionName === "LIST13");
-        const descriptionHtml = item.description ? '<p class="web-item__desc">' + item.description + "</p>" : "";
-        const overlayHtml = isFeatured
-            ? '<div class="web-item__overlay"><h5 class="web-item__title">' + item.title + "</h5>" + descriptionHtml + "</div>"
+        const showsMeta = layout === "web" && (sectionName === "LIST11" || sectionName === "LIST12" || sectionName === "LIST13");
+        const showsImageTitle = showsMeta || layout === "visual";
+        const imageTitleHtml = showsImageTitle && item.title
+            ? '<span class="portfolio-card__image-title">' + escapeHtml(item.title) + "</span>"
             : "";
-        const metaHtml = showsMeta
-            ? '<div class="web-item__meta"><h5 class="web-item__title">' + item.title + "</h5>" + descriptionHtml + "</div>"
-            : "";
-        const titleHtml = isFeatured || showsMeta ? "" : "<h5>" + item.title + "</h5>";
+        const descriptionHtml = item.description ? '<p class="web-item__desc">' + escapeHtml(item.description) + "</p>" : "";
+        const metaHtml = showsMeta ? '<div class="web-item__meta">' + descriptionHtml + "</div>" : "";
+        const titleHtml = showsImageTitle ? "" : "<h5>" + escapeHtml(item.title) + "</h5>";
 
         return {
             media: createMediaMarkup(item),
-            overlay: overlayHtml,
+            imageTitle: imageTitleHtml,
             meta: metaHtml,
             title: titleHtml
         };
@@ -80,24 +92,24 @@
 
     function createCardElement(item, sectionName, layout) {
         const li = document.createElement("li");
-        li.className = "swiper-slide horizontal-list__item";
+        li.className = (layout === "visual" ? "macy-grid__item " : "swiper-slide ") + "horizontal-list__item";
 
         const externalUrl = getExternalUrl(item);
         const content = createCardContent(item, sectionName, layout);
 
         if (externalUrl) {
             li.innerHTML =
-                '<a class="openModalBtn" href="' + externalUrl + '" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">' +
+                '<button class="openModalBtn portfolio-card__trigger" type="button" data-external-url="' + escapeHtml(externalUrl) + '" aria-label="Open external link for ' + escapeHtml(item.title || "portfolio item") + '">' +
                 content.media +
-                content.overlay +
-                "</a>" +
+                content.imageTitle +
+                "</button>" +
                 content.meta +
                 content.title;
         } else {
             li.innerHTML =
                 '<div class="openModalBtn">' +
                 content.media +
-                content.overlay +
+                content.imageTitle +
                 "</div>" +
                 content.meta +
                 content.title;
@@ -111,10 +123,23 @@
         section.className = "section section--" + sectionName;
         section.innerHTML =
             '<h3 class="animT blurIncontainer">' +
-            '<span class="char char02">' + sectionData["title_en-first"] + "</span>" +
-            '<span class="char char03">' + sectionData["title_en-rest"] + "</span><br />" +
-            '<span style="font-size: 1rem;" class="char char01">' + sectionData.title_zh + "</span>" +
+            '<span class="char char02">' + escapeHtml(sectionData["title_en-first"]) + "</span><br />" +
+            '<span class="char char03">' + escapeHtml(sectionData["title_en-rest"]) + "</span><br />" +
+            '<span style="font-size: 1rem;" class="char char01">' + escapeHtml(sectionData.title_zh) + "</span>" +
             "</h3>";
+
+        if (layout === "visual") {
+            const grid = document.createElement("ul");
+            grid.className = "macy-grid";
+            grid.id = "macy-" + sectionName.toLowerCase();
+
+            sectionData.items.forEach(function (item) {
+                grid.appendChild(createCardElement(item, sectionName, layout));
+            });
+
+            section.appendChild(grid);
+            return section;
+        }
 
         const swiper = document.createElement("div");
         swiper.className = "swiper mySwiper";
@@ -137,29 +162,156 @@
             return;
         }
 
-        function getEdgeOffset() {
+        function getStartOffset() {
             return window.matchMedia("(max-width: 768px)").matches ? 24 : 50;
         }
 
+        function getEndOffset() {
+            return window.matchMedia("(max-width: 768px)").matches ? 40 : 96;
+        }
+
+        function bindImageUpdates(swiperInstance, swiperElement) {
+            const images = swiperElement.querySelectorAll("img");
+
+            images.forEach(function (image) {
+                if (image.complete) {
+                    return;
+                }
+
+                image.addEventListener("load", function () {
+                    swiperInstance.update();
+                }, { once: true });
+
+                image.addEventListener("error", function () {
+                    swiperInstance.update();
+                }, { once: true });
+            });
+        }
+
         container.querySelectorAll(".mySwiper").forEach(function (swiperElement) {
-            new Swiper(swiperElement, {
+            const swiperInstance = new Swiper(swiperElement, {
                 slidesPerView: "auto",
                 slidesPerGroup: 1,
                 spaceBetween: 10,
-                slidesOffsetBefore: getEdgeOffset(),
-                slidesOffsetAfter: getEdgeOffset(),
+                slidesOffsetBefore: getStartOffset(),
+                slidesOffsetAfter: getEndOffset(),
                 watchOverflow: true,
                 observer: true,
                 observeParents: true,
                 on: {
                     resize: function () {
-                        const edgeOffset = getEdgeOffset();
-                        this.params.slidesOffsetBefore = edgeOffset;
-                        this.params.slidesOffsetAfter = edgeOffset;
+                        this.params.slidesOffsetBefore = getStartOffset();
+                        this.params.slidesOffsetAfter = getEndOffset();
                         this.update();
                     }
                 }
             });
+
+            bindImageUpdates(swiperInstance, swiperElement);
+        });
+    }
+
+    function initMacyLayouts(container) {
+        if (typeof Macy === "undefined") {
+            return;
+        }
+
+        container.querySelectorAll(".macy-grid").forEach(function (grid) {
+            const macyInstance = Macy({
+                container: "#" + grid.id,
+                trueOrder: false,
+                waitForImages: true,
+                margin: {
+                    x: 24,
+                    y: 28
+                },
+                columns: 4,
+                breakAt: {
+                    1200: 3,
+                    940: 2,
+                    520: 1
+                }
+            });
+
+            grid.querySelectorAll("img").forEach(function (image) {
+                if (image.complete) {
+                    return;
+                }
+
+                const refreshLayout = function () {
+                    macyInstance.recalculate(true);
+                };
+
+                image.addEventListener("load", refreshLayout, { once: true });
+                image.addEventListener("error", refreshLayout, { once: true });
+            });
+        });
+    }
+
+    function initExternalLinks(container) {
+        container.addEventListener("click", function (event) {
+            const trigger = event.target.closest(".portfolio-card__trigger");
+
+            if (!trigger) {
+                return;
+            }
+
+            const externalUrl = trigger.dataset.externalUrl;
+            if (!externalUrl) {
+                return;
+            }
+
+            event.preventDefault();
+            openExternalUrl(externalUrl);
+        });
+
+        container.addEventListener("keydown", function (event) {
+            const trigger = event.target.closest(".portfolio-card__trigger");
+
+            if (!trigger || (event.key !== "Enter" && event.key !== " ")) {
+                return;
+            }
+
+            const externalUrl = trigger.dataset.externalUrl;
+            if (!externalUrl) {
+                return;
+            }
+
+            event.preventDefault();
+            openExternalUrl(externalUrl);
+        });
+    }
+
+    function revealInitialSectionHeading(container) {
+        const firstHeading = container.querySelector(".section .animT");
+        if (firstHeading) {
+            firstHeading.classList.add("fadeIn");
+        }
+
+        const firstBlurHeading = container.querySelector(".section .blurIncontainer");
+        if (!firstBlurHeading) {
+            return;
+        }
+
+        firstBlurHeading.querySelectorAll(".char01").forEach(function (element) {
+            element.style.animationName = "blurInAnim";
+            element.style.animationDuration = "1.6s";
+            element.style.animationDelay = "0s";
+            element.style.animationFillMode = "forwards";
+        });
+
+        firstBlurHeading.querySelectorAll(".char02").forEach(function (element) {
+            element.style.animationName = "blurInAnim";
+            element.style.animationDuration = "1.6s";
+            element.style.animationDelay = "0.16s";
+            element.style.animationFillMode = "forwards";
+        });
+
+        firstBlurHeading.querySelectorAll(".char03").forEach(function (element) {
+            element.style.animationName = "blurInAnim";
+            element.style.animationDuration = "1.6s";
+            element.style.animationDelay = "0.32s";
+            element.style.animationFillMode = "forwards";
         });
     }
 
@@ -183,7 +335,13 @@
                     container.appendChild(createSectionElement(sectionName, sectionData, layout));
                 });
 
-                initSwipers(container);
+                if (layout === "visual") {
+                    initMacyLayouts(container);
+                } else {
+                    initSwipers(container);
+                }
+                initExternalLinks(container);
+                revealInitialSectionHeading(container);
             })
             .catch(function (error) {
                 console.error("Portfolio data load failed:", error);
