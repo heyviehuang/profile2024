@@ -4,8 +4,10 @@
     const site = {
         init() {
             this.cacheDom();
+            this.initRouteLoader();
             this.bindScrollTopLinks();
             this.bindBackToTop();
+            this.bindPageTransitions();
             this.initScrollEffects();
             this.initInfiniteSlide();
             this.initMasonry();
@@ -19,6 +21,146 @@
             this.$body = $("body");
             this.$menu = $("#menu");
             this.$backToTop = $(".btnTop");
+        },
+
+        initRouteLoader() {
+            if ($(".route-loader").length) {
+                return;
+            }
+
+            const loaderHtml = [
+                '<div class="route-loader" aria-hidden="true">',
+                '<div class="route-loader__inner">',
+                '<div class="route-loader__mark">',
+                '<img class="route-loader__logo" src="/img/logo.svg" alt="Sally Huang logo">',
+                '<span class="route-loader__spinner"></span>',
+                "</div>",
+                "</div>",
+                "</div>"
+            ].join("");
+
+            this.$body.append(loaderHtml);
+
+            if (this.shouldShowInitialLoader()) {
+                this.$body.addClass("is-link-loading is-initial-loading");
+            }
+        },
+
+        shouldShowInitialLoader() {
+            const navigationEntries = performance.getEntriesByType &&
+                performance.getEntriesByType("navigation");
+            const navigationType = navigationEntries && navigationEntries[0] ? navigationEntries[0].type : "";
+
+            return this.$body.hasClass("index") && navigationType === "reload";
+        },
+
+        showRouteLoader() {
+            this.$body.addClass("is-link-loading");
+        },
+
+        hideRouteLoader() {
+            this.$body.removeClass("is-link-loading");
+        },
+
+        isPageTransitionTarget(url) {
+            if (!url || typeof url !== "string") {
+                return false;
+            }
+
+            if (
+                url.indexOf("mailto:") === 0 ||
+                url.indexOf("tel:") === 0 ||
+                url.indexOf("javascript:") === 0
+            ) {
+                return false;
+            }
+
+            const targetUrl = new URL(url, window.location.href);
+
+            if (targetUrl.origin !== window.location.origin) {
+                return false;
+            }
+
+            const isSamePageHashOnly =
+                targetUrl.pathname === window.location.pathname &&
+                targetUrl.search === window.location.search &&
+                targetUrl.hash;
+
+            return !isSamePageHashOnly;
+        },
+
+        bindPageTransitions() {
+            const self = this;
+
+            const startPageTransition = function (url) {
+                self.showRouteLoader();
+                window.requestAnimationFrame(function () {
+                    window.requestAnimationFrame(function () {
+                        window.setTimeout(function () {
+                            window.location.href = url;
+                        }, 220);
+                    });
+                });
+            };
+
+            window.showRouteLoader = function () {
+                self.showRouteLoader();
+            };
+
+            window.hideRouteLoader = function () {
+                self.hideRouteLoader();
+            };
+
+            $(document).on("click", 'a[href]', function (event) {
+                if (
+                    event.isDefaultPrevented() ||
+                    event.metaKey ||
+                    event.ctrlKey ||
+                    event.shiftKey ||
+                    event.altKey ||
+                    event.which === 2
+                ) {
+                    return;
+                }
+
+                const href = $(this).attr("href");
+                const target = $(this).attr("target");
+
+                if (target === "_blank" || !self.isPageTransitionTarget(href)) {
+                    return;
+                }
+
+                event.preventDefault();
+                startPageTransition(href);
+            });
+
+            window.navigateWithLoader = function (url) {
+                if (!self.isPageTransitionTarget(url)) {
+                    window.location.href = url;
+                    return;
+                }
+
+                startPageTransition(url);
+            };
+
+            $(window).on("pageshow", function () {
+                if (self.$body.hasClass("is-initial-loading")) {
+                    return;
+                }
+
+                self.hideRouteLoader();
+            });
+
+            $(window).on("load", function () {
+                if (!self.$body.hasClass("is-initial-loading")) {
+                    return;
+                }
+
+                window.setTimeout(function () {
+                    self.$body.removeClass("is-initial-loading");
+                    self.hideRouteLoader();
+                }, 420);
+            });
         },
 
         bindScrollTopLinks() {
@@ -190,10 +332,10 @@
 
         initIndexCursor() {
             const isIndex = document.body.classList.contains("index");
-            const supportsHover = window.matchMedia &&
-                window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+            const isCoarsePointer = window.matchMedia &&
+                window.matchMedia("(pointer: coarse)").matches;
 
-            if (!isIndex || !supportsHover) {
+            if (!isIndex || isCoarsePointer) {
                 return;
             }
 
@@ -201,8 +343,7 @@
             cursor.className = "cursor-orbit is-light";
             cursor.innerHTML = '<span class="cursor-orbit__dot"></span>';
             document.body.appendChild(cursor);
-
-            let lastMouseY = 0;
+            document.body.classList.add("cursor-ready");
 
             const setLight = () => {
                 cursor.classList.add("is-light");
@@ -235,13 +376,15 @@
                 setLight();
             };
 
-            window.addEventListener("mousemove", function (event) {
+            const updateCursorPosition = function (event) {
                 cursor.classList.add("is-active");
                 cursor.style.left = event.clientX + "px";
                 cursor.style.top = event.clientY + "px";
-                lastMouseY = event.clientY;
                 setCursorTone(document.elementFromPoint(event.clientX, event.clientY));
-            });
+            };
+
+            window.addEventListener("pointermove", updateCursorPosition, { passive: true });
+            window.addEventListener("mousemove", updateCursorPosition, { passive: true });
 
             window.addEventListener("mouseleave", function () {
                 cursor.classList.remove("is-active");

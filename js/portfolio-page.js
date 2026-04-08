@@ -3,6 +3,7 @@
 
     const DATA_URL = "/js/all.json";
     let dataPromise;
+    let routeLoaderElement;
 
     function getPortfolioData() {
         if (!dataPromise) {
@@ -64,12 +65,57 @@
         return candidates.find(isExternalLink) || "";
     }
 
+    function ensureRouteLoader() {
+        if (routeLoaderElement) {
+            return routeLoaderElement;
+        }
+
+        routeLoaderElement = document.createElement("div");
+        routeLoaderElement.className = "route-loader";
+        routeLoaderElement.setAttribute("aria-hidden", "true");
+        routeLoaderElement.innerHTML =
+            '<div class="route-loader__inner">' +
+            '<div class="route-loader__mark">' +
+            '<img class="route-loader__logo" src="/img/logo.svg" alt="Sally Huang logo">' +
+            '<span class="route-loader__spinner"></span>' +
+            "</div>" +
+            "</div>";
+
+        document.body.appendChild(routeLoaderElement);
+        return routeLoaderElement;
+    }
+
+    function showRouteLoader() {
+        if (typeof window.showRouteLoader === "function") {
+            window.showRouteLoader();
+            return;
+        }
+
+        ensureRouteLoader();
+        document.body.classList.add("is-link-loading");
+    }
+
+    function hideRouteLoader() {
+        if (typeof window.hideRouteLoader === "function") {
+            window.hideRouteLoader();
+            return;
+        }
+
+        document.body.classList.remove("is-link-loading");
+    }
+
     function openExternalUrl(url) {
+        showRouteLoader();
+
         const newWindow = window.open(url, "_blank", "noopener,noreferrer");
 
         if (newWindow) {
             newWindow.opener = null;
+            window.setTimeout(hideRouteLoader, 900);
+            return;
         }
+
+        hideRouteLoader();
     }
 
     function createCardContent(item, sectionName, layout) {

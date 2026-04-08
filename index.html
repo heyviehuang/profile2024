@@ -37,11 +37,17 @@
   </head>
 
   <body id="body" class="index">
-    <h1></h1>
+    <h1 class="site-header">
+      <div class="site-header__inner wrap">
+        <a class="site-header__logo site-header__logo--hero" href="/index.html#page1" aria-label="Back to Home">
+          <img src="/img/logo.svg" alt="Sally Huang logo">
+        </a>
+      </div>
+    </h1>
 
     <ul id="menu">
       <li data-menuanchor="page1" class="active ui-btn"><a href="#page1"><span>Home</span></a></li>
-      <li data-menuanchor="page2" class="ui-btn"><a href="#page2"><span>About Me</span></a></li>
+      <li data-menuanchor="page2" class="ui-btn"><a href="#page2"><span>About</span></a></li>
       <li data-menuanchor="page3" class="ui-btn"><a href="#page3"><span>Web</span></a></li>
       <li data-menuanchor="page4" class="ui-btn"><a href="#page4"><span>Gallery</span></a></li>
       <li data-menuanchor="page5" class="ui-btn"><a href="#page5"><span>Contact</span></a></li>
@@ -49,7 +55,6 @@
 
     <div id="pagepiling">
       <div class="section" id="section1">
-        <img class="indexMain__corner-logo" src="/img/logo.svg" alt="Sally Huang logo">
         <video autoplay loop muted playsinline id="myVideo" src="/223625_large.mp4"></video>
         <div class="layer indexMain__container">
           <div class="indexMain__text wrap">
@@ -64,8 +69,8 @@
         <div class="aboutPreview wrap">
           <p class="aboutPreview__eyebrow">About Me</p>
           <h2 class="aboutPreview__title">黃暄晴 <span>/ Sally Huang</span></h2>
-          <p class="aboutPreview__lead">Web Designer with a visual design background, focused on brand websites,
-            campaign pages, and frontend implementation.</p>
+          <p class="aboutPreview__lead">具視覺設計背景的網頁設計師，專注於品牌官網、活動頁與前端實作。
+          </p>
           <div class="aboutPreview__meta">
             <span>#前端</span>
             <span>#網頁設計</span>
@@ -131,10 +136,10 @@
         </div>
         <div class="webCreations__container webCreations__container--code">
           <!-- <h2 class="sectionTitle">Other Visual Creations</h2> -->
-          <h2 class="orange-glow webCreations__title">WEB</h2>
+          <h2 class="webCreations__title">WEB</h2>
           <p class="webCreations__lead">Web Designer with a visual design background, focused on brand websites,
             campaign pages, and frontend implementation.</p>
-          <button class="btn-17" onclick="window.location.href='/html/webCreations.html';">
+          <button class="btn-17" onclick="navigateWithLoader('/html/webCreations.html');">
             <span class="text-container">
               <span class="text">Button</span>
             </span>
@@ -151,13 +156,13 @@
           <span class="otherVisualCreations__bg-panel" style="--panel-image: url('/img/webDesign04.webp');"></span>
         </div>
         <div class="otherVisualCreations__hero">
-          <h2 class="orange-glow otherVisualCreations__title">Gallery</h2>
+          <h2 class="otherVisualCreations__title">Gallery</h2>
           <p class="otherVisualCreations__desc">
             這裡收錄我的網頁作品，包含視覺設計、互動與前端實作。
             點擊按鈕可進入完整作品列表與細節。
           </p>
           <button class="otherVisualCreations__cta btn-17"
-            onclick="window.location.href='/html/otherVisualCreations.html';">
+            onclick="navigateWithLoader('/html/otherVisualCreations.html');">
             <span class="text-container">
               <span class="text">View</span>
             </span>

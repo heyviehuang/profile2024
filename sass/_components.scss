@@ -1,6 +1,6 @@
-// 定義水平列表的樣式
+﻿// Horizontal list cards
 .horizontal-list {
-  @include horizontal-list(2rem); // 使用 Mixin，間距設為 2rem
+  @include horizontal-list(2rem); // Shared horizontal-list mixin with 2rem gap
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 
@@ -16,7 +16,7 @@
       transform 0.3s,
       box-shadow 0.3s;
 
-    // 標題樣式
+    // Card title
     h5 {
       position: absolute;
       top: 1rem;
@@ -25,16 +25,16 @@
       margin: 0.5rem 0;
     }
 
-    // 滑鼠懸停效果
+    // Hover state
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
   }
 }
-/* 按鈕--------------------------------------- */
+/* Buttons --------------------------------------- */
 
-// Top按鈕
+// Back to top button
 .btnTop {
   position: fixed;
   right: 1.5%;
@@ -51,7 +51,7 @@
   }
 }
 
-// 黑白按鈕
+// Rounded primary button
 .btn-17,
 .btn-17 *,
 .btn-17 :after,
@@ -65,7 +65,7 @@
 .btn-17 {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: button;
-  background-color: #1c1c1e;
+  background-color: $bg-amber-sunset;
   background-image: none;
   color: #fff;
   cursor: pointer;
@@ -125,15 +125,16 @@
 
 .btn-17 .text-container {
   display: block;
-  mix-blend-mode: difference;
 }
 
 .btn-17 .text {
   display: block;
   position: relative;
+  color: #fff;
 }
 
 .btn-17:hover .text {
+  color: $bg-amber-sunset;
   -webkit-animation: move-up-alternate 0.3s forwards;
   animation: move-up-alternate 0.3s forwards;
 }
@@ -180,11 +181,11 @@
   background: #fff;
   content: "";
   display: block;
-  height: 102%;
+  height: 100%;
   left: calc(-50% - 50% * var(--skew));
   pointer-events: none;
   position: absolute;
-  top: -104%;
+  top: -100%;
   transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
   transition: transform 0.2s ease;
   width: 100%;
@@ -202,10 +203,10 @@
 }
 
 .btn-17:hover:after {
-  --progress: -102%;
+  --progress: -101.5%;
 }
 
-// 亂碼按鈕
+// Navigation button
 /* From Uiverse.io by Galahhad */
 .ui-btn {
   // --btn-default-bg: rgb(41, 41, 41);
@@ -219,13 +220,13 @@
   --hover-btn-color: #dbdeaf;
   --default-btn-color: #fff;
   --font-size: 16px;
-  /* 👆 this field should not be empty */
+  /* Required field */
   --font-weight: 600;
   --font-family: Menlo, Roboto Mono, monospace;
-  /* 👆 this field should not be empty */
+  /* Required field */
 }
 
-/* button settings 👆 */
+/* Button settings */
 
 .ui-btn {
   box-sizing: border-box;
@@ -295,7 +296,7 @@
   }
 
   25% {
-    content: "№:0";
+    content: "??0";
   }
 
   // 30% {
@@ -364,7 +365,7 @@
   }
 }
 
-// Top按鈕
+// Material icons
 .material-icons {
   color: #fff;
 }
@@ -393,10 +394,10 @@
   background-color: $dark-gray;
 }
 
-/* 彈窗--------------------------------------- */
+/* Modal --------------------------------------- */
 
-/* 彈窗內容 */
-/* 彈窗背景樣式 */
+/* Modal container */
+/* Modal overlay */
 .modal {
   position: fixed;
   top: 0;
@@ -410,7 +411,7 @@
   z-index: 1000;
 }
 
-/* 彈窗內容樣式 */
+/* Modal content */
 .modal__content {
   position: relative;
   width: 60%;
@@ -459,7 +460,7 @@
   }
 }
 
-/* 關閉按鈕樣式 */
+/* Modal close button */
 .modal__close-btn {
   position: absolute;
   top: 2rem;
@@ -473,14 +474,14 @@
   font-size: 3rem;
 }
 
-/* 鎖定滾動 */
+/* Prevent body scroll */
 .no-scroll {
   overflow: hidden;
 }
 
-/* 動畫--------------------------------------- */
+/* Scroll animations --------------------------------------- */
 
-//淡入淡出動畫
+// Entry animations
 .animT,
 .animR,
 .animB,
@@ -529,7 +530,7 @@
   -webkit-transform: translateY(0);
 }
 
-// 文字模糊淡入動畫
+// Blur-in title animation
 .blurIncontainer {
   .char {
     opacity: 0;
@@ -557,25 +558,25 @@
   }
 }
 
-/* 效果--------------------------------------- */
+/* Glow text --------------------------------------- */
 
-// 霓虹燈文字
-// 橙色霓虹燈
+// Neon text presets
+// Orange neon glow
 .orange-glow {
   @include neon-text(#ffae42, 2s);
 }
 
-// 藍色霓虹燈
+// Blue neon glow
 .blue-glow {
   @include neon-text(#42a5f5, 1.8s);
 }
 
-// 粉色霓虹燈
+// Pink neon glow
 .pink-glow {
   @include neon-text(#ff4081, 1.5s);
 }
 
-// 全屏滾動
+// Section text alignment
 /* Centered texts in each section
 * --------------------------------------- */
 .section {
@@ -619,7 +620,7 @@
   overflow: hidden;
 }
 
-/* 表單--------------------------------------- */
+/* 銵典--------------------------------------- */
 .contact-form {
   &__group {
     width: 50%;
@@ -917,4 +918,81 @@
   left: 0.85rem;
   font-size: 0.9rem;
   background: rgba(17, 17, 17, 0.42);
+}
+
+.route-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  pointer-events: all;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(248, 248, 252, 0.84);
+  backdrop-filter: blur(10px);
+  transition:
+    opacity 0.32s ease,
+    visibility 0.32s ease;
+}
+
+.route-loader__inner {
+  display: grid;
+  justify-items: center;
+  gap: 0.9rem;
+}
+
+.route-loader__mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(78px, 12vw, 112px);
+  aspect-ratio: 1;
+}
+
+.route-loader__logo {
+  width: 58%;
+  height: auto;
+  opacity: 0.92;
+  animation: routeLoaderFloat 1.3s ease-in-out infinite;
+}
+
+.route-loader__spinner {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(17, 17, 17, 0.1);
+  border-top-color: rgba(17, 17, 17, 0.72);
+  border-radius: 50%;
+  animation: routeLoaderSpin 0.8s linear infinite;
+}
+
+body.is-link-loading .route-loader {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.is-link-loading > *:not(.route-loader) {
+  opacity: 0.1;
+  filter: blur(2px);
+  transform: scale(0.995);
+  transition:
+    opacity 0.22s ease,
+    filter 0.22s ease,
+    transform 0.22s ease;
+}
+
+@keyframes routeLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes routeLoaderFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }

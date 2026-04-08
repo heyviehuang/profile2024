@@ -3,26 +3,16 @@
 // }
 //容器
 //container
+:root {
+  --site-edge: clamp(1.2rem, 3vw, 2.2rem);
+  --logo-content-offset: clamp(0.7rem, 1.8vw, 1rem);
+}
+
 .wrap {
   margin: 0 auto;
   max-width: 1320px;
   overflow: hidden;
-  @media (max-width: 1440px) {
-    // max-width: map-get($container-max-widths, xl);
-    padding: 0 10%;
-  }
-  @media (max-width: 1024px) {
-    // max-width: map-get($container-max-widths, lg);
-    padding: 0 10%;
-  }
-  @media (max-width: 768px) {
-    // max-width: map-get($container-max-widths, md);
-    padding: 0 8%;
-  }
-  @media (max-width: 500px) {
-    // max-width: map-get($container-max-widths, sm);
-    padding: 0 2%;
-  }
+  padding-inline: var(--site-edge);
 }
 
 //header
