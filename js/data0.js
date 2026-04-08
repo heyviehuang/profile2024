@@ -36,7 +36,7 @@ $(document).ready(function () {
             '#EADCC6', // Page 2: About
             '#2D3428', // Page 3: Gallery
             '#2D3428', // Page 4: Web
-            '#D9A05B'  // Page 5: Contact
+            '#e6e1cd'  // Page 5: Contact
         ],
         navigation: {
             'position': 'right',

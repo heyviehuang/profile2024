@@ -320,8 +320,8 @@
   color: $bg-amber-sunset;
 }
 
-.webCreations__desc,
-.otherVisualCreations__desc {
+.webCreations__lead,
+.otherVisualCreations__lead {
   margin: 0 0 1.5rem;
   max-width: 360px;
   font-size: 0.95rem;
@@ -332,6 +332,21 @@
 .webCreations__cta,
 .otherVisualCreations__cta {
   min-width: 180px;
+}
+
+.aboutPreview__cta,
+.webCreations__cta,
+.otherVisualCreations__cta {
+  padding: 0.68rem 2.15rem;
+  border-width: 0;
+}
+
+.aboutPreview__cta .text,
+.webCreations__cta .text,
+.otherVisualCreations__cta .text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 @include pad {
@@ -418,14 +433,6 @@
   backdrop-filter: none;
 }
 
-.webCreations__lead {
-  margin: 0 0 1.5rem;
-  max-width: 360px;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: rgba($pure-white, 0.92);
-}
-
 .webCreations__image--code,
 .otherVisualCreations__image {
   display: none;
@@ -490,7 +497,8 @@
   height: auto;
   margin: 0;
   opacity: 0.92;
-  filter: brightness(0) saturate(100%) invert(16%) sepia(12%) saturate(811%) hue-rotate(54deg) brightness(97%) contrast(91%);
+  filter: brightness(0) saturate(100%) invert(16%) sepia(12%) saturate(811%) hue-rotate(54deg) brightness(97%)
+    contrast(91%);
 }
 
 .closing__links {
@@ -895,8 +903,7 @@
   border-bottom: 1px solid rgba($primary-black, 0.08);
 }
 
-.aboutPage__eyebrow,
-.aboutPage__kicker {
+.aboutPage__eyebrow {
   margin: 0 0 0.85rem;
   font-size: 0.74rem;
   letter-spacing: 0.24rem;
@@ -906,6 +913,10 @@
 
 .aboutPage__eyebrow {
   font-family: "Poiret One", "Noto Sans TC", sans-serif;
+}
+
+.aboutPage__eyebrow--section {
+  margin-bottom: 0.95rem;
 }
 
 .aboutPage__title {
@@ -937,6 +948,22 @@
 .webCreations .home-snap-section,
 .otherVisualCreations .home-snap-section {
   padding-inline: var(--site-edge);
+}
+
+.webCreations #content,
+.webCreations .section,
+.webCreations .section h3,
+.webCreations .sectionTitle {
+  color: $pure-white;
+}
+
+.webCreations .section h3 .char01,
+.webCreations .section h3 .char02 {
+  color: rgba($pure-white, 0.96);
+}
+
+.webCreations .section h3 .char03 {
+  color: rgba($pure-white, 0.76);
 }
 
 .webCreations__hero,

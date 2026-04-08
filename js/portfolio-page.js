@@ -268,29 +268,37 @@
                 trueOrder: false,
                 waitForImages: true,
                 margin: {
-                    x: 24,
-                    y: 28
+                    x: 20,
+                    y: 24
                 },
-                columns: 4,
+                columns: 5,
                 breakAt: {
+                    1500: 4,
                     1200: 3,
-                    940: 2,
+                    820: 2,
                     520: 1
                 }
             });
 
+            const refreshLayout = function () {
+                macyInstance.recalculate(true);
+            };
+
+            window.requestAnimationFrame(refreshLayout);
+            window.setTimeout(refreshLayout, 120);
+            window.setTimeout(refreshLayout, 320);
+
             grid.querySelectorAll("img").forEach(function (image) {
                 if (image.complete) {
+                    refreshLayout();
                     return;
                 }
-
-                const refreshLayout = function () {
-                    macyInstance.recalculate(true);
-                };
 
                 image.addEventListener("load", refreshLayout, { once: true });
                 image.addEventListener("error", refreshLayout, { once: true });
             });
+
+            window.addEventListener("load", refreshLayout, { once: true });
         });
     }
 

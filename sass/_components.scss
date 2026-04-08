@@ -40,6 +40,12 @@
   right: 1.5%;
   bottom: 1.5%;
   z-index: 50;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   color: $medium-gray;
   // background-color: $cerulean;
   transition: 0.3s;
@@ -199,7 +205,7 @@
 }
 
 .btn-17:hover:before {
-  --progress: 100%;
+  --progress: 99.5%;
 }
 
 .btn-17:hover:after {
@@ -383,6 +389,12 @@
   right: 1.5%;
   bottom: 1.5%;
   z-index: 9;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   // background-color: $cerulean;
   transition: 0.3s;
   -webkit-transition: 0.3s;
@@ -620,7 +632,7 @@
   overflow: hidden;
 }
 
-/* 銵典--------------------------------------- */
+/* --------------------------------------- */
 .contact-form {
   &__group {
     width: 50%;
@@ -860,7 +872,7 @@
   font-size: 0.82rem;
   line-height: 1.5;
   word-break: break-word;
-  color: rgba(17, 17, 17, 0.7);
+  color: rgba($pure-white, 0.72);
 }
 
 .webCreations .section h3 .char03 {
@@ -887,8 +899,12 @@
 
 .otherVisualCreations .macy-grid__item.horizontal-list__item {
   width: 100% !important;
+  height: auto !important;
+  min-height: 0;
   display: block;
+  padding: 0;
   background: transparent;
+  border-radius: 0;
   box-shadow: none;
   overflow: visible;
 }
@@ -903,6 +919,12 @@
   position: relative;
   display: block;
   width: 100%;
+  height: auto !important;
+  min-height: 0;
+  padding: 0;
+  line-height: 0;
+  background: transparent;
+  border: 0;
   overflow: hidden;
   border-radius: 18px;
 }
@@ -910,7 +932,9 @@
 .otherVisualCreations .portfolio-card__image {
   display: block;
   width: 100%;
-  height: auto;
+  max-width: 100%;
+  height: auto !important;
+  vertical-align: top;
 }
 
 .otherVisualCreations .portfolio-card__image-title {
@@ -918,6 +942,19 @@
   left: 0.85rem;
   font-size: 0.9rem;
   background: rgba(17, 17, 17, 0.42);
+}
+
+.otherVisualCreations .section--LIST21 .openModalBtn,
+.otherVisualCreations .section--LIST24 .openModalBtn {
+  aspect-ratio: 16 / 10 !important;
+}
+
+.otherVisualCreations .section--LIST21 .portfolio-card__image,
+.otherVisualCreations .section--LIST24 .portfolio-card__image {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
 }
 
 .route-loader {

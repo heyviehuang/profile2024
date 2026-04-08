@@ -113,29 +113,29 @@
       "title_zh": "橫幅設計",
       "items": [
         {
-          "title": "作品 01",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/1200x4000"
+          "title": "Banner 01",
+          "coverImage": "/img/bn01.webp",
+          "link": "/img/bn01.webp"
         },
         {
-          "title": "作品 02",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Banner 02",
+          "coverImage": "/img/bn02.webp",
+          "link": "/img/bn02.webp"
         },
         {
-          "title": "作品 03",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Banner 03",
+          "coverImage": "/img/bn03.webp",
+          "link": "/img/bn03.webp"
         },
         {
-          "title": "作品 04",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Banner 04",
+          "coverImage": "/img/bn04.webp",
+          "link": "/img/bn04.webp"
         },
         {
-          "title": "作品 05",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Banner 05",
+          "coverImage": "/img/bn05.webp",
+          "link": "/img/bn05.webp"
         }
       ]
     },
@@ -145,29 +145,29 @@
       "title_zh": "電腦繪圖",
       "items": [
         {
-          "title": "作品 01",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Digital Art 01",
+          "coverImage": "/img/1.jpg",
+          "link": "/img/1.jpg"
         },
         {
-          "title": "作品 02",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Digital Art 02",
+          "coverImage": "/img/2.jpg",
+          "link": "/img/2.jpg"
         },
         {
-          "title": "作品 03",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Digital Art 03",
+          "coverImage": "/img/3.jpg",
+          "link": "/img/3.jpg"
         },
         {
-          "title": "作品 04",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Digital Art 04",
+          "coverImage": "/img/4.jpg",
+          "link": "/img/4.jpg"
         },
         {
-          "title": "作品 05",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Digital Art 05",
+          "coverImage": "/img/5.jpg",
+          "link": "/img/5.jpg"
         }
       ]
     },
@@ -177,51 +177,61 @@
       "title_zh": "傳統繪圖",
       "items": [
         {
-          "title": "作品 01",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/500x450"
+          "title": "Painting 01",
+          "coverImage": "/img/painting2.png",
+          "link": "/img/painting2.png"
         },
         {
-          "title": "作品 02",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Painting 02",
+          "coverImage": "/img/painting3.png",
+          "link": "/img/painting3.png"
         },
         {
-          "title": "作品 03",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Painting 03",
+          "coverImage": "/img/painting4.png",
+          "link": "/img/painting4.png"
         },
         {
-          "title": "作品 04",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Painting 04",
+          "coverImage": "/img/painting5.png",
+          "link": "/img/painting5.png"
+        },
+        {
+          "title": "Painting 05",
+          "coverImage": "/img/painting6.png",
+          "link": "/img/painting6.png"
         }
       ]
     },
     "LIST24": {
-      "title_en-first": "Game",
+      "title_en-first": "Campaign",
       "title_en-rest": "Design",
-      "title_zh": "遊戲設計",
+      "title_zh": "活動設計",
       "items": [
         {
-          "title": "作品 01",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Campaign 01",
+          "coverImage": "/img/bn06.webp",
+          "link": "/img/bn06.webp"
         },
         {
-          "title": "作品 02",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Campaign 02",
+          "coverImage": "/img/bn07.webp",
+          "link": "/img/bn07.webp"
         },
         {
-          "title": "作品 03",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Campaign 03",
+          "coverImage": "/img/bn08.webp",
+          "link": "/img/bn08.webp"
         },
         {
-          "title": "作品 04",
-          "coverImage": "https://dummyimage.com/500x500",
-          "link": "https://dummyimage.com/300x250"
+          "title": "Campaign 04",
+          "coverImage": "/img/bn09.webp",
+          "link": "/img/bn09.webp"
+        },
+        {
+          "title": "Campaign 05",
+          "coverImage": "/img/bn10.webp",
+          "link": "/img/bn10.webp"
         }
       ]
     }
