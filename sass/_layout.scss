@@ -4,7 +4,7 @@
 //容器
 //container
 :root {
-  --site-edge: clamp(1.2rem, 3vw, 2.2rem);
+  --site-edge: clamp(2.4rem, 6vw, 4.4rem);
   --logo-content-offset: clamp(0.7rem, 1.8vw, 1rem);
 }
 
@@ -108,10 +108,11 @@
 #menu {
   position: fixed;
   top: 40px;
-  left: 85%;
+  right: var(--site-edge);
+  left: auto;
   height: 40px;
   z-index: 70;
-  width: 100%;
+  width: auto;
   padding: 0;
   margin: 0;
 
@@ -154,6 +155,25 @@
     li.active,
     li.active a {
       color: #111;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #menu {
+    top: 24px;
+    left: auto;
+    right: var(--site-edge);
+    width: auto;
+
+    li {
+      width: auto;
+      margin: 6px 0;
+
+      a {
+        padding: 6px 10px;
+        font-size: 0.82rem;
+      }
     }
   }
 }
