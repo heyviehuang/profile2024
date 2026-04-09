@@ -96,6 +96,8 @@
             '<img class="route-loader__logo" src="' + resolveAssetPath("img/logo.svg") + '" alt="Sally Huang logo">' +
             '<span class="route-loader__spinner"></span>' +
             "</div>" +
+            '<p class="route-loader__text" aria-hidden="true">LOADING<span class="route-loader__dots"><span class="route-loader__dot">.</span><span class="route-loader__dot">.</span><span class="route-loader__dot">.</span></span></p>' +
+            "</div>" +
             "</div>";
 
         document.body.appendChild(routeLoaderElement);

@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" translate="no">
 
   <head>
     <meta charset="UTF-8" />
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./img/FBogImage-L.png" />
     <meta property="twitter:image" content="./img/FBogImage-L.png" />
-    <meta name="google" content="notranslate">
+    <meta name="google" content="notranslate" />
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -36,7 +36,7 @@
     </script>
   </head>
 
-  <body id="body" class="index">
+  <body id="body" class="index" translate="no">
     <h1 class="site-header">
       <div class="site-header__inner wrap">
         <a class="site-header__logo site-header__logo--hero" href="./index.html#page1" aria-label="Back to Home">
@@ -59,7 +59,7 @@
         <div class="layer indexMain__container">
           <div class="indexMain__text wrap">
             <h2>Crafting value to bring vibrant colors to everyday life.</h2>
-            <h3>創造價值，為人們的日常生活增添色彩。</h3>
+            <h3>創造價值，日常增添色彩。</h3>
           </div>
         </div>
       </div>
@@ -149,42 +149,47 @@
       </div>
 
       <div class="section" id="section4">
-        <div class="otherVisualCreations__bg" aria-hidden="true">
-          <span class="otherVisualCreations__bg-panel" style="background-image: url('./img/webDesign01.webp');"></span>
-          <span class="otherVisualCreations__bg-panel" style="background-image: url('./img/webDesign02.webp');"></span>
-          <span class="otherVisualCreations__bg-panel" style="background-image: url('./img/webDesign03.webp');"></span>
-          <span class="otherVisualCreations__bg-panel" style="background-image: url('./img/webDesign04.webp');"></span>
-        </div>
-        <div class="otherVisualCreations__hero wrap">
-          <h2 class="otherVisualCreations__title">Gallery</h2>
-          <p class="otherVisualCreations__lead">
-            收錄插畫與個人創作<br />
-            呈現不同形式的視覺探索
-          </p>
-          <button class="otherVisualCreations__cta btn-17"
-            onclick="navigateWithLoader('./html/otherVisualCreations.html');">
-            <span class="text-container">
-              <span class="text">EXPLORE</span>
-            </span>
-          </button>
-        </div>
-      </div>
-
-      <div class="section section--closing" id="section5">
-        <footer class="footer footer--closing wrap">
-          <div class="closing__inner">
-            <p class="closing__eyebrow">CONTACT</p>
-            <img class="closing__logo" src="./img/logo.svg" alt="Sally Huang logo">
-            <div class="closing__links">
-              <a class="closing__link" href="mailto:heyviehuang@gmail.com">heyviehuang@gmail.com</a>
-              <a class="closing__link" href="https://github.com/heyviehuang" target="_blank"
-                rel="noopener noreferrer">Github</a>
-              <a class="closing__link" href="./img/OWG7Zm.jpg" target="_blank" rel="noopener noreferrer">在校成績單</a>
+        <div class="otherVisualCreations__layout wrap">
+          <div class="otherVisualCreations__hero">
+            <h2 class="otherVisualCreations__title">Gallery</h2>
+            <p class="otherVisualCreations__lead">
+              收錄商業作品與個人創作<br />
+              呈現不同形式的視覺探索
+            </p>
+            <button class="otherVisualCreations__cta btn-17"
+              onclick="navigateWithLoader('./html/otherVisualCreations.html');">
+              <span class="text-container">
+                <span class="text">EXPLORE</span>
+              </span>
+            </button>
             </div>
-            <p class="copyRight closing__copyright">Copyright © 2026 heyviehuang. All rights reserved.</p>
+            <div class="otherVisualCreations__bg otherVisualCreations__bg--cover" aria-hidden="true">
+              <figure class="otherVisualCreations__cover">
+                <picture>
+                  <source media="(max-width: 576px)" srcset="./img/Gallery封面MB.png" />
+                  <img src="./img/Gallery封面.png" alt="" />
+                </picture>
+              </figure>
+            </div>
           </div>
-        </footer>
       </div>
+    </div>
+
+    <div class="section section--closing" id="section5">
+      <footer class="footer footer--closing wrap">
+        <div class="closing__inner">
+          <p class="closing__eyebrow">CONTACT</p>
+          <img class="closing__logo" src="./img/logo.svg" alt="Sally Huang logo">
+          <div class="closing__links">
+            <a class="closing__link" href="mailto:heyviehuang@gmail.com">heyviehuang@gmail.com</a>
+            <a class="closing__link" href="https://github.com/heyviehuang" target="_blank"
+              rel="noopener noreferrer">Github</a>
+            <a class="closing__link" href="./img/OWG7Zm.jpg" target="_blank" rel="noopener noreferrer">在校成績單</a>
+          </div>
+          <p class="copyRight closing__copyright">Copyright © 2026 heyviehuang. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
     </div>
 
     <button class="btnTop material-icons md-48" style="display: none" type="button">
