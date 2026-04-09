@@ -1,7 +1,11 @@
 (function () {
     "use strict";
 
-    const DATA_URL = "/js/all.json";
+    const SCRIPT_URL = document.currentScript && document.currentScript.src
+        ? new URL(document.currentScript.src, window.location.href)
+        : new URL("js/portfolio-page.js", window.location.href);
+    const SITE_ROOT_URL = new URL("../", SCRIPT_URL);
+    const DATA_URL = new URL("js/all.json", SITE_ROOT_URL).href;
     let dataPromise;
     let routeLoaderElement;
 
@@ -28,10 +32,23 @@
             .replace(/'/g, "&#39;");
     }
 
+    function resolveAssetPath(path) {
+        if (!path || typeof path !== "string") {
+            return "";
+        }
+
+        if (/^(?:https?:)?\/\//i.test(path) || /^data:/i.test(path)) {
+            return path;
+        }
+
+        return new URL(path.replace(/^\/+/, ""), SITE_ROOT_URL).href;
+    }
+
     function createMediaMarkup(item) {
         const alt = item.alt || item.title || "Portfolio item";
+        const coverImage = resolveAssetPath(item.coverImage);
 
-        return '<img class="portfolio-card__image" src="' + escapeHtml(item.coverImage) + '" alt="' + escapeHtml(alt) + '" loading="lazy" decoding="async">';
+        return '<img class="portfolio-card__image" src="' + escapeHtml(coverImage) + '" alt="' + escapeHtml(alt) + '" loading="lazy" decoding="async">';
     }
 
     function isExternalLink(url) {
@@ -76,7 +93,7 @@
         routeLoaderElement.innerHTML =
             '<div class="route-loader__inner">' +
             '<div class="route-loader__mark">' +
-            '<img class="route-loader__logo" src="/img/logo.svg" alt="Sally Huang logo">' +
+            '<img class="route-loader__logo" src="' + resolveAssetPath("img/logo.svg") + '" alt="Sally Huang logo">' +
             '<span class="route-loader__spinner"></span>' +
             "</div>" +
             "</div>";

@@ -30,7 +30,7 @@
   @include hide-text;
   width: 70.16px;
   height: 78px;
-  background: url("/img/logo.svg") no-repeat center;
+  background: url("../img/logo.svg") no-repeat center;
   @include pad {
     height: 60px;
   }
@@ -247,6 +247,7 @@
   }
 }
 
+// Section 3 specific content
 .webCreations {
   &__text {
     @include center;
@@ -261,6 +262,7 @@
   }
 }
 
+// Shared section 3 / 4 visual system
 .webCreations,
 .otherVisualCreations {
   &__bg {
@@ -280,7 +282,7 @@
   &__bg-panel {
     flex: 1;
     border-radius: 18px;
-    background-image: var(--panel-image);
+    background-image: none;
     background-size: cover;
     background-position: center;
     opacity: 0.75;
@@ -337,18 +339,11 @@
   }
 
   &__cta {
-    min-width: 180px;
-    padding: 0.68rem 2.15rem;
     border-width: 0;
-
-    .text {
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
   }
 }
 
+// Shared tablet adjustments for section 3 / 4
 @include pad {
   .webCreations,
   .otherVisualCreations {
@@ -371,6 +366,7 @@
   }
 }
 
+// Shared section 3 / 4 text overlays
 .webCreations,
 .otherVisualCreations {
   &__text {
@@ -398,6 +394,7 @@
   }
 }
 
+// Decorative code marquee
 .code-marquee {
   opacity: 0.9;
 }
@@ -414,6 +411,7 @@
   color: rgba(125, 211, 252, 0.2);
 }
 
+// Shared section 3 / 4 foreground containers
 .webCreations,
 .otherVisualCreations {
   &__container {
@@ -434,6 +432,7 @@
   }
 }
 
+// Section 3 code layout
 .webCreations {
   &__container--code {
     @extend .webCreations__container;
@@ -449,6 +448,7 @@
   }
 }
 
+// Section 4 hero layout
 .otherVisualCreations {
   &__hero {
     display: flex;
@@ -459,6 +459,7 @@
   }
 }
 
+// Closing section
 .contact__text {
   color: $primary-black;
   margin: 2rem auto;
@@ -866,6 +867,20 @@
     &:hover .text {
       color: $bg-deep-forest;
     }
+  }
+}
+
+.aboutPreview__cta,
+.webCreations__cta,
+.otherVisualCreations__cta {
+  min-width: 180px;
+  padding: 0.68rem 2.15rem;
+  border-width: 0;
+
+  .text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
   }
 }
 

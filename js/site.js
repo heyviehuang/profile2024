@@ -1,6 +1,23 @@
 (function ($) {
     "use strict";
 
+    const SCRIPT_URL = document.currentScript && document.currentScript.src
+        ? new URL(document.currentScript.src, window.location.href)
+        : new URL("js/site.js", window.location.href);
+    const SITE_ROOT_URL = new URL("../", SCRIPT_URL);
+
+    function resolveAssetPath(path) {
+        if (!path || typeof path !== "string") {
+            return "";
+        }
+
+        if (/^(?:https?:)?\/\//i.test(path) || /^data:/i.test(path)) {
+            return path;
+        }
+
+        return new URL(path.replace(/^\/+/, ""), SITE_ROOT_URL).href;
+    }
+
     const site = {
         init() {
             this.cacheDom();
@@ -32,7 +49,7 @@
                 '<div class="route-loader" aria-hidden="true">',
                 '<div class="route-loader__inner">',
                 '<div class="route-loader__mark">',
-                '<img class="route-loader__logo" src="/img/logo.svg" alt="Sally Huang logo">',
+                '<img class="route-loader__logo" src="' + resolveAssetPath("img/logo.svg") + '" alt="Sally Huang logo">',
                 '<span class="route-loader__spinner"></span>',
                 "</div>",
                 "</div>",
