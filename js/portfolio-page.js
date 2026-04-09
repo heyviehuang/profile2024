@@ -136,9 +136,34 @@
         };
     }
 
-    function createCardElement(item, sectionName, layout) {
+    function getVisualCategory(sectionName, sectionData) {
+        if (!sectionName || !sectionData) {
+            return "";
+        }
+
+        const title = String(sectionData["title_en-first"] || "").toLowerCase();
+        if (sectionName === "LIST21" || sectionName === "LIST24" || title.includes("banner") || title.includes("campaign")) {
+            return "banner";
+        }
+        if (sectionName === "LIST22" || title.includes("digital")) {
+            return "landscape";
+        }
+        if (sectionName === "LIST23" || title.includes("traditional")) {
+            return "portrait";
+        }
+
+        return "";
+    }
+
+    function createCardElement(item, sectionName, sectionData, layout) {
         const li = document.createElement("li");
         li.className = (layout === "visual" ? "macy-grid__item " : "swiper-slide ") + "horizontal-list__item";
+        li.dataset.section = sectionName;
+
+        const category = getVisualCategory(sectionName, sectionData);
+        if (category) {
+            li.dataset.category = category;
+        }
 
         const externalUrl = getExternalUrl(item);
         const content = createCardContent(item, sectionName, layout);
@@ -167,12 +192,25 @@
     function createSectionElement(sectionName, sectionData, layout) {
         const section = document.createElement("div");
         section.className = "section section--" + sectionName;
-        section.innerHTML =
-            '<h3 class="animT blurIncontainer">' +
-            '<span class="char char02">' + escapeHtml(sectionData["title_en-first"]) + "</span><br />" +
-            '<span class="char char03">' + escapeHtml(sectionData["title_en-rest"]) + "</span><br />" +
-            '<span style="font-size: 1rem;" class="char char01">' + escapeHtml(sectionData.title_zh) + "</span>" +
-            "</h3>";
+
+        if (layout === "visual") {
+            const enTitle = [sectionData["title_en-first"], sectionData["title_en-rest"]]
+                .filter(Boolean)
+                .join(" ");
+
+            section.innerHTML =
+                '<h3 class="animT blurIncontainer">' +
+                '<span class="char char02">' + escapeHtml(sectionData.title_zh) + "</span><br />" +
+                '<span class="char char03">' + escapeHtml(enTitle) + "</span>" +
+                "</h3>";
+        } else {
+            section.innerHTML =
+                '<h3 class="animT blurIncontainer">' +
+                '<span class="char char02">' + escapeHtml(sectionData["title_en-first"]) + "</span><br />" +
+                '<span class="char char03">' + escapeHtml(sectionData["title_en-rest"]) + "</span><br />" +
+                '<span style="font-size: 1rem;" class="char char01">' + escapeHtml(sectionData.title_zh) + "</span>" +
+                "</h3>";
+        }
 
         if (layout === "visual") {
             const grid = document.createElement("ul");
@@ -180,7 +218,7 @@
             grid.id = "macy-" + sectionName.toLowerCase();
 
             sectionData.items.forEach(function (item) {
-                grid.appendChild(createCardElement(item, sectionName, layout));
+                grid.appendChild(createCardElement(item, sectionName, sectionData, layout));
             });
 
             section.appendChild(grid);
@@ -194,7 +232,7 @@
         list.className = "swiper-wrapper horizontal-list";
 
         sectionData.items.forEach(function (item) {
-            list.appendChild(createCardElement(item, sectionName, layout));
+            list.appendChild(createCardElement(item, sectionName, sectionData, layout));
         });
 
         swiper.appendChild(list);
@@ -203,13 +241,56 @@
         return section;
     }
 
+    function createUnifiedGrid(pageData, layout, pageKey) {
+        if (layout !== "visual") {
+            return null;
+        }
+
+        const grid = document.createElement("ul");
+        grid.className = "macy-grid macy-grid--unified";
+        grid.id = "macy-unified";
+
+        let entries = Object.entries(pageData);
+        if (pageKey === "page2") {
+            const desiredOrder = ["LIST21", "LIST22", "LIST23"];
+            entries = desiredOrder
+                .filter(function (key) { return pageData[key]; })
+                .map(function (key) { return [key, pageData[key]]; })
+                .concat(entries.filter(function (entry) { return !desiredOrder.includes(entry[0]); }));
+        }
+
+        entries.forEach(function (entry) {
+            const sectionName = entry[0];
+            const sectionData = entry[1];
+
+            sectionData.items.forEach(function (item) {
+                grid.appendChild(createCardElement(item, sectionName, sectionData, layout));
+            });
+        });
+
+        return grid;
+    }
+
+    function appendOrderedVisualSections(container, pageData, orderKeys) {
+        const entries = orderKeys
+            .filter(function (key) { return pageData[key]; })
+            .map(function (key) { return [key, pageData[key]]; })
+            .concat(Object.entries(pageData).filter(function (entry) { return !orderKeys.includes(entry[0]); }));
+
+        entries.forEach(function (entry) {
+            const sectionName = entry[0];
+            const sectionData = entry[1];
+            container.appendChild(createSectionElement(sectionName, sectionData, "visual"));
+        });
+    }
+
     function initSwipers(container) {
         if (typeof Swiper === "undefined") {
             return;
         }
 
         function getStartOffset() {
-            return window.matchMedia("(max-width: 768px)").matches ? 24 : 50;
+            return 0;
         }
 
         function getEndOffset() {
@@ -372,6 +453,7 @@
     function initPortfolioPage(container) {
         const pageKey = container.dataset.portfolioPage;
         const layout = container.dataset.portfolioLayout || "default";
+        const unifiedGrid = container.dataset.portfolioUnified === "true";
         if (!pageKey) {
             return;
         }
@@ -383,14 +465,25 @@
                     throw new Error("Missing portfolio data for " + pageKey);
                 }
 
-                Object.entries(pageData).forEach(function (entry) {
-                    const sectionName = entry[0];
-                    const sectionData = entry[1];
-                    container.appendChild(createSectionElement(sectionName, sectionData, layout));
-                });
+                if (unifiedGrid && pageKey === "page2") {
+                    appendOrderedVisualSections(container, pageData, ["LIST21", "LIST22", "LIST23"]);
+                } else if (unifiedGrid) {
+                    const grid = createUnifiedGrid(pageData, layout, pageKey);
+                    if (grid) {
+                        container.appendChild(grid);
+                    }
+                } else {
+                    Object.entries(pageData).forEach(function (entry) {
+                        const sectionName = entry[0];
+                        const sectionData = entry[1];
+                        container.appendChild(createSectionElement(sectionName, sectionData, layout));
+                    });
+                }
 
                 if (layout === "visual") {
-                    initMacyLayouts(container);
+                    if (!unifiedGrid) {
+                        initMacyLayouts(container);
+                    }
                 } else {
                     initSwipers(container);
                 }

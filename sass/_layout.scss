@@ -10,9 +10,11 @@
 
 .wrap {
   margin: 0 auto;
-  max-width: 1320px;
+  max-width: 1400px;
+  width: 100%;
   overflow: hidden;
-  padding-inline: var(--site-edge);
+  padding-left: var(--site-edge);
+  padding-right: var(--site-edge);
 }
 
 //header
@@ -132,6 +134,7 @@
         }
       }
     }
+
     a {
       text-decoration: none;
       color: $silver-gray;
@@ -139,48 +142,49 @@
       display: block;
     }
   }
+
+  &.theme-dark {
+    li.active,
+    li.active a {
+      color: #fff;
+    }
+  }
+
+  &.theme-light {
+    li.active,
+    li.active a {
+      color: #111;
+    }
+  }
 }
 
-#menu.theme-dark li.active,
-#menu.theme-dark li.active a {
-  color: #fff;
-}
+#pp-nav,
+.pp-slidesNav {
+  span {
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    background: rgba(255, 255, 255, 0) !important;
+    box-shadow: none !important;
+  }
 
-#menu.theme-light li.active,
-#menu.theme-light li.active a {
-  color: #111;
-}
+  .active span {
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    box-shadow: none !important;
+  }
 
-#pp-nav span,
-.pp-slidesNav span,
-#pp-nav.theme-dark span,
-.pp-slidesNav.theme-dark span {
-  border: 1px solid rgba(255, 255, 255, 0.95) !important;
-  background: rgba(255, 255, 255, 0) !important;
-  box-shadow: none !important;
-}
+  &.theme-light {
+    span {
+      border: 1px solid rgba(17, 17, 17, 0.95) !important;
+      background: rgba(17, 17, 17, 0) !important;
+      box-shadow: none !important;
+    }
 
-#pp-nav li .active span,
-.pp-slidesNav .active span,
-#pp-nav.theme-dark li .active span,
-.pp-slidesNav.theme-dark .active span {
-  background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid rgba(255, 255, 255, 0.95) !important;
-  box-shadow: none !important;
-}
-
-#pp-nav.theme-light span,
-.pp-slidesNav.theme-light span {
-  border: 1px solid rgba(17, 17, 17, 0.95) !important;
-  background: rgba(17, 17, 17, 0) !important;
-  box-shadow: none !important;
-}
-
-#pp-nav.theme-light li .active span,
-.pp-slidesNav.theme-light .active span {
-  background: rgba(17, 17, 17, 0.95) !important;
-  border: 1px solid rgba(17, 17, 17, 0.95) !important;
-  box-shadow: none !important;
+    .active span {
+      background: rgba(17, 17, 17, 0.95) !important;
+      border: 1px solid rgba(17, 17, 17, 0.95) !important;
+      box-shadow: none !important;
+    }
+  }
 }
 
 .pp-tooltip {

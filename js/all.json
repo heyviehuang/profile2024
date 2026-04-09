@@ -114,124 +114,109 @@
       "items": [
         {
           "title": "Banner 01",
-          "coverImage": "/img/bn01.webp",
-          "link": "/img/bn01.webp"
+          "coverImage": "/img/bn01.webp"
         },
         {
           "title": "Banner 02",
-          "coverImage": "/img/bn02.webp",
-          "link": "/img/bn02.webp"
+          "coverImage": "/img/bn02.webp"
         },
         {
           "title": "Banner 03",
-          "coverImage": "/img/bn03.webp",
-          "link": "/img/bn03.webp"
+          "coverImage": "/img/bn03.webp"
         },
         {
           "title": "Banner 04",
-          "coverImage": "/img/bn04.webp",
-          "link": "/img/bn04.webp"
+          "coverImage": "/img/bn04.webp"
         },
         {
           "title": "Banner 05",
-          "coverImage": "/img/bn05.webp",
-          "link": "/img/bn05.webp"
+          "coverImage": "/img/bn05.webp"
+        },
+        {
+          "title": "Banner 06",
+          "coverImage": "/img/bn06.webp"
+        },
+        {
+          "title": "Banner 07",
+          "coverImage": "/img/bn07.webp"
         }
       ]
     },
     "LIST22": {
       "title_en-first": "Digital",
       "title_en-rest": "Art",
-      "title_zh": "電腦繪圖",
+      "title_zh": "電繪",
       "items": [
         {
-          "title": "Digital Art 01",
-          "coverImage": "/img/1.jpg",
-          "link": "/img/1.jpg"
+          "title": "電繪 01",
+          "coverImage": "/img/Digital Art 01.jpg"
         },
         {
-          "title": "Digital Art 02",
-          "coverImage": "/img/2.jpg",
-          "link": "/img/2.jpg"
+          "title": "電繪 02",
+          "coverImage": "/img/Digital Art 02.jpg"
         },
         {
-          "title": "Digital Art 03",
-          "coverImage": "/img/3.jpg",
-          "link": "/img/3.jpg"
+          "title": "電繪 03",
+          "coverImage": "/img/Digital Art 03.jpg"
         },
         {
-          "title": "Digital Art 04",
-          "coverImage": "/img/4.jpg",
-          "link": "/img/4.jpg"
+          "title": "電繪 04",
+          "coverImage": "/img/Digital Art 04.jpg"
         },
         {
-          "title": "Digital Art 05",
-          "coverImage": "/img/5.jpg",
-          "link": "/img/5.jpg"
+          "title": "電繪 05",
+          "coverImage": "/img/Digital Art 05.jpg"
+        },
+        {
+          "title": "電繪 06",
+          "coverImage": "/img/Digital Art 06.png"
+        },
+        {
+          "title": "電繪 07",
+          "coverImage": "/img/Digital Art 07.png"
+        },
+        {
+          "title": "電繪 08",
+          "coverImage": "/img/Digital Art 08.png"
+        },
+        {
+          "title": "電繪 09",
+          "coverImage": "/img/Digital Art 09.png"
+        },
+        {
+          "title": "電繪 10",
+          "coverImage": "/img/Digital Art 10.png"
         }
       ]
     },
     "LIST23": {
-      "title_en-first": "Traditional",
+      "title_en-first": "Painting",
       "title_en-rest": "Art",
-      "title_zh": "傳統繪圖",
+      "title_zh": "手繪",
       "items": [
         {
-          "title": "Painting 01",
-          "coverImage": "/img/painting2.png",
-          "link": "/img/painting2.png"
+          "title": "手繪 01",
+          "coverImage": "/img/Painting01.jpg"
         },
         {
-          "title": "Painting 02",
-          "coverImage": "/img/painting3.png",
-          "link": "/img/painting3.png"
+          "title": "手繪 02",
+          "coverImage": "/img/Painting02.jpg"
         },
         {
-          "title": "Painting 03",
-          "coverImage": "/img/painting4.png",
-          "link": "/img/painting4.png"
+          "title": "手繪 03",
+          "coverImage": "/img/Painting03.jpg"
         },
         {
-          "title": "Painting 04",
-          "coverImage": "/img/painting5.png",
-          "link": "/img/painting5.png"
+          "title": "手繪 04",
+          "coverImage": "/img/Painting04.jpg"
         },
         {
-          "title": "Painting 05",
-          "coverImage": "/img/painting6.png",
-          "link": "/img/painting6.png"
-        }
-      ]
-    },
-    "LIST24": {
-      "title_en-first": "Campaign",
-      "title_en-rest": "Design",
-      "title_zh": "活動設計",
-      "items": [
-        {
-          "title": "Campaign 01",
-          "coverImage": "/img/bn06.webp",
-          "link": "/img/bn06.webp"
+          "title": "手繪 05",
+          "coverImage": "/img/Painting05.jpg"
         },
         {
-          "title": "Campaign 02",
-          "coverImage": "/img/bn07.webp",
-          "link": "/img/bn07.webp"
-        },
-        {
-          "title": "Campaign 03",
-          "coverImage": "/img/bn08.webp",
-          "link": "/img/bn08.webp"
-        },
-        {
-          "title": "Campaign 04",
-          "coverImage": "/img/bn09.webp",
-          "link": "/img/bn09.webp"
-        },
-        {
-          "title": "Campaign 05",
-          "coverImage": "/img/bn10.webp",
-          "link": "/img/bn10.webp"
+          "title": "手繪 06",
+          "coverImage": "/img/Painting06.jpg"
         }
       ]
     }
