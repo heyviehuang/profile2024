@@ -2,6 +2,10 @@
 @use "variable" as *;
 @use "mixin" as *;
 
+// =========================================================
+// Global
+// =========================================================
+
 body {
   @include custom-scrollbar($primary-black, $dark-gray, 6px);
   background-color: var(--bg-color);
@@ -85,6 +89,9 @@ body {
 }
 
 .aboutMe,
+// =========================================================
+// Web / Gallery Shared
+// =========================================================
 .webCreations,
 .otherVisualCreations {
   .site-header__logo,
@@ -267,6 +274,9 @@ body {
 }
 
 // Shared section 3 / 4 visual system
+// =========================================================
+// Web / Gallery Shared
+// =========================================================
 .webCreations,
 .otherVisualCreations {
   &__bg {
@@ -406,6 +416,9 @@ body {
 }
 
 // Shared section 3 / 4 text overlays
+// =========================================================
+// Web / Gallery Shared
+// =========================================================
 .webCreations,
 .otherVisualCreations {
   &__text {
@@ -451,6 +464,9 @@ body {
 }
 
 // Shared section 3 / 4 foreground containers
+// =========================================================
+// Web / Gallery Shared
+// =========================================================
 .webCreations,
 .otherVisualCreations {
   &__container {
@@ -603,7 +619,9 @@ body {
   color: rgba($bg-deep-forest, 0.68);
 }
 
-//?
+// =========================================================
+// Index Section 2 (About preview)
+// =========================================================
 .i__section {
   margin: 2rem 0;
   padding: 0 20rem;
@@ -754,6 +772,9 @@ body {
   }
 }
 
+// =========================================================
+// About (Preview + Page)
+// =========================================================
 .aboutPreview {
   min-height: 100vh;
   position: relative;
@@ -808,8 +829,9 @@ body {
   &__lead {
     max-width: 640px;
     margin: 0.6rem 0 0;
-    font-size: 0.92rem;
-    line-height: 1.9;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 300;
     color: $cool-gray;
   }
 
@@ -935,11 +957,6 @@ body {
     &::before {
       top: 3%;
       right: 0;
-    }
-
-    &__card:nth-child(2),
-    &__card:nth-child(3) {
-      transform: none;
     }
   }
 }
@@ -1122,6 +1139,7 @@ body {
     box-shadow: none;
     overflow: visible;
     text-align: left;
+    transition: transform 0.3s ease;
 
     &::before {
       content: none;
@@ -1145,6 +1163,22 @@ body {
       font-size: 0.84rem;
       line-height: 1.9;
       color: $cool-gray;
+    }
+  }
+
+  &__card:hover,
+  &__panel:hover,
+  &__card:focus-within,
+  &__panel:focus-within {
+    transform: translateY(-4px);
+  }
+
+  @media (hover: none), (pointer: coarse) {
+    &__card:hover,
+    &__panel:hover,
+    &__card:focus-within,
+    &__panel:focus-within {
+      transform: none;
     }
   }
 
@@ -1378,6 +1412,9 @@ body {
   }
 }
 
+// =========================================================
+// Web / Gallery Shared
+// =========================================================
 .webCreations,
 .otherVisualCreations {
   .home-snap-section {
@@ -1385,6 +1422,9 @@ body {
   }
 }
 
+// =========================================================
+// Index Sections 2 + 4
+// =========================================================
 .index {
   #section2 {
     .aboutPreview {
@@ -1396,6 +1436,94 @@ body {
 
     .aboutPreview::before {
       right: var(--site-edge);
+    }
+  }
+
+  @media (max-width: 992px) {
+    #section2 {
+      .aboutPreview {
+        min-height: auto;
+        padding-top: clamp(2rem, 4vw, 3rem);
+        padding-bottom: clamp(2rem, 4vw, 3rem);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    #section2 {
+      .wrap {
+        padding-left: var(--site-edge);
+        padding-right: var(--site-edge);
+      }
+
+      .aboutPreview {
+        align-items: flex-start;
+        text-align: left;
+        gap: 0.9rem;
+      }
+
+      .aboutPreview__title {
+        font-size: clamp(1rem, 5vw, 1.45rem);
+
+        span {
+          display: block;
+          margin-top: 0.4rem;
+          font-size: 0.7em;
+        }
+      }
+
+      .aboutPreview__lead {
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .aboutPreview__meta {
+        gap: 0.6rem 0.8rem;
+        margin-top: 0.2rem;
+
+        span {
+          font-size: 0.82rem;
+        }
+      }
+
+      .aboutPreview__grid {
+        margin-top: 1.4rem;
+      }
+
+      .aboutPreview__card {
+        padding-top: 1rem;
+
+        h3 {
+          font-size: 0.9rem;
+        }
+
+        p {
+          font-size: 0.82rem;
+          line-height: 1.7;
+        }
+      }
+
+      .aboutPreview__cta {
+        min-width: 160px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    #section2 {
+      .aboutPreview__title {
+        font-size: clamp(0.95rem, 5.2vw, 1.3rem);
+      }
+
+      .aboutPreview__lead {
+        font-size: 0.85rem;
+      }
+
+      .aboutPreview__cta {
+        width: auto;
+        max-width: none;
+        min-width: 180px;
+      }
     }
   }
 
@@ -1523,11 +1651,11 @@ body {
         width: min(520px, 88vw);
         max-width: 100%;
         height: auto;
-        margin: 0 auto;
+        margin: 2rem auto;
         border-radius: 20px;
 
         img {
-          width: 100%;
+          width: 80%;
           height: auto;
           max-width: 100%;
           margin: 0 auto;
@@ -1550,6 +1678,9 @@ body {
   }
 }
 
+// =========================================================
+// Web Page
+// =========================================================
 .webCreations {
   #content,
   .section,

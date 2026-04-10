@@ -3,74 +3,74 @@
     "LIST11": {
       "title_en-first": "品牌官網",
       "title_en-rest": "WordPress",
-      "title_zh": "金田興業股份有限公司",
+      "title_zh": "以品牌調性為基礎規劃頁面視覺與資訊編排\n強化產品特色與整體瀏覽體驗",
       "items": [
         {
           "title": "品牌官網 01",
           "coverImage": "/img/jtfs01.png",
           "link": "https://sarabeth.com.tw/",
-          "description": "品牌官網首頁視覺與切版設計。"
+          "description": ""
         },
         {
           "title": "品牌官網 02",
           "coverImage": "/img/jtfs02.png",
           "link": "https://kimukatsu.com.tw/",
-          "description": "品牌內容與產品資訊整合頁面設計。"
+          "description": ""
         },
         {
           "title": "品牌官網 03",
           "coverImage": "/img/jtfs03.png",
           "link": "https://ladynara.com.tw/",
-          "description": "首頁主視覺與品牌調性延伸設計。"
+          "description": ""
         },
         {
           "title": "品牌官網 04",
           "coverImage": "/img/jtfs04.png",
           "link": "https://tokyo-sundubu.com.tw/",
-          "description": "活動檔期與導購資訊頁面規劃。"
+          "description": ""
         },
         {
           "title": "品牌官網 05",
           "coverImage": "/img/jtfs05.png",
           "link": "https://nara.com.tw/",
-          "description": "餐飲品牌形象頁與前端切版整理。"
+          "description": ""
         }
       ]
     },
     "LIST12": {
       "title_en-first": "一頁式活動頁",
-      "title_en-rest": "WordPress & Bootstrap",
-      "title_zh": "智冠科技股份有限公司",
+      "title_en-rest": "Bootstrap",
+      "title_zh": "以活動主題為核心進行視覺延伸與頁面設計\n整合資訊與 CTA 配置，提升整體吸引力與閱讀節奏",
       "items": [
         {
           "title": "活動頁 01",
           "coverImage": "/img/mycard01.png",
           "link": "https://dummyimage.com/300x250",
-          "description": "以活動主題為核心的一頁式頁面設計。"
+          "description": ""
         },
         {
           "title": "活動頁 02",
           "coverImage": "/img/mycard02.webp",
           "link": "https://dummyimage.com/300x250",
-          "description": "整合活動資訊、CTA 與視覺節奏的落地頁。"
+          "description": ""
         },
         {
           "title": "活動頁 03",
           "coverImage": "/img/mycard03.webp",
           "link": "https://dummyimage.com/300x250",
-          "description": "配合行銷檔期製作的活動宣傳頁面。"
+          "description": ""
         },
         {
           "title": "活動頁 04",
           "coverImage": "/img/mycard04.webp",
           "link": "https://dummyimage.com/300x250",
-          "description": "以 Bootstrap 架構完成的活動頁切版。"
+          "description": ""
         },
         {
           "title": "活動頁 05",
           "coverImage": "/img/mycard05.webp",
           "link": "https://dummyimage.com/300x250",
-          "description": "兼顧品牌視覺與資訊導流的一頁式頁面。"
+          "description": ""
         }
       ]
     },
@@ -83,25 +83,25 @@
           "title": "品牌官網 01",
           "coverImage": "/img/webDesign01.webp",
           "link": "https://heyviehuang.github.io/ningxia/",
-          "description": "手刻網站作品，著重品牌資訊整理與版面切版。"
+          "description": "手刻網站作品，著重品牌資訊整理與版面切版"
         },
         {
           "title": "品牌官網 02",
           "coverImage": "/img/webDesign02.webp",
           "link": "https://heyviehuang.github.io/flyHotel/",
-          "description": "旅宿形象網站練習，聚焦視覺節奏與資訊架構。"
+          "description": "旅宿形象網站練習，聚焦視覺節奏與資訊架構"
         },
         {
           "title": "電子商務網站",
           "coverImage": "/img/webDesign03.webp",
           "link": "https://clearskytuckshop.com/",
-          "description": "電商網站作品，整合商品展示與品牌內容呈現。"
+          "description": "規劃商品展示與頁面資訊架構，兼顧品牌風格與使用流程，提升瀏覽效率與購物體驗"
         },
         {
           "title": "售票網站設計稿",
           "coverImage": "/img/webDesign04.webp",
           "link": "https://xd.adobe.com/view/3af5096b-9a31-41a7-b79b-11af403d3e23-6fa6/",
-          "description": "以 Adobe XD 製作的介面原型與互動流程設計。"
+          "description": "建立整體視覺方向與版面系統，作為介面發展與後續實作的設計基礎，以 Adobe XD 製作介面提案與互動流程設計，協助釐清畫面邏輯與使用情境"
         }
       ]
     }

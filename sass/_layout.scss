@@ -128,13 +128,13 @@
 
     &.active {
       // background: rgba(0, 0, 0, 0.5);
-      color: #fff;
+      color: $wasabi-cream;
 
       a {
-        color: #fff;
+        color: $wasabi-cream;
 
         &:hover {
-          color: #000;
+          color: inherit;
         }
       }
     }
@@ -149,15 +149,40 @@
 
   &.theme-dark {
     li.active,
-    li.active a {
-      color: #fff;
+    li.active a,
+    li.active a:hover {
+      color: $wasabi-cream;
     }
   }
 
   &.theme-light {
     li.active,
-    li.active a {
-      color: #111;
+    li.active a,
+    li.active a:hover {
+      color: $wasabi-cream;
+    }
+  }
+}
+
+// Page-specific overrides for menu active/hover colors
+.index {
+  #menu.theme-light {
+    li.active,
+    li.active a,
+    li.active a:hover {
+      color: $primary-black;
+    }
+  }
+}
+
+.aboutMe,
+.webCreations,
+.otherVisualCreations {
+  #menu.theme-light {
+    li.active,
+    li.active a,
+    li.active a:hover {
+      color: $wasabi-cream;
     }
   }
 }
@@ -166,15 +191,15 @@
   #menu {
     top: 24px;
     left: auto;
-    right: var(--site-edge);
+    right: max(0px, calc(var(--site-edge) - 12px));
     width: auto;
 
     li {
       width: auto;
-      margin: 6px 0;
+      margin: 8px 0;
 
       a {
-        padding: 6px 10px;
+        padding: 8px 14px;
         font-size: 0.82rem;
       }
     }
@@ -225,4 +250,3 @@
   text-align: center;
   color: $pure-white;
 }
-

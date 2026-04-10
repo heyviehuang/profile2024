@@ -10,6 +10,13 @@
 
 html {
     height: 100%;
+    font-size: 18px;
+}
+
+@media (max-width: 576px) {
+    html {
+        font-size: 17px;
+    }
 }
 
 body {
@@ -44,4 +51,3 @@ button {
     padding: 0;
     border: none;
 }
-

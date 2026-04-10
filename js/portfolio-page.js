@@ -32,6 +32,10 @@
             .replace(/'/g, "&#39;");
     }
 
+    function formatMultilineText(value) {
+        return escapeHtml(value).replace(/\n/g, "<br />");
+    }
+
     function resolveAssetPath(path) {
         if (!path || typeof path !== "string") {
             return "";
@@ -219,15 +223,15 @@
 
             section.innerHTML =
                 '<h3 class="animT blurIncontainer">' +
-                '<span class="char char02">' + escapeHtml(sectionData.title_zh) + "</span><br />" +
-                '<span class="char char03">' + escapeHtml(enTitle) + "</span>" +
+                '<p class="char char02 section-title section-title--zh">' + formatMultilineText(sectionData.title_zh) + "</p><br />" +
+                '<span class="char char03 section-title section-title--en">' + escapeHtml(enTitle) + "</span>" +
                 "</h3>";
         } else {
             section.innerHTML =
                 '<h3 class="animT blurIncontainer">' +
-                '<span class="char char02">' + escapeHtml(sectionData["title_en-first"]) + "</span><br />" +
-                '<span class="char char03">' + escapeHtml(sectionData["title_en-rest"]) + "</span><br />" +
-                '<span style="font-size: 1rem;" class="char char01">' + escapeHtml(sectionData.title_zh) + "</span>" +
+                '<span class="char char02 section-title section-title--zh">' + escapeHtml(sectionData["title_en-first"]) + "</span><br />" +
+                '<span class="char char03 section-title section-title--en">' + escapeHtml(sectionData["title_en-rest"]) + "</span><br />" +
+                '<p class="char char01 section-title section-title--desc">' + formatMultilineText(sectionData.title_zh) + "</p>" +
                 "</h3>";
         }
 
