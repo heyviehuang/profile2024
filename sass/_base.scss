@@ -1,3 +1,6 @@
+﻿@use "variable" as *;
+@use "mixin" as *;
+
 *,
 *::after,
 *::before {
@@ -41,3 +44,4 @@ button {
     padding: 0;
     border: none;
 }
+

@@ -1,3 +1,6 @@
+﻿@use "sass:color";
+@use "variable" as *;
+
 //RWD
 @mixin pcXL {
     @media (max-width: 1440px) {
@@ -72,7 +75,7 @@
 @mixin neon-text($color: #ffae42, $animation-duration: 1.5s) {
     font-size: 48px;
     font-weight: bold;
-    color: lighten($color, 40%); // 提升文字的亮度
+    color: color.adjust($color, $lightness: 40%); // 提升文字的亮度
     text-align: center;
 
     // 設定 text-shadow 創造霓虹燈效果
@@ -114,3 +117,4 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+

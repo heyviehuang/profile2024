@@ -1,4 +1,7 @@
-﻿// Horizontal list cards
+﻿@use "variable" as *;
+@use "mixin" as *;
+
+// Horizontal list cards
 .horizontal-list {
   @include horizontal-list(2rem); // Shared horizontal-list mixin with 2rem gap
   padding-top: 2.5rem;
@@ -1232,81 +1235,6 @@
     }
   }
 
-  @media (max-width: 768px) {
-    #section4 {
-      .otherVisualCreations__layout {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 7rem var(--site-edge) 3rem;
-      }
-
-      .otherVisualCreations__hero {
-        flex: none;
-        width: 100%;
-        align-items: center;
-        text-align: center;
-        gap: 1.15rem;
-      }
-
-      .otherVisualCreations__lead {
-        max-width: 28ch;
-      }
-
-      .otherVisualCreations__cta {
-        display: inline-flex;
-        margin-top: 0.35rem;
-        min-width: 160px;
-      }
-
-      .otherVisualCreations__bg {
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        margin-left: calc(50% - 50vw);
-      }
-
-      .otherVisualCreations__cover {
-        width: 100vw;
-        max-width: none;
-        height: auto;
-        min-height: 0;
-        margin: 0 auto;
-      }
-
-      .otherVisualCreations__cover img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-        margin: 0 auto;
-      }
-    }
-  }
-
-  @media (max-width: 576px) {
-    #section4 {
-      .otherVisualCreations__layout {
-        padding-top: 6.5rem;
-      }
-
-      .otherVisualCreations__cover {
-        height: auto;
-      }
-
-      .otherVisualCreations__title {
-        font-size: clamp(1.8rem, 7vw, 2.6rem);
-      }
-
-      .otherVisualCreations__lead {
-        font-size: 0.85rem;
-      }
-
-      .otherVisualCreations__cta {
-        min-width: 180px;
-      }
-    }
-  }
 }
 
 /* --------------------------------------- */
@@ -1989,3 +1917,4 @@ body.is-link-loading > *:not(.route-loader) {
     transform: translateY(-8px) scale(1.22);
   }
 }
+

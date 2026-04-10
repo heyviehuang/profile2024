@@ -1,3 +1,6 @@
+﻿@use "variable" as *;
+@use "mixin" as *;
+
 //字型
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Noto+Serif+TC&display=swap');
 // Poiret One： 由於其較為特殊的風格，Poiret One 更適合用於標題、標語或需要吸引注意力的地方。
@@ -64,3 +67,4 @@ p {
     color: #fff;
     text-shadow: 0 0 10px #ff9900, 0 0 20px #ff9900, 0 0 30px #ff9900;
   }  
+
