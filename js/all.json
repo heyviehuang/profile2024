@@ -103,7 +103,7 @@
   "page2": {
     "LIST21": {
       "title_en-first": "平面設計",
-      "title_en-rest": "Banner Design",
+      "title_en-rest": "Graphic Design",
       "title_zh": "以品牌調性為基礎規劃頁面視覺與資訊編排\n強化產品特色與整體瀏覽體驗",
       "items": [
         {
@@ -143,15 +143,15 @@
           "coverImage": "/img/bn09.jpg"
         },
         {
-          "title": "Banner 10",
+          "title": "社群素材 01",
           "coverImage": "/img/bn10.jpg"
         },
         {
-          "title": "Banner 11",
+          "title": "社群素材 02",
           "coverImage": "/img/bn11.jpg"
         },
         {
-          "title": "Banner 12",
+          "title": "社群素材 03",
           "coverImage": "/img/bn12.jpg"
         }
       ]
@@ -162,74 +162,74 @@
       "title_zh": "使用 Clip Studio Paint 或 Procreate 進行創作，題材包含動物、風景等\n以色彩與光影表現氛圍，並注重構圖與細節刻畫",
       "items": [
         {
-          "title": "電繪 01",
+          "title": "數位繪圖 01",
           "coverImage": "/img/Digital Art 01.jpg"
         },
         {
-          "title": "電繪 02",
+          "title": "數位繪圖 02",
           "coverImage": "/img/Digital Art 02.jpg"
         },
         {
-          "title": "電繪 03",
+          "title": "數位繪圖 03",
           "coverImage": "/img/Digital Art 03.jpg"
         },
         {
-          "title": "電繪 04",
+          "title": "數位繪圖 04",
           "coverImage": "/img/Digital Art 04.jpg"
         },
         {
-          "title": "電繪 05",
+          "title": "數位繪圖 05",
           "coverImage": "/img/Digital Art 05.jpg"
         },
         {
-          "title": "電繪 06",
+          "title": "數位繪圖 06",
           "coverImage": "/img/Digital Art 06.png"
         },
         {
-          "title": "電繪 07",
+          "title": "數位繪圖 07",
           "coverImage": "/img/Digital Art 07.png"
         },
         {
-          "title": "電繪 08",
+          "title": "數位繪圖 08",
           "coverImage": "/img/Digital Art 08.png"
         },
         {
-          "title": "電繪 09",
+          "title": "數位繪圖 09",
           "coverImage": "/img/Digital Art 09.png"
         },
         {
-          "title": "電繪 10",
+          "title": "數位繪圖 10",
           "coverImage": "/img/Digital Art 10.png"
         }
       ]
     },
     "LIST23": {
-      "title_en-first": "手繪",
+      "title_en-first": "傳統繪圖",
       "title_en-rest": "Painting Art",
       "title_zh": "興趣是使用水彩傳統媒材進行創作\n以色彩與光影表現氛圍，並注重構圖與細節刻畫",
       "items": [
         {
-          "title": "手繪 01",
+          "title": "傳統繪圖 01",
           "coverImage": "/img/Painting01.jpg"
         },
         {
-          "title": "手繪 02",
+          "title": "傳統繪圖 02",
           "coverImage": "/img/Painting02.jpg"
         },
         {
-          "title": "手繪 03",
+          "title": "傳統繪圖 03",
           "coverImage": "/img/Painting03.jpg"
         },
         {
-          "title": "手繪 04",
+          "title": "傳統繪圖 04",
           "coverImage": "/img/Painting04.jpg"
         },
         {
-          "title": "手繪 05",
+          "title": "傳統繪圖 05",
           "coverImage": "/img/Painting05.jpg"
         },
         {
-          "title": "手繪 06",
+          "title": "傳統繪圖 06",
           "coverImage": "/img/Painting06.jpg"
         }
       ]
