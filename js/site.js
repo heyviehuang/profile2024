@@ -29,6 +29,7 @@
             this.initInfiniteSlide();
             this.initMasonry();
             this.initTabs();
+            this.initLightboxes();
             this.initDynamicBackgroundBlur();
             this.initIndexCursor();
         },
@@ -65,11 +66,39 @@
         },
 
         shouldShowInitialLoader() {
-            const navigationEntries = performance.getEntriesByType &&
-                performance.getEntriesByType("navigation");
-            const navigationType = navigationEntries && navigationEntries[0] ? navigationEntries[0].type : "";
+            return this.$body.hasClass("index");
+        },
 
-            return this.$body.hasClass("index") && navigationType === "reload";
+        waitForInitialMedia() {
+            if (!this.$body.hasClass("index")) {
+                return $.Deferred().resolve().promise();
+            }
+
+            const deferred = $.Deferred();
+            const video = document.getElementById("myVideo");
+
+            if (!video) {
+                deferred.resolve();
+                return deferred.promise();
+            }
+
+            const settle = function () {
+                if (deferred.state() !== "resolved") {
+                    deferred.resolve();
+                }
+            };
+
+            if (video.readyState >= 3) {
+                settle();
+                return deferred.promise();
+            }
+
+            video.addEventListener("loadeddata", settle, { once: true });
+            video.addEventListener("canplay", settle, { once: true });
+            video.addEventListener("error", settle, { once: true });
+            window.setTimeout(settle, 2200);
+
+            return deferred.promise();
         },
 
         showRouteLoader() {
@@ -174,10 +203,12 @@
                     return;
                 }
 
-                window.setTimeout(function () {
-                    self.$body.removeClass("is-initial-loading");
-                    self.hideRouteLoader();
-                }, 420);
+                self.waitForInitialMedia().always(function () {
+                    window.setTimeout(function () {
+                        self.$body.removeClass("is-initial-loading");
+                        self.hideRouteLoader();
+                    }, 220);
+                });
             });
         },
 
@@ -321,6 +352,19 @@
 
                 $(".tab-btn").removeClass("tab--active");
                 $(this).addClass("tab--active");
+            });
+        },
+
+        initLightboxes() {
+            if (!$.fn.magnificPopup) {
+                return;
+            }
+
+            $(".closing__link--image").magnificPopup({
+                type: "image",
+                closeBtnInside: false,
+                mainClass: "mfp-fade",
+                removalDelay: 180
             });
         },
 

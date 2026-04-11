@@ -1,6 +1,8 @@
 (function () {
     "use strict";
 
+    const PAGE2_SECTION_ORDER = ["LIST21", "LIST22", "LIST23"];
+    const WEB_META_SECTIONS = new Set(["LIST11", "LIST12", "LIST13"]);
     const SCRIPT_URL = document.currentScript && document.currentScript.src
         ? new URL(document.currentScript.src, window.location.href)
         : new URL("js/portfolio-page.js", window.location.href);
@@ -141,13 +143,26 @@
         hideRouteLoader();
     }
 
+    function getOrderedEntries(pageData, orderKeys) {
+        return orderKeys
+            .filter(function (key) { return pageData[key]; })
+            .map(function (key) { return [key, pageData[key]]; })
+            .concat(Object.entries(pageData).filter(function (entry) { return !orderKeys.includes(entry[0]); }));
+    }
+
+    function appendSectionItems(listElement, sectionName, sectionData, layout) {
+        sectionData.items.forEach(function (item) {
+            listElement.appendChild(createCardElement(item, sectionName, sectionData, layout));
+        });
+    }
+
     function createCardContent(item, sectionName, layout) {
-        const showsMeta = layout === "web" && (sectionName === "LIST11" || sectionName === "LIST12" || sectionName === "LIST13");
+        const showsMeta = layout === "web" && WEB_META_SECTIONS.has(sectionName);
         const showsImageTitle = showsMeta || layout === "visual";
         const imageTitleHtml = showsImageTitle && item.title
             ? '<span class="portfolio-card__image-title">' + escapeHtml(item.title) + "</span>"
             : "";
-        const descriptionHtml = item.description ? '<p class="web-item__desc">' + escapeHtml(item.description) + "</p>" : "";
+        const descriptionHtml = item.description ? '<p class="web-item__desc">' + formatMultilineText(item.description) + "</p>" : "";
         const metaHtml = showsMeta ? '<div class="web-item__meta">' + descriptionHtml + "</div>" : "";
         const titleHtml = showsImageTitle ? "" : "<h5>" + escapeHtml(item.title) + "</h5>";
 
@@ -165,7 +180,7 @@
         }
 
         const title = String(sectionData["title_en-first"] || "").toLowerCase();
-        if (sectionName === "LIST21" || sectionName === "LIST24" || title.includes("banner") || title.includes("campaign")) {
+        if (sectionName === "LIST21" || title.includes("banner") || title.includes("campaign")) {
             return "banner";
         }
         if (sectionName === "LIST22" || title.includes("digital")) {
@@ -216,34 +231,19 @@
         const section = document.createElement("div");
         section.className = "section section--" + sectionName;
 
-        if (layout === "visual") {
-            const enTitle = [sectionData["title_en-first"], sectionData["title_en-rest"]]
-                .filter(Boolean)
-                .join(" ");
-
-            section.innerHTML =
-                '<h3 class="animT blurIncontainer">' +
-                '<p class="char char02 section-title section-title--zh">' + formatMultilineText(sectionData.title_zh) + "</p><br />" +
-                '<span class="char char03 section-title section-title--en">' + escapeHtml(enTitle) + "</span>" +
-                "</h3>";
-        } else {
-            section.innerHTML =
-                '<h3 class="animT blurIncontainer">' +
-                '<span class="char char02 section-title section-title--zh">' + escapeHtml(sectionData["title_en-first"]) + "</span><br />" +
-                '<span class="char char03 section-title section-title--en">' + escapeHtml(sectionData["title_en-rest"]) + "</span><br />" +
-                '<p class="char char01 section-title section-title--desc">' + formatMultilineText(sectionData.title_zh) + "</p>" +
-                "</h3>";
-        }
+        section.innerHTML =
+            '<h3 class="animT blurIncontainer">' +
+            '<span class="char char02 section-title section-title--zh">' + escapeHtml(sectionData["title_en-first"]) + "</span><br />" +
+            '<span class="char char03 section-title section-title--en">' + escapeHtml(sectionData["title_en-rest"]) + "</span><br />" +
+            '<p class="char char01 section-title section-title--desc">' + formatMultilineText(sectionData.title_zh) + "</p>" +
+            "</h3>";
 
         if (layout === "visual") {
             const grid = document.createElement("ul");
             grid.className = "macy-grid";
             grid.id = "macy-" + sectionName.toLowerCase();
 
-            sectionData.items.forEach(function (item) {
-                grid.appendChild(createCardElement(item, sectionName, sectionData, layout));
-            });
-
+            appendSectionItems(grid, sectionName, sectionData, layout);
             section.appendChild(grid);
             return section;
         }
@@ -254,10 +254,7 @@
         const list = document.createElement("ul");
         list.className = "swiper-wrapper horizontal-list";
 
-        sectionData.items.forEach(function (item) {
-            list.appendChild(createCardElement(item, sectionName, sectionData, layout));
-        });
-
+        appendSectionItems(list, sectionName, sectionData, layout);
         swiper.appendChild(list);
         section.appendChild(swiper);
 
@@ -273,32 +270,21 @@
         grid.className = "macy-grid macy-grid--unified";
         grid.id = "macy-unified";
 
-        let entries = Object.entries(pageData);
-        if (pageKey === "page2") {
-            const desiredOrder = ["LIST21", "LIST22", "LIST23"];
-            entries = desiredOrder
-                .filter(function (key) { return pageData[key]; })
-                .map(function (key) { return [key, pageData[key]]; })
-                .concat(entries.filter(function (entry) { return !desiredOrder.includes(entry[0]); }));
-        }
+        const entries = pageKey === "page2"
+            ? getOrderedEntries(pageData, PAGE2_SECTION_ORDER)
+            : Object.entries(pageData);
 
         entries.forEach(function (entry) {
             const sectionName = entry[0];
             const sectionData = entry[1];
-
-            sectionData.items.forEach(function (item) {
-                grid.appendChild(createCardElement(item, sectionName, sectionData, layout));
-            });
+            appendSectionItems(grid, sectionName, sectionData, layout);
         });
 
         return grid;
     }
 
     function appendOrderedVisualSections(container, pageData, orderKeys) {
-        const entries = orderKeys
-            .filter(function (key) { return pageData[key]; })
-            .map(function (key) { return [key, pageData[key]]; })
-            .concat(Object.entries(pageData).filter(function (entry) { return !orderKeys.includes(entry[0]); }));
+        const entries = getOrderedEntries(pageData, orderKeys);
 
         entries.forEach(function (entry) {
             const sectionName = entry[0];
@@ -362,30 +348,21 @@
     }
 
     function initMacyLayouts(container) {
-        if (typeof Macy === "undefined") {
+        if (typeof Masonry === "undefined") {
             return;
         }
 
         container.querySelectorAll(".macy-grid").forEach(function (grid) {
-            const macyInstance = Macy({
-                container: "#" + grid.id,
-                trueOrder: false,
-                waitForImages: true,
-                margin: {
-                    x: 20,
-                    y: 24
-                },
-                columns: 5,
-                breakAt: {
-                    1500: 4,
-                    1200: 3,
-                    820: 2,
-                    520: 1
-                }
+            const masonryInstance = new Masonry(grid, {
+                itemSelector: ".macy-grid__item",
+                percentPosition: true,
+                horizontalOrder: true,
+                gutter: 20
             });
 
             const refreshLayout = function () {
-                macyInstance.recalculate(true);
+                masonryInstance.reloadItems();
+                masonryInstance.layout();
             };
 
             window.requestAnimationFrame(refreshLayout);
@@ -403,6 +380,7 @@
             });
 
             window.addEventListener("load", refreshLayout, { once: true });
+            window.addEventListener("resize", refreshLayout);
         });
     }
 
@@ -489,7 +467,7 @@
                 }
 
                 if (unifiedGrid && pageKey === "page2") {
-                    appendOrderedVisualSections(container, pageData, ["LIST21", "LIST22", "LIST23"]);
+                    appendOrderedVisualSections(container, pageData, PAGE2_SECTION_ORDER);
                 } else if (unifiedGrid) {
                     const grid = createUnifiedGrid(pageData, layout, pageKey);
                     if (grid) {
@@ -504,9 +482,7 @@
                 }
 
                 if (layout === "visual") {
-                    if (!unifiedGrid) {
-                        initMacyLayouts(container);
-                    }
+                    initMacyLayouts(container);
                 } else {
                     initSwipers(container);
                 }

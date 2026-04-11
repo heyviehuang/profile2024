@@ -165,7 +165,8 @@
 }
 
 // Page-specific overrides for menu active/hover colors
-.index {
+.index,
+.aboutMe {
   #menu.theme-light {
     li.active,
     li.active a,
@@ -175,7 +176,6 @@
   }
 }
 
-.aboutMe,
 .webCreations,
 .otherVisualCreations {
   #menu.theme-light {

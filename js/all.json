@@ -43,74 +43,68 @@
       "title_zh": "以活動主題為核心進行視覺延伸與頁面設計\n整合資訊與 CTA 配置，提升整體吸引力與閱讀節奏",
       "items": [
         {
-          "title": "活動頁 01",
-          "coverImage": "/img/mycard01.png",
-          "link": "https://dummyimage.com/300x250",
-          "description": ""
-        },
-        {
-          "title": "活動頁 02",
-          "coverImage": "/img/mycard02.webp",
-          "link": "https://dummyimage.com/300x250",
-          "description": ""
-        },
-        {
-          "title": "活動頁 03",
-          "coverImage": "/img/mycard03.webp",
-          "link": "https://dummyimage.com/300x250",
-          "description": ""
-        },
-        {
-          "title": "活動頁 04",
+          "title": "遊戲事前登錄活動頁 01",
           "coverImage": "/img/mycard04.webp",
-          "link": "https://dummyimage.com/300x250",
+          "link": "https://heyviehuang.github.io/202301preregister/",
           "description": ""
         },
         {
-          "title": "活動頁 05",
+          "title": "遊戲事前登錄活動頁 02",
           "coverImage": "/img/mycard05.webp",
-          "link": "https://dummyimage.com/300x250",
+          "link": "https://heyviehuang.github.io/202211preregister/",
+          "description": ""
+        },
+        {
+          "title": "會員活動頁 01",
+          "coverImage": "/img/mycard01.png",
+          "link": "https://app.mycard520.com.tw/202301memberevent/",
+          "description": ""
+        },
+        {
+          "title": "會員活動頁 02",
+          "coverImage": "/img/mycard02.webp",
+          "link": "https://app.mycard520.com.tw/202211memberevent/",
+          "description": ""
+        },
+        {
+          "title": "會員活動頁 03",
+          "coverImage": "/img/mycard03.webp",
+          "link": "https://app.mycard520.com.tw/202210memberevent/",
           "description": ""
         }
       ]
     },
     "LIST13": {
-      "title_en-first": "品牌官網 & 電子商務平台 & 設計稿",
-      "title_en-rest": "個人作品",
-      "title_zh": "手刻網站 & WordPress & Adobe XD",
+      "title_en-first": "品牌官網 & 設計稿",
+      "title_en-rest": "Personal projects",
+      "title_zh": "此三件作品皆為原創設計\n《檸夏果汁》與《敖翔飯店》皆為沒有使用套版的網站，純手刻HTML與CSS\n《魔娜售票 • 設計稿》為 Adobe XD 平台開發的設計稿",
       "items": [
         {
-          "title": "品牌官網 01",
+          "title": "品牌官網 01 -《檸夏果汁》",
           "coverImage": "/img/webDesign01.webp",
           "link": "https://heyviehuang.github.io/ningxia/",
-          "description": "手刻網站作品，著重品牌資訊整理與版面切版"
+          "description": "手搖飲品牌官網，採明亮的水果色調，以冷飲的氣泡、\n柳橙與雞蛋花等做裝飾，讓夏天沁涼的果汁帶來暢快"
         },
         {
-          "title": "品牌官網 02",
+          "title": "品牌官網 02 -《敖翔飯店》",
           "coverImage": "/img/webDesign02.webp",
           "link": "https://heyviehuang.github.io/flyHotel/",
-          "description": "旅宿形象網站練習，聚焦視覺節奏與資訊架構"
+          "description": "飯店形象網站，走低調奢華的高級飯店路線\n以黑色底金色邊為主視覺，設計的是一趟精緻的旅程"
         },
         {
-          "title": "電子商務網站",
-          "coverImage": "/img/webDesign03.webp",
-          "link": "https://clearskytuckshop.com/",
-          "description": "規劃商品展示與頁面資訊架構，兼顧品牌風格與使用流程，提升瀏覽效率與購物體驗"
-        },
-        {
-          "title": "售票網站設計稿",
+          "title": "售票網站設計稿 -《魔娜售票》",
           "coverImage": "/img/webDesign04.webp",
           "link": "https://xd.adobe.com/view/3af5096b-9a31-41a7-b79b-11af403d3e23-6fa6/",
-          "description": "建立整體視覺方向與版面系統，作為介面發展與後續實作的設計基礎，以 Adobe XD 製作介面提案與互動流程設計，協助釐清畫面邏輯與使用情境"
+          "description": "風格以魔女為原型，充滿神祕氣息的紫色為主色系"
         }
       ]
     }
   },
   "page2": {
     "LIST21": {
-      "title_en-first": "Banner",
-      "title_en-rest": "Design",
-      "title_zh": "橫幅設計",
+      "title_en-first": "平面設計",
+      "title_en-rest": "Banner Design",
+      "title_zh": "以品牌調性為基礎規劃頁面視覺與資訊編排\n強化產品特色與整體瀏覽體驗",
       "items": [
         {
           "title": "Banner 01",
@@ -139,13 +133,33 @@
         {
           "title": "Banner 07",
           "coverImage": "/img/bn07.webp"
+        },
+        {
+          "title": "Banner 08",
+          "coverImage": "/img/bn08.jpg"
+        },
+        {
+          "title": "Banner 09",
+          "coverImage": "/img/bn09.jpg"
+        },
+        {
+          "title": "Banner 10",
+          "coverImage": "/img/bn10.jpg"
+        },
+        {
+          "title": "Banner 11",
+          "coverImage": "/img/bn11.jpg"
+        },
+        {
+          "title": "Banner 12",
+          "coverImage": "/img/bn12.jpg"
         }
       ]
     },
     "LIST22": {
-      "title_en-first": "Digital",
-      "title_en-rest": "Art",
-      "title_zh": "電繪",
+      "title_en-first": "數位繪圖",
+      "title_en-rest": "Digital Art",
+      "title_zh": "使用 Clip Studio Paint 或 Procreate 進行創作，題材包含動物、風景等\n以色彩與光影表現氛圍，並注重構圖與細節刻畫",
       "items": [
         {
           "title": "電繪 01",
@@ -190,9 +204,9 @@
       ]
     },
     "LIST23": {
-      "title_en-first": "Painting",
-      "title_en-rest": "Art",
-      "title_zh": "手繪",
+      "title_en-first": "手繪",
+      "title_en-rest": "Painting Art",
+      "title_zh": "興趣是使用水彩傳統媒材進行創作\n以色彩與光影表現氛圍，並注重構圖與細節刻畫",
       "items": [
         {
           "title": "手繪 01",
