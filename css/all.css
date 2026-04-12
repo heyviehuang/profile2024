@@ -1029,7 +1029,7 @@ button {
   z-index: 5;
   width: 100%;
   left: 0;
-  top: 14rem;
+  top: 10rem;
   height: 100vh;
 }
 
@@ -1047,7 +1047,7 @@ button {
     font-size: clamp(1.65rem, 3.2vw, 2rem);
   }
   #section1 .layer {
-    top: 12rem;
+    top: 10rem;
   }
 }
 @media (max-width: 992px) {
@@ -1172,22 +1172,27 @@ button {
     margin-left: calc(50% - 50vw);
     border-radius: 0;
   }
+  .index #section4 .otherVisualCreations__cover img {
+    width: auto;
+    height: 100%;
+    max-width: none;
+  }
   .index #section4 .otherVisualCreations__hero {
     position: relative;
     top: auto;
     left: auto;
     transform: none;
     width: 100%;
-    padding: 7rem var(--site-edge) 3rem;
-    align-items: center;
-    text-align: center;
+    padding: 7rem calc(var(--logo-content-offset) + 1.35rem) 3rem;
+    align-items: flex-start;
+    text-align: left;
     gap: 1.15rem;
     order: 1;
     z-index: 3;
   }
   .index #section4 .otherVisualCreations__lead {
     font-size: 0.9rem;
-    max-width: 28ch;
+    max-width: 24ch;
   }
   .index #section4 .otherVisualCreations__cta {
     display: inline-flex;
@@ -1195,11 +1200,6 @@ button {
     min-width: 160px;
     position: relative;
     z-index: 4;
-  }
-  .index #section4 .otherVisualCreations__cover img {
-    width: auto;
-    height: 100%;
-    max-width: none;
   }
 }
 @media (max-width: 576px) {
@@ -1425,7 +1425,7 @@ button {
   flex-direction: column;
   align-items: stretch;
   gap: 12px;
-  background: transparent;
+  background: #2d3428;
   box-shadow: none;
   overflow: visible;
 }
@@ -1495,12 +1495,6 @@ button {
   .webCreations .mySwiper {
     padding-right: clamp(1rem, 6vw, 2rem);
   }
-  .webCreations .portfolio-card__image-title {
-    top: 0.72rem;
-    left: 0.72rem;
-    padding: 0.28rem 0.6rem;
-    font-size: 0.88rem;
-  }
 }
 @media (max-width: 576px) {
   .webCreations .section--LIST11 .horizontal-list__item {
@@ -1514,12 +1508,6 @@ button {
   }
   .webCreations .mySwiper {
     padding-right: clamp(0.8rem, 6vw, 1.5rem);
-  }
-  .webCreations .portfolio-card__image-title {
-    top: 0.56rem;
-    left: 0.56rem;
-    padding: 0.22rem 0.52rem;
-    font-size: 0.76rem;
   }
 }
 .webCreations .web-case-study {
@@ -1926,6 +1914,22 @@ button {
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .portfolio-card__image-title {
+    top: 0.72rem;
+    left: 0.72rem;
+    padding: 0.28rem 0.6rem;
+    font-size: 0.88rem;
+  }
+}
+@media (max-width: 576px) {
+  .portfolio-card__image-title {
+    top: 0.56rem;
+    left: 0.56rem;
+    padding: 0.22rem 0.52rem;
+    font-size: 0.76rem;
+  }
+}
 .webCreations .mySwiper {
   padding-left: 0;
   padding-right: clamp(2.5rem, 6vw, 6rem);
@@ -2091,12 +2095,6 @@ button {
   }
 }
 @media (max-width: 768px) {
-  .otherVisualCreations .portfolio-card__image-title {
-    top: 0.72rem;
-    left: 0.72rem;
-    padding: 0.28rem 0.6rem;
-    font-size: 0.88rem;
-  }
   .otherVisualCreations #content {
     padding-top: clamp(2.5rem, 6vw, 4rem);
   }
@@ -2112,12 +2110,6 @@ button {
   }
 }
 @media (max-width: 576px) {
-  .otherVisualCreations .portfolio-card__image-title {
-    top: 0.56rem;
-    left: 0.56rem;
-    padding: 0.22rem 0.52rem;
-    font-size: 0.76rem;
-  }
   .otherVisualCreations #content {
     padding-top: clamp(2rem, 6vw, 3rem);
   }
@@ -3138,9 +3130,9 @@ body {
 .aboutPreview::before {
   content: "ABOUT";
   position: absolute;
-  top: 7%;
-  right: -1.5rem;
-  font-size: clamp(5rem, 15vw, 12rem);
+  top: 9%;
+  right: -0.35rem;
+  font-size: clamp(4rem, 12vw, 9rem);
   font-weight: 700;
   letter-spacing: 0.22rem;
   color: rgba(28, 28, 30, 0.05);
@@ -3284,8 +3276,9 @@ body {
     grid-template-columns: 1fr;
   }
   .aboutPreview::before {
-    top: 3%;
-    right: 0;
+    top: 4%;
+    right: 0rem;
+    opacity: 0.8;
   }
 }
 .aboutPage {
@@ -3312,14 +3305,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: clamp(1.5rem, 4vw, 3rem) min(7vw, 4.5rem) 4.5rem;
+  padding: clamp(1.5rem, 4vw, 3rem) 0 4.5rem;
   text-align: center;
 }
 .aboutPage__hero::after {
   content: "";
   position: absolute;
-  left: min(7vw, 4.5rem);
-  right: min(7vw, 4.5rem);
+  left: 0;
+  right: 0;
   bottom: 0;
   height: 1px;
   background: rgba(28, 28, 30, 0.08);
@@ -3380,7 +3373,7 @@ body {
 }
 .aboutPage__section {
   position: relative;
-  padding: clamp(3.5rem, 6vw, 4.5rem) min(7vw, 4.5rem) 0;
+  padding: clamp(3.5rem, 6vw, 4.5rem) 0 0;
 }
 .aboutPage__section + .aboutPage__section {
   margin-top: clamp(3.5rem, 6vw, 4.5rem);
@@ -3388,8 +3381,8 @@ body {
 .aboutPage__section + .aboutPage__section::before {
   content: "";
   position: absolute;
-  left: min(7vw, 4.5rem);
-  right: min(7vw, 4.5rem);
+  left: 0;
+  right: 0;
   top: 0;
   height: 1px;
   background: rgba(28, 28, 30, 0.06);
@@ -3648,10 +3641,10 @@ body {
 }
 
 .index #section2 .aboutPreview {
-  padding-left: 0;
   width: 100%;
   padding-top: clamp(3rem, 6vw, 5rem);
   padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-left: 0;
 }
 .index #section2 .aboutPreview::before {
   right: var(--site-edge);
