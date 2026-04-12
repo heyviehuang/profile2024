@@ -83,27 +83,27 @@
           "title": "品牌官網 01 -《檸夏果汁》",
           "coverImage": "/img/webDesign01.webp",
           "link": "https://heyviehuang.github.io/ningxia/",
-          "description": "手搖飲品牌官網，採明亮的水果色調，以冷飲的氣泡、\n柳橙與雞蛋花等做裝飾，讓夏天沁涼的果汁帶來暢快"
+          "description": "手搖飲品牌官網，採明亮的水果色調，以冷飲的氣泡、柳橙與雞蛋花等做裝飾，讓夏天沁涼的果汁帶來暢快。"
         },
         {
           "title": "品牌官網 02 -《敖翔飯店》",
           "coverImage": "/img/webDesign02.webp",
           "link": "https://heyviehuang.github.io/flyHotel/",
-          "description": "飯店形象網站，走低調奢華的高級飯店路線\n以黑色底金色邊為主視覺，設計的是一趟精緻的旅程"
+          "description": "飯店形象網站，走低調奢華的高級飯店路線，以黑色底金色邊為主視覺，設計的是一趟精緻的旅程。"
         },
         {
           "title": "售票網站設計稿 -《魔娜售票》",
           "coverImage": "/img/webDesign04.webp",
           "link": "https://xd.adobe.com/view/3af5096b-9a31-41a7-b79b-11af403d3e23-6fa6/",
-          "description": "風格以魔女為原型，充滿神祕氣息的紫色為主色系"
+          "description": "風格以魔女為原型，充滿神祕氣息的紫色為主色系。"
         }
       ]
     }
   },
   "page2": {
     "LIST21": {
-      "title_en-first": "平面設計",
-      "title_en-rest": "Graphic Design",
+      "title_en-first": "商業設計",
+      "title_en-rest": "Commercial Design",
       "title_zh": "以品牌調性為基礎規劃頁面視覺與資訊編排\n強化產品特色與整體瀏覽體驗",
       "items": [
         {
@@ -159,7 +159,7 @@
     "LIST22": {
       "title_en-first": "數位繪圖",
       "title_en-rest": "Digital Art",
-      "title_zh": "使用 Clip Studio Paint 或 Procreate 進行創作，題材包含動物、風景等\n以色彩與光影表現氛圍，並注重構圖與細節刻畫",
+      "title_zh": "使用 Clip Studio Paint 或 Procreate 進行創作，題材包含動物、風景",
       "items": [
         {
           "title": "數位繪圖 01",
@@ -206,7 +206,7 @@
     "LIST23": {
       "title_en-first": "傳統繪圖",
       "title_en-rest": "Painting Art",
-      "title_zh": "興趣是使用水彩傳統媒材進行創作\n以色彩與光影表現氛圍，並注重構圖與細節刻畫",
+      "title_zh": "使用傳統媒材不透明水彩進行的創作",
       "items": [
         {
           "title": "傳統繪圖 01",

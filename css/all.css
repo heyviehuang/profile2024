@@ -297,6 +297,13 @@ button {
   justify-content: center;
   color: #eadcc6;
   background: transparent;
+  border: 0;
+  padding: 0;
+  font-family: "Poiret One", "Noto Sans TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.04em;
   transition: 0.3s;
   -webkit-transition: 0.3s;
 }
@@ -306,6 +313,13 @@ button {
   -webkit-transform: translateY(-5px);
   color: #ffffff;
   background-color: transparent;
+}
+
+.aboutMe .btnTop {
+  color: #1c1c1e;
+}
+.aboutMe .btnTop:hover {
+  color: #1c1c1e;
 }
 
 .otherVisualCreations .gallery-hero, .webCreations .web-hero {
@@ -1470,30 +1484,42 @@ button {
 }
 @media (max-width: 768px) {
   .webCreations .section--LIST11 .horizontal-list__item {
-    --portfolio-card-width: min(620px, 78vw);
+    --portfolio-card-width: min(520px, 66vw);
   }
   .webCreations .section--LIST12 .horizontal-list__item {
-    --portfolio-card-width: min(480px, 70vw);
+    --portfolio-card-width: min(390px, 60vw);
   }
   .webCreations .section--LIST13 .horizontal-list__item {
-    --portfolio-card-width: min(320px, 60vw);
+    --portfolio-card-width: min(290px, 56vw);
   }
   .webCreations .mySwiper {
     padding-right: clamp(1rem, 6vw, 2rem);
   }
+  .webCreations .portfolio-card__image-title {
+    top: 0.72rem;
+    left: 0.72rem;
+    padding: 0.28rem 0.6rem;
+    font-size: 0.88rem;
+  }
 }
 @media (max-width: 576px) {
   .webCreations .section--LIST11 .horizontal-list__item {
-    --portfolio-card-width: min(520px, 86vw);
+    --portfolio-card-width: min(400px, 68vw);
   }
   .webCreations .section--LIST12 .horizontal-list__item {
-    --portfolio-card-width: min(400px, 78vw);
+    --portfolio-card-width: min(320px, 62vw);
   }
   .webCreations .section--LIST13 .horizontal-list__item {
-    --portfolio-card-width: min(300px, 70vw);
+    --portfolio-card-width: min(260px, 60vw);
   }
   .webCreations .mySwiper {
     padding-right: clamp(0.8rem, 6vw, 1.5rem);
+  }
+  .webCreations .portfolio-card__image-title {
+    top: 0.56rem;
+    left: 0.56rem;
+    padding: 0.22rem 0.52rem;
+    font-size: 0.76rem;
   }
 }
 .webCreations .web-case-study {
@@ -1523,8 +1549,8 @@ button {
   position: relative;
   overflow: hidden;
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #ffffff;
+  border: 0;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
   aspect-ratio: 16/9;
 }
@@ -1547,8 +1573,7 @@ button {
   background: linear-gradient(180deg, rgba(17, 17, 17, 0.14) 0%, rgba(17, 17, 17, 0.38) 100%);
   transition: opacity 0.25s ease;
 }
-.webCreations .web-case-study__poster:hover::after,
-.webCreations .web-case-study__poster:focus-visible::after {
+.webCreations .web-case-study__poster:hover::after, .webCreations .web-case-study__poster:focus-visible::after {
   opacity: 0.82;
 }
 .webCreations .web-case-study__poster-play {
@@ -1583,15 +1608,18 @@ button {
   height: 100%;
   border: 0;
   display: block;
+  background: #ffffff;
 }
 .webCreations .web-case-study__image {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center center;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
 }
-.webCreations .web-case-study__video-shell.is-playing .web-case-study__poster {
+.webCreations .web-case-study__video-shell.is-playing .webCreations .web-case-study__poster {
   opacity: 0;
   pointer-events: none;
 }
@@ -1600,8 +1628,7 @@ button {
   gap: 2.4rem;
   min-width: 0;
 }
-.webCreations .web-case-study__intro,
-.webCreations .web-case-study__section {
+.webCreations .web-case-study__intro, .webCreations .web-case-study__section {
   display: grid;
   gap: 0.9rem;
   padding: 1.35rem 0 0;
@@ -1614,8 +1641,7 @@ button {
 .webCreations .web-case-study__content > .web-case-study__section:last-child {
   padding-bottom: 1.35rem;
 }
-.webCreations .web-case-study__eyebrow,
-.webCreations .web-case-study__section-label {
+.webCreations .web-case-study__eyebrow, .webCreations .web-case-study__section-label {
   margin: 0;
   font-size: 0.72rem;
   letter-spacing: 0.22rem;
@@ -1637,17 +1663,13 @@ button {
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.66);
 }
-.webCreations .web-case-study__summary,
-.webCreations .web-case-study__phase > p,
-.webCreations .web-case-study__highlights li,
-.webCreations .web-case-study__list li {
+.webCreations .web-case-study__summary, .webCreations .web-case-study__phase > p, .webCreations .web-case-study__highlights li, .webCreations .web-case-study__list li {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.85;
   color: rgba(255, 255, 255, 0.76);
 }
-.webCreations .web-case-study__timeline,
-.webCreations .web-case-study__highlights {
+.webCreations .web-case-study__timeline, .webCreations .web-case-study__highlights {
   display: grid;
   gap: 1.25rem;
 }
@@ -1662,19 +1684,16 @@ button {
   font-weight: 400;
   color: rgba(255, 255, 255, 0.94);
 }
-.webCreations .web-case-study__list,
-.webCreations .web-case-study__highlights {
+.webCreations .web-case-study__list, .webCreations .web-case-study__highlights {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-.webCreations .web-case-study__list li,
-.webCreations .web-case-study__highlights li {
+.webCreations .web-case-study__list li, .webCreations .web-case-study__highlights li {
   position: relative;
   padding-left: 1rem;
 }
-.webCreations .web-case-study__list li::before,
-.webCreations .web-case-study__highlights li::before {
+.webCreations .web-case-study__list li::before, .webCreations .web-case-study__highlights li::before {
   content: "";
   position: absolute;
   top: 0.8rem;
@@ -1715,7 +1734,8 @@ button {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   background: rgba(255, 255, 255, 0.96);
 }
 .webCreations .web-case-study__lightbox-trigger {
@@ -1792,13 +1812,11 @@ button {
   .webCreations .web-case-study__content {
     gap: 1.6rem;
   }
-  .webCreations .web-case-study__intro,
-  .webCreations .web-case-study__section {
+  .webCreations .web-case-study__intro, .webCreations .web-case-study__section {
     gap: 0.8rem;
     padding-top: 1.1rem;
   }
-  .webCreations .web-case-study__eyebrow,
-  .webCreations .web-case-study__section-label {
+  .webCreations .web-case-study__eyebrow, .webCreations .web-case-study__section-label {
     font-size: 0.68rem;
     letter-spacing: 0.16rem;
   }
@@ -1810,10 +1828,7 @@ button {
     font-size: 0.86rem;
     line-height: 1.65;
   }
-  .webCreations .web-case-study__summary,
-  .webCreations .web-case-study__phase > p,
-  .webCreations .web-case-study__highlights li,
-  .webCreations .web-case-study__list li {
+  .webCreations .web-case-study__summary, .webCreations .web-case-study__phase > p, .webCreations .web-case-study__highlights li, .webCreations .web-case-study__list li {
     font-size: 0.84rem;
     line-height: 1.78;
   }
@@ -1827,16 +1842,13 @@ button {
     font-size: 0.96rem;
     line-height: 1.42;
   }
-  .webCreations .web-case-study__timeline,
-  .webCreations .web-case-study__highlights {
+  .webCreations .web-case-study__timeline, .webCreations .web-case-study__highlights {
     gap: 1rem;
   }
-  .webCreations .web-case-study__list li,
-  .webCreations .web-case-study__highlights li {
+  .webCreations .web-case-study__list li, .webCreations .web-case-study__highlights li {
     padding-left: 0.9rem;
   }
-  .webCreations .web-case-study__list li::before,
-  .webCreations .web-case-study__highlights li::before {
+  .webCreations .web-case-study__list li::before, .webCreations .web-case-study__highlights li::before {
     top: 0.72rem;
   }
   .webCreations .web-case-study__section--reports {
@@ -1874,11 +1886,7 @@ button {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-  .webCreations .web-case-study__summary,
-  .webCreations .web-case-study__phase > p,
-  .webCreations .web-case-study__highlights li,
-  .webCreations .web-case-study__list li,
-  .webCreations .web-case-study__subtitle {
+  .webCreations .web-case-study__summary, .webCreations .web-case-study__phase > p, .webCreations .web-case-study__highlights li, .webCreations .web-case-study__list li, .webCreations .web-case-study__subtitle {
     font-size: 0.8rem;
   }
   .webCreations .web-case-study__phase h5 {
@@ -2083,6 +2091,12 @@ button {
   }
 }
 @media (max-width: 768px) {
+  .otherVisualCreations .portfolio-card__image-title {
+    top: 0.72rem;
+    left: 0.72rem;
+    padding: 0.28rem 0.6rem;
+    font-size: 0.88rem;
+  }
   .otherVisualCreations #content {
     padding-top: clamp(2.5rem, 6vw, 4rem);
   }
@@ -2098,6 +2112,12 @@ button {
   }
 }
 @media (max-width: 576px) {
+  .otherVisualCreations .portfolio-card__image-title {
+    top: 0.56rem;
+    left: 0.56rem;
+    padding: 0.22rem 0.52rem;
+    font-size: 0.76rem;
+  }
   .otherVisualCreations #content {
     padding-top: clamp(2rem, 6vw, 3rem);
   }
@@ -3639,8 +3659,8 @@ body {
 @media (max-width: 992px) {
   .index #section2 .aboutPreview {
     min-height: auto;
-    padding-top: clamp(2rem, 4vw, 3rem);
-    padding-bottom: clamp(2rem, 4vw, 3rem);
+    padding-top: clamp(1rem, 2vw, 1.5rem);
+    padding-bottom: clamp(1rem, 2vw, 1.5rem);
   }
 }
 @media (max-width: 768px) {
@@ -3651,7 +3671,12 @@ body {
   .index #section2 .aboutPreview {
     align-items: flex-start;
     text-align: left;
-    gap: 0.9rem;
+    gap: 0.55rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  .index #section2 .aboutPreview__eyebrow {
+    margin-top: 0.7rem;
   }
   .index #section2 .aboutPreview__title {
     font-size: clamp(1rem, 5vw, 1.45rem);
@@ -3672,30 +3697,40 @@ body {
     letter-spacing: 0.01em;
   }
   .index #section2 .aboutPreview__meta {
-    gap: 0.6rem 0.8rem;
-    margin-top: 0.2rem;
+    gap: 0.45rem 0.7rem;
+    margin-top: 0.05rem;
   }
   .index #section2 .aboutPreview__meta span {
     font-size: 0.82rem;
   }
   .index #section2 .aboutPreview__grid {
-    margin-top: 1.4rem;
+    margin-top: 0.85rem;
+    gap: 0.7rem;
   }
   .index #section2 .aboutPreview__card {
-    padding-top: 1rem;
+    padding: 0.55rem 0 0.65rem;
   }
   .index #section2 .aboutPreview__card h3 {
     font-size: 0.9rem;
+    margin-bottom: 0.45rem;
   }
   .index #section2 .aboutPreview__card p {
     font-size: 0.82rem;
-    line-height: 1.7;
+    line-height: 1.52;
   }
   .index #section2 .aboutPreview__cta {
     min-width: 160px;
   }
 }
 @media (max-width: 576px) {
+  .index #section2 .aboutPreview {
+    gap: 0.45rem;
+    padding-top: 0.55rem;
+    padding-bottom: 0.55rem;
+  }
+  .index #section2 .aboutPreview__eyebrow {
+    margin-top: 0.9rem;
+  }
   .index #section2 .aboutPreview__title {
     font-size: clamp(0.95rem, 5.2vw, 1.3rem);
     line-height: 1.3;
@@ -3709,6 +3744,21 @@ body {
     width: auto;
     max-width: none;
     min-width: 180px;
+  }
+  .index #section2 .aboutPreview__grid {
+    margin-top: 0.7rem;
+    gap: 0.55rem;
+  }
+  .index #section2 .aboutPreview__card {
+    padding: 0.45rem 0 0.55rem;
+  }
+  .index #section2 .aboutPreview__card h3 {
+    margin-bottom: 0.38rem;
+    font-size: 0.84rem;
+  }
+  .index #section2 .aboutPreview__card p {
+    font-size: 0.78rem;
+    line-height: 1.45;
   }
 }
 .index #section4 .otherVisualCreations__bg {
