@@ -488,6 +488,13 @@
                 }
                 initExternalLinks(container);
                 revealInitialSectionHeading(container);
+                document.dispatchEvent(new CustomEvent("portfolio:content-ready", {
+                    detail: {
+                        containerId: container.id || "",
+                        pageKey: pageKey,
+                        layout: layout
+                    }
+                }));
             })
             .catch(function (error) {
                 console.error("Portfolio data load failed:", error);

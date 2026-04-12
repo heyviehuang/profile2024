@@ -256,7 +256,45 @@
 
             const updateScrollState = () => {
                 const scrollTop = this.$window.scrollTop();
-                const scrollBottom = scrollTop + this.$window.height();
+                const viewportHeight = this.$window.height();
+                const revealThreshold = viewportHeight * 0.88;
+
+                const isElementReadyToReveal = function ($element) {
+                    const element = $element.get(0);
+                    if (!element) {
+                        return false;
+                    }
+
+                    const rect = element.getBoundingClientRect();
+                    return rect.top <= revealThreshold;
+                };
+
+                const applyBlurReveal = function ($element) {
+                    if ($element.attr("data-blur-revealed") === "true") {
+                        return;
+                    }
+
+                    $element.attr("data-blur-revealed", "true");
+
+                    $element.find(".char01").css({
+                        "animation-name": "blurInAnim",
+                        "animation-duration": "1.6s",
+                        "animation-delay": "0s",
+                        "animation-fill-mode": "forwards"
+                    });
+                    $element.find(".char02").css({
+                        "animation-name": "blurInAnim",
+                        "animation-duration": "1.6s",
+                        "animation-delay": "0.16s",
+                        "animation-fill-mode": "forwards"
+                    });
+                    $element.find(".char03").css({
+                        "animation-name": "blurInAnim",
+                        "animation-duration": "1.6s",
+                        "animation-delay": "0.32s",
+                        "animation-fill-mode": "forwards"
+                    });
+                };
 
                 if (scrollTop > triggerHeight) {
                     this.$backToTop.fadeIn();
@@ -266,35 +304,26 @@
 
                 $(".animT,.animR,.animB,.animL,.animM").each(function () {
                     const $element = $(this);
-                    if (scrollBottom >= $element.offset().top) {
+                    if ($element.attr("data-reveal-manual") === "true") {
+                        return;
+                    }
+
+                    if (isElementReadyToReveal($element)) {
                         $element.addClass("fadeIn");
                     }
                 });
 
                 $(".blurIncontainer").each(function () {
                     const $element = $(this);
-                    if (scrollBottom < $element.offset().top) {
+                    if ($element.attr("data-reveal-manual") === "true") {
                         return;
                     }
 
-                    $element.find("char,.char01").css({
-                        "animation-name": "blurInAnim",
-                        "animation-duration": "1.6s",
-                        "animation-delay": "0s",
-                        "animation-fill-mode": "forwards"
-                    });
-                    $element.find("char,.char02").css({
-                        "animation-name": "blurInAnim",
-                        "animation-duration": "1.6s",
-                        "animation-delay": "0.16s",
-                        "animation-fill-mode": "forwards"
-                    });
-                    $element.find("char,.char03").css({
-                        "animation-name": "blurInAnim",
-                        "animation-duration": "1.6s",
-                        "animation-delay": "0.32s",
-                        "animation-fill-mode": "forwards"
-                    });
+                    if (!isElementReadyToReveal($element)) {
+                        return;
+                    }
+
+                    applyBlurReveal($element);
                 });
             };
 

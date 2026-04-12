@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
     <meta name="referrer" content="no-referrer" />
     <title>Web Creations | Sally Huang</title>
     <link rel="shortcut icon" href="../img/logo.ico" />
@@ -62,10 +63,10 @@
         <div id="content" data-portfolio-page="page1" data-portfolio-layout="web"></div>
 
         <section class="section web-case-study">
-          <h3 class="animT blurIncontainer">
+          <h3 class="animT blurIncontainer" data-reveal-manual="true">
             <span class="char char02 section-title section-title--zh">自有品牌電子商務網站</span><br />
             <span class="char char03 section-title section-title--en">Personal E-commerce Website</span><br />
-            <p class="char char01 section-title section-title--desc">《晴空雜貨店》品牌電商專案<br />從品牌建置、網站營運到靜態化遷移的完整實作歷程</p>
+            <span class="char char01 section-title section-title--desc">《晴空雜貨店》品牌電商專案<br />從品牌建置、網站營運到靜態化遷移的完整實作歷程</span>
           </h3>
 
           <div class="web-case-study__layout">
@@ -74,9 +75,9 @@
                 <button class="web-case-study__poster" type="button"
                   data-video-embed="https://www.youtube.com/embed/XMQ6TT209v8?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1&fs=1"
                   data-video-watch="https://www.youtube.com/watch?v=XMQ6TT209v8" aria-label="播放晴空雜貨店影片">
-                  <!-- <img class="web-case-study__image" src="../img/main-BN-scaled.webp" alt="晴空雜貨店影片封面" loading="lazy"
+                  <img class="web-case-study__image" src="../img/main-BN-scaled.webp" alt="晴空雜貨店影片封面" loading="lazy"
                     decoding="async">
-                  <span class="web-case-study__poster-play" aria-hidden="true"></span> -->
+                  <span class="web-case-study__poster-play" aria-hidden="true"></span>
                 </button>
                 <iframe class="web-case-study__video" src="about:blank" title="晴空雜貨店 YouTube video player"
                   frameborder="0"
@@ -180,18 +181,70 @@
     <script src="../js/site.js"></script>
     <script src="../js/portfolio-page.js"></script>
     <script>
+      function revealWebCaseStudyHeading() {
+        const heading = document.querySelector(".web-case-study .blurIncontainer");
+
+        if (!heading || heading.dataset.revealed === "true") {
+          return;
+        }
+
+        function restartBlurAnimation(elements, delay) {
+          elements.forEach(function (element) {
+            element.style.animation = "none";
+            void element.offsetWidth;
+            element.style.animationName = "blurInAnim";
+            element.style.animationDuration = "1.6s";
+            element.style.animationDelay = delay;
+            element.style.animationFillMode = "forwards";
+          });
+        }
+
+        heading.dataset.revealed = "true";
+        heading.classList.add("fadeIn");
+
+        restartBlurAnimation(heading.querySelectorAll(".char01"), "0s");
+        restartBlurAnimation(heading.querySelectorAll(".char02"), "0.16s");
+        restartBlurAnimation(heading.querySelectorAll(".char03"), "0.32s");
+      }
+
+      function initWebCaseStudyHeadingReveal() {
+        const webCaseStudyHeading = document.querySelector(".web-case-study .blurIncontainer");
+
+        if (!webCaseStudyHeading || webCaseStudyHeading.dataset.revealObserverBound === "true") {
+          return;
+        }
+
+        webCaseStudyHeading.dataset.revealObserverBound = "true";
+
+        if ("IntersectionObserver" in window) {
+          const headingObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              revealWebCaseStudyHeading();
+              observer.unobserve(entry.target);
+            });
+          }, {
+            threshold: 0.35
+          });
+
+          headingObserver.observe(webCaseStudyHeading);
+          return;
+        }
+
+        window.setTimeout(revealWebCaseStudyHeading, 120);
+      }
+
+      document.addEventListener("portfolio:content-ready", initWebCaseStudyHeadingReveal);
+      window.addEventListener("load", initWebCaseStudyHeadingReveal);
+
       document.querySelectorAll(".web-case-study__poster").forEach(function (poster) {
         poster.addEventListener("click", function () {
           const shell = poster.closest(".web-case-study__video-shell");
           const iframe = shell && shell.querySelector(".web-case-study__video");
           const embedUrl = poster.getAttribute("data-video-embed");
-          const watchUrl = poster.getAttribute("data-video-watch");
-          const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-
-          if (isTouchDevice && watchUrl) {
-            window.open(watchUrl, "_blank", "noopener,noreferrer");
-            return;
-          }
 
           if (!iframe || !embedUrl) {
             return;
