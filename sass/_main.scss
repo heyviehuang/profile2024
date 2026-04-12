@@ -1710,29 +1710,6 @@ body {
   }
 }
 
-// =========================================================
-// Web Page
-// =========================================================
-.webCreations {
-  #content,
-  .section,
-  .section h3,
-  .sectionTitle {
-    color: $pure-white;
-  }
-
-  .section h3 {
-    .char01,
-    .char02 {
-      color: rgba($pure-white, 0.96);
-    }
-
-    .char03 {
-      color: rgba($pure-white, 0.76);
-    }
-  }
-}
-
 @include pad {
   .aboutPreview,
   .webCreations__hero,

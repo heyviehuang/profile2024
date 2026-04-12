@@ -3883,20 +3883,6 @@ body {
   }
 }
 
-.webCreations #content,
-.webCreations .section,
-.webCreations .section h3,
-.webCreations .sectionTitle {
-  color: #ffffff;
-}
-.webCreations .section h3 .char01,
-.webCreations .section h3 .char02 {
-  color: rgba(255, 255, 255, 0.96);
-}
-.webCreations .section h3 .char03 {
-  color: rgba(255, 255, 255, 0.76);
-}
-
 @media (max-width: 768px) {
   .aboutPreview,
   .webCreations__hero,
