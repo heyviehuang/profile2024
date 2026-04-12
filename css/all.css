@@ -101,16 +101,6 @@ video {
   vertical-align: baseline;
 }
 
-a[x-apple-data-detectors],
-a[x-apple-data-detectors=true] {
-  color: inherit !important;
-  text-decoration: none !important;
-  font: inherit !important;
-  line-height: inherit !important;
-  letter-spacing: inherit !important;
-  white-space: inherit !important;
-}
-
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -1601,13 +1591,18 @@ button {
   border: 0;
   display: block;
   background: #ffffff;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  aspect-ratio: 16/9;
 }
 .webCreations .web-case-study__image {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
 }

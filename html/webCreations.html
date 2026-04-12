@@ -66,23 +66,22 @@
           <h3 class="animT blurIncontainer" data-reveal-manual="true">
             <span class="char char02 section-title section-title--zh">自有品牌電子商務網站</span><br />
             <span class="char char03 section-title section-title--en">Personal E-commerce Website</span><br />
-            <span class="char char01 section-title section-title--desc">《晴空雜貨店》品牌電商專案<br />從品牌建置、網站營運到靜態化遷移的完整實作歷程</span>
+            <span
+              class="char char01 section-title section-title--desc">《晴空雜貨店》品牌電商專案<br />從品牌建置、網站營運到靜態化遷移的完整實作歷程</span>
           </h3>
 
           <div class="web-case-study__layout">
             <article class="web-case-study__media">
               <div class="web-case-study__video-shell">
-                <button class="web-case-study__poster" type="button"
-                  data-video-embed="https://www.youtube.com/embed/XMQ6TT209v8?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1&fs=1"
-                  data-video-watch="https://www.youtube.com/watch?v=XMQ6TT209v8" aria-label="播放晴空雜貨店影片">
-                  <img class="web-case-study__image" src="../img/main-BN-scaled.webp" alt="晴空雜貨店影片封面" loading="lazy"
+                <button class="web-case-study__poster" type="button" data-video-src="../img/晴空雜貨店.mp4"
+                  aria-label="播放晴空雜貨店影片">
+                  <img class="web-case-study__image" src="../img/main-BN.jpg" alt="晴空雜貨店影片封面" loading="lazy"
                     decoding="async">
                   <span class="web-case-study__poster-play" aria-hidden="true"></span>
                 </button>
-                <iframe class="web-case-study__video" src="about:blank" title="晴空雜貨店 YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <video class="web-case-study__video" title="晴空雜貨店影片" controls playsinline preload="none">
+                  <source data-src="../img/晴空雜貨店.mp4" type="video/mp4">
+                </video>
               </div>
             </article>
 
@@ -243,15 +242,27 @@
       document.querySelectorAll(".web-case-study__poster").forEach(function (poster) {
         poster.addEventListener("click", function () {
           const shell = poster.closest(".web-case-study__video-shell");
-          const iframe = shell && shell.querySelector(".web-case-study__video");
-          const embedUrl = poster.getAttribute("data-video-embed");
+          const video = shell && shell.querySelector(".web-case-study__video");
+          const source = video && video.querySelector("source");
+          const videoSrc = poster.getAttribute("data-video-src");
 
-          if (!iframe || !embedUrl) {
+          if (!video || !source || !videoSrc) {
             return;
           }
 
-          iframe.src = embedUrl;
+          if (!source.getAttribute("src")) {
+            source.setAttribute("src", videoSrc);
+            video.load();
+          }
+
           shell.classList.add("is-playing");
+
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(function () {
+              shell.classList.remove("is-playing");
+            });
+          }
         });
       });
 
