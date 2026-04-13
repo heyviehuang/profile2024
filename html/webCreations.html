@@ -73,15 +73,11 @@
           <div class="web-case-study__layout">
             <article class="web-case-study__media">
               <div class="web-case-study__video-shell">
-                <button class="web-case-study__poster" type="button" data-video-src="../img/晴空雜貨店.mp4"
-                  aria-label="播放晴空雜貨店影片">
-                  <img class="web-case-study__image" src="../img/main-BN.jpg" alt="晴空雜貨店影片封面" loading="lazy"
+                <a class="web-case-study__poster" href="https://heyviehuang.github.io/simply-static-1-1772766954/"
+                  target="_blank" rel="noopener" aria-label="前往晴空雜貨店網站">
+                  <img class="web-case-study__image" src="../img/main-BN.jpg" alt="晴空雜貨店網站封面" loading="lazy"
                     decoding="async">
-                  <span class="web-case-study__poster-play" aria-hidden="true"></span>
-                </button>
-                <video class="web-case-study__video" title="晴空雜貨店影片" controls playsinline preload="none">
-                  <source data-src="../img/晴空雜貨店.mp4" type="video/mp4">
-                </video>
+                </a>
               </div>
             </article>
 
@@ -238,33 +234,6 @@
 
       document.addEventListener("portfolio:content-ready", initWebCaseStudyHeadingReveal);
       window.addEventListener("load", initWebCaseStudyHeadingReveal);
-
-      document.querySelectorAll(".web-case-study__poster").forEach(function (poster) {
-        poster.addEventListener("click", function () {
-          const shell = poster.closest(".web-case-study__video-shell");
-          const video = shell && shell.querySelector(".web-case-study__video");
-          const source = video && video.querySelector("source");
-          const videoSrc = poster.getAttribute("data-video-src");
-
-          if (!video || !source || !videoSrc) {
-            return;
-          }
-
-          if (!source.getAttribute("src")) {
-            source.setAttribute("src", videoSrc);
-            video.load();
-          }
-
-          shell.classList.add("is-playing");
-
-          const playPromise = video.play();
-          if (playPromise && typeof playPromise.catch === "function") {
-            playPromise.catch(function () {
-              shell.classList.remove("is-playing");
-            });
-          }
-        });
-      });
 
       if (window.jQuery && jQuery.fn.magnificPopup) {
         jQuery(".web-case-study__lightbox-trigger").magnificPopup({
