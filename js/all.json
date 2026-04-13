@@ -77,7 +77,7 @@
     "LIST13": {
       "title_en-first": "品牌官網 & 設計稿",
       "title_en-rest": "Personal projects",
-      "title_zh": "此三件作品皆為原創設計\n《檸夏果汁》與《敖翔飯店》皆為沒有使用套版的網站，純手刻HTML與CSS\n《魔娜售票 • 設計稿》為 Adobe XD 平台開發的設計稿",
+      "title_zh": "此四件作品皆為原創設計\n《檸夏果汁》與《敖翔飯店》皆為沒有使用套版的網站，純手刻HTML與CSS\n《魔娜售票 • 設計稿》為 Adobe XD 平台開發的設計稿\n《敖翔飯店 • 設計稿》為 Figma 平台開發的設計稿",
       "items": [
         {
           "title": "品牌官網 01 -《檸夏果汁》",
@@ -93,9 +93,15 @@
         },
         {
           "title": "售票網站設計稿 -《魔娜售票》",
-          "coverImage": "/img/webDesign04.webp",
+          "coverImage": "/img/webDesign04.jpg",
           "link": "https://xd.adobe.com/view/3af5096b-9a31-41a7-b79b-11af403d3e23-6fa6/",
           "description": "風格以魔女為原型，充滿神祕氣息的紫色為主色系。"
+        },
+        {
+          "title": "品牌官網設計稿 -《敖翔飯店》",
+          "coverImage": "/img/webDesign05.jpg",
+          "link": "https://www.figma.com/proto/ePZhIsS2V4lgxfoKfrCC3H/Midterm-Project?node-id=32-8&p=f&t=zNcpGysvwksqIDWs-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=32%3A8&show-proto-sidebar=1",
+          "description": "《敖翔飯店》的 Figma 設計稿。"
         }
       ]
     }

@@ -1394,17 +1394,23 @@
       flex: none;
       position: relative;
       display: inline-block;
+      line-height: 0;
       width: auto;
       max-width: var(--portfolio-card-width);
       border-radius: 18px;
       overflow: hidden;
+      isolation: isolate;
+      cursor: pointer;
     }
 
-    img {
-      width: auto;
+    .portfolio-card__image {
+      width: calc(100% + 2px);
       height: auto;
       display: block;
-      max-width: var(--portfolio-card-width);
+      max-width: none;
+      margin: -1px;
+      border-radius: inherit;
+      clip-path: inset(0 round 18px);
     }
 
     .web-item__meta {
@@ -1597,10 +1603,21 @@
 
     &__image {
       display: block;
-      width: 100%;
-      height: 100%;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      margin: -1px;
       object-fit: cover;
       object-position: center center;
+      transition: transform 0.45s ease;
+      transform-origin: center center;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+
+    &__poster:hover .web-case-study__image,
+    &__poster:focus-visible .web-case-study__image {
+      transform: translateZ(0) scale(1.03);
     }
 
     &__video-shell.is-playing .web-case-study__poster,
@@ -1961,13 +1978,19 @@
 .webCreations,
 .otherVisualCreations {
   .portfolio-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
     transition: transform 0.45s ease;
     transform-origin: center center;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
   }
 
   .horizontal-list__item:hover .portfolio-card__image,
   .horizontal-list__item:focus-within .portfolio-card__image {
-    transform: scale(1.025);
+    transform: translateZ(0) scale(1.03);
   }
 }
 
@@ -2011,6 +2034,12 @@
     padding-left: 0;
     padding-right: clamp(2.5rem, 6vw, 6rem);
     box-sizing: border-box;
+  }
+
+  .horizontal-list__item:hover,
+  .horizontal-list__item:focus-within {
+    transform: none;
+    box-shadow: none;
   }
 }
 

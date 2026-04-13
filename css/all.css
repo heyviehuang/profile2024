@@ -1425,16 +1425,22 @@ button {
   flex: none;
   position: relative;
   display: inline-block;
+  line-height: 0;
   width: auto;
   max-width: var(--portfolio-card-width);
   border-radius: 18px;
   overflow: hidden;
+  isolation: isolate;
+  cursor: pointer;
 }
-.webCreations :is(.section--LIST11, .section--LIST12, .section--LIST13) img {
-  width: auto;
+.webCreations :is(.section--LIST11, .section--LIST12, .section--LIST13) .portfolio-card__image {
+  width: calc(100% + 2px);
   height: auto;
   display: block;
-  max-width: var(--portfolio-card-width);
+  max-width: none;
+  margin: -1px;
+  border-radius: inherit;
+  clip-path: inset(0 round 18px);
 }
 .webCreations :is(.section--LIST11, .section--LIST12, .section--LIST13) .web-item__meta {
   display: grid;
@@ -1599,12 +1605,21 @@ button {
 }
 .webCreations .web-case-study__image {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin: -1px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
+  transition: transform 0.45s ease;
+  transform-origin: center center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+.webCreations .web-case-study__poster:hover .web-case-study__image, .webCreations .web-case-study__poster:focus-visible .web-case-study__image {
+  transform: translateZ(0) scale(1.03);
 }
 .webCreations .web-case-study__video-shell.is-playing .web-case-study__poster, .webCreations .web-case-study__video-shell.is-playing .web-case-study__poster-play {
   opacity: 0;
@@ -1886,14 +1901,20 @@ button {
 
 .webCreations .portfolio-card__image,
 .otherVisualCreations .portfolio-card__image {
+  display: block;
+  width: 100%;
+  height: auto;
   transition: transform 0.45s ease;
   transform-origin: center center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 .webCreations .horizontal-list__item:hover .portfolio-card__image,
 .webCreations .horizontal-list__item:focus-within .portfolio-card__image,
 .otherVisualCreations .horizontal-list__item:hover .portfolio-card__image,
 .otherVisualCreations .horizontal-list__item:focus-within .portfolio-card__image {
-  transform: scale(1.025);
+  transform: translateZ(0) scale(1.03);
 }
 
 .portfolio-card__image-title {
@@ -1933,6 +1954,11 @@ button {
   padding-left: 0;
   padding-right: clamp(2.5rem, 6vw, 6rem);
   box-sizing: border-box;
+}
+.webCreations .horizontal-list__item:hover,
+.webCreations .horizontal-list__item:focus-within {
+  transform: none;
+  box-shadow: none;
 }
 
 .otherVisualCreations .section {
