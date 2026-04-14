@@ -3,7 +3,7 @@
 
 // Horizontal list cards
 .horizontal-list {
-  @include horizontal-list(2rem); // Shared horizontal-list mixin with 2rem gap
+  @include horizontal-list(0.5rem); // Shared horizontal-list mixin with 2rem gap
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 
