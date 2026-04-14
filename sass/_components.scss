@@ -1379,7 +1379,7 @@
 .webCreations {
   :is(.section--LIST11, .section--LIST12, .section--LIST13) {
     .horizontal-list__item {
-      width: fit-content !important;
+      width: var(--portfolio-card-width) !important;
       height: auto;
       display: flex;
       flex-direction: column;
@@ -1393,10 +1393,10 @@
     .openModalBtn {
       flex: none;
       position: relative;
-      display: inline-block;
+      display: block;
       line-height: 0;
-      width: auto;
-      max-width: var(--portfolio-card-width);
+      width: 100%;
+      max-width: 100%;
       border-radius: 18px;
       overflow: hidden;
       isolation: isolate;
@@ -1404,13 +1404,12 @@
     }
 
     .portfolio-card__image {
-      width: calc(100% + 2px);
+      width: 100%;
       height: auto;
       display: block;
-      max-width: none;
-      margin: -1px;
+      max-width: 100%;
+      margin: 0;
       border-radius: inherit;
-      clip-path: inset(0 round 18px);
     }
 
     .web-item__meta {

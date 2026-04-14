@@ -37,7 +37,16 @@
     </script>
   </head>
 
-  <body id="body" class="otherVisualCreations" translate="no">
+  <body id="body" class="otherVisualCreations is-link-loading is-initial-loading" translate="no">
+    <div class="route-loader" aria-hidden="true">
+      <div class="route-loader__inner">
+        <div class="route-loader__mark">
+          <img class="route-loader__logo" src="../img/logo.svg" alt="Sally Huang logo">
+          <span class="route-loader__spinner"></span>
+        </div>
+        <p class="route-loader__text" aria-hidden="true">LOADING<span class="route-loader__dots"><span class="route-loader__dot">.</span><span class="route-loader__dot">.</span><span class="route-loader__dot">.</span></span></p>
+      </div>
+    </div>
     <!-- Main Navigation -->
     <ul id="menu" class="theme-light">
       <li data-menuanchor="page1" class="ui-btn"><a href="../index.html#page1"><span>Home</span></a></li>
