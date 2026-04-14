@@ -66,7 +66,7 @@
         },
 
         shouldShowInitialLoader() {
-            return this.$body.hasClass("index");
+            return this.$body.hasClass("is-initial-loading") || this.$body.hasClass("index");
         },
 
         waitForInitialMedia() {
@@ -138,6 +138,17 @@
 
         bindPageTransitions() {
             const self = this;
+            const finishInitialLoader = function () {
+                if (!self.$body.hasClass("is-initial-loading")) {
+                    return;
+                }
+
+                self.$body.removeClass("is-initial-loading");
+                self.hideRouteLoader();
+            };
+            const scheduleInitialLoaderFallback = function () {
+                window.setTimeout(finishInitialLoader, 2500);
+            };
 
             const startPageTransition = function (url) {
                 self.showRouteLoader();
@@ -204,12 +215,15 @@
                 }
 
                 self.waitForInitialMedia().always(function () {
-                    window.setTimeout(function () {
-                        self.$body.removeClass("is-initial-loading");
-                        self.hideRouteLoader();
-                    }, 220);
+                    window.setTimeout(finishInitialLoader, 220);
                 });
             });
+
+            document.addEventListener("DOMContentLoaded", function () {
+                window.setTimeout(finishInitialLoader, 300);
+            });
+
+            scheduleInitialLoaderFallback();
         },
 
         bindScrollTopLinks() {
