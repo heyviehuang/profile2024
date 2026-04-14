@@ -2029,12 +2029,6 @@
 }
 
 .webCreations {
-  .mySwiper {
-    padding-left: 0;
-    padding-right: clamp(2.5rem, 6vw, 6rem);
-    box-sizing: border-box;
-  }
-
   .horizontal-list__item:hover,
   .horizontal-list__item:focus-within {
     transform: none;

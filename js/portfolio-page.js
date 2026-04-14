@@ -308,17 +308,24 @@
 
         function bindImageUpdates(swiperInstance, swiperElement) {
             const images = swiperElement.querySelectorAll("img");
+            const refreshOffsets = function () {
+                swiperInstance.params.slidesOffsetBefore = getStartOffset(swiperElement);
+                swiperInstance.params.slidesOffsetAfter = getEndOffset(swiperElement);
+            };
 
             images.forEach(function (image) {
                 if (image.complete) {
+                    refreshOffsets();
                     return;
                 }
 
                 image.addEventListener("load", function () {
+                    refreshOffsets();
                     swiperInstance.update();
                 }, { once: true });
 
                 image.addEventListener("error", function () {
+                    refreshOffsets();
                     swiperInstance.update();
                 }, { once: true });
             });

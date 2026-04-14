@@ -344,6 +344,10 @@
             this.$window.on("scroll", updateScrollState);
             this.$menu.show();
             updateScrollState();
+
+            document.addEventListener("portfolio:content-ready", function () {
+                updateScrollState();
+            });
         },
 
         initInfiniteSlide() {

@@ -1948,11 +1948,6 @@ button {
     font-size: 0.76rem;
   }
 }
-.webCreations .mySwiper {
-  padding-left: 0;
-  padding-right: clamp(2.5rem, 6vw, 6rem);
-  box-sizing: border-box;
-}
 .webCreations .horizontal-list__item:hover,
 .webCreations .horizontal-list__item:focus-within {
   transform: none;
